@@ -13,11 +13,6 @@
 
 
 
-TEST
-
-
-
-
 
 
 
@@ -2008,6 +2003,33 @@ ${grandparent}'s gaze fell back to my hand, a look of concern on $!{pospronoun} 
 ///////////////////////////////////////////////////////////////////////////////////
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 *page_break
 
 *comment 16/4/25 changes
@@ -2231,7 +2253,32 @@ You managed to cook your second fish a bit more successfully, holding the skewer
 
 "That's enough excitement for one night," ${grandparent} said, breaking the silence. ${pospronoun} eyes were fixed on the embers. "Power is not about a grand beginning, but about a controlled end. You've done well for a first lesson. Now rest. We have much to learn tomorrow."
 
+*page_break
 
+The night was still. The hearth hissed low, and you lay on your back on the narrow pallet, the straw mattress creaking as your ribs rose and fell. Your bones were tired in a way that words could not hold; sleep came for you in slow, patient waves. You were half-sinking into that soft dark when the silence shifted.
+
+It did not arrive as a knock or a footstep. It was a presence — not heard so much as felt, threading itself through the spaces between thought and breath. A woman’s voice, low and edged with something older than memory: warm, scolding, and wound tight with grief.
+
+[i][Sage] Sleep, stubborn child. You are more fragile than you assume, and closer to being lost than you deserve. From tonight, your steps are not only yours. I will walk beside you, whether you like it or not. Even if it breaks me. Even if I must die for you a thousand times over.[/i]
+
+Her words lay over you like a blanket of iron and comfort. The sound made something ache — familiar and impossible at once — like a tune half-remembered in a dream you haven't lived.
+
+*choice
+    # "Who… are you?"
+        [i][Sage] No one. Not yet. Just sleep.[/i]
+        *goto after_sage_voice
+
+    # "What do you want from me?"
+        You open your mouth to ask, but the voice does not answer. Silence folds around the question, deliberate and final.
+        *goto after_sage_voice
+
+*label after_sage_voice
+
+You try to push the questions further, to pry words from the quiet, but no sound will leave your throat. The room is exactly as it was: the low fire, the shallow shadows, the rough grain of the wall. And yet you feel the small, stubborn certainty that you are not alone.  
+
+Her voice lingers in the hollow between waking and dream, a vow caught between sorrow and defiance. Then, like a candle snuffed out, it is gone.  
+
+Sleep takes you whole. But from this night forward, you will carry with you the weight of that unseen promise — and the faint echo of a voice that refuses to let you go.
 
 
 
