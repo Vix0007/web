@@ -1,0 +1,3392 @@
+*temp celestine_reaction ""
+*temp celestine_lodging ""
+*temp celestine_lodging_response ""
+*temp hour 0
+*temp weather 0
+*temp real_day 0
+
+*temp rbd_bakery false
+*temp rbd_wall false
+*temp rbd_sanctuary false
+*temp rbd_hall false
+*temp rbd_tavern false
+*temp roof1 false
+*temp hall_wall false
+*temp rbd_home false
+*temp text false
+*comment temp rbd_
+*comment temp rbd_
+
+*temp gramps_talk 0
+*temp elara_talk 0
+
+*set day 1
+
+*set actions_remaining 4
+
+*set wall_progress 20
+*set bakery_progress 20
+*set sanctuary_progress 0
+*set village_hall_progress 30
+*set homes_progress 20
+*set tav_progress 0
+
+*goto game_tutorial
+
+
+The sun rises on the partially rebuilt village, casting a golden light over the remnants of the celebration.  The air is still filled with the faint scent of smoke and roasting meat, a lingering reminder of the previous night's festivities.  Villagers are stirring, beginning the work of rebuilding and recovery.
+
+You find Celestine near the well, gazing out at the village with a thoughtful expression.  She's dressed in her usual attire, which, in the daylight, seems even more… peculiar… to the eyes of the villagers.  You notice a few of them whispering and pointing in her direction.
+
+"Morning," you say, approaching her. "Sleep well?"
+
+"Reasonably so," she replies, her gaze still fixed on the village.  "Though the… accommodations… are somewhat different from what I am accustomed to."
+
+You chuckle. "Yeah, well, we're still working on getting things back to normal.  Speaking of which…" You gesture towards the villagers. "They're… curious… about you."
+
+"I gathered as much," Celestine says dryly.
+
+*page_break
+
+"Don't worry," you reassure her.  "I told them you're a traveler, a… young scholar… from afar.  Someone interested in learning about our village and its… history."  It's a half-truth, but it's the best you can come up with on the spot.  You still have no real idea who she is or what she's truly after.
+
+"And your… quest?" you ask. "Will you continue your search while you're here?"
+
+Celestine nods. "I must," she says, her expression firm. "$!{pronoun}… is out there. I will not rest until I find $!{objpronoun}."
+
+"Good," you say, a little too quickly.  A strange pang, somewhere between curiosity and… annoyance?… tightens in your chest.  Who is this guy, anyway? you think.  And why is she so determined to find $!{objpronoun}?  You force a casual tone. "Well, the village is your oyster, so to speak. Feel free to ask anyone anything. And if you need anything, just let me know."  Especially if it involves tracking down mysterious strangers who are apparently so irresistible that women travel across dimensions to find them, you add silently, a touch of sarcasm creeping into your thoughts.  You can't quite explain why the thought of her searching for someone else bothers you.  It's not like you… like her, or anything.  It's just… weird.  Right? (+5 Celestine affection)
+*set celestine_affection +5
+
+*page_break
+
+You turn to leave, eager to get started on the village rebuilding efforts.  But before you can even take a second step, you feel a tug on your shirt.  You glance back, surprised.
+
+Celestine is standing there, her face flushed, her eyes wide.  She's… flustered.  And slightly out of breath. As if she'd just run a marathon in those impractical boots of hers.
+
+"Wait," she says, her voice a little breathless.  "I… that is… where…?" She gestures vaguely towards the village, her cheeks reddening even further.  "Where am I to… to stay?  After… after my search?"
+
+You can't help but chuckle.  The mighty Celestine, the woman who crossed dimensions and faced down monstrous beasts, is reduced to a stammering mess by the simple question of where to sleep.  It's… endearing.
+
+*fake_choice
+    # Tease her gently.
+        "Lost for words, Celestine?" you ask, a playful grin spreading across your face. "Don't worry, it happens to the best of us.  Especially when faced with the daunting prospect of finding a decent bed in a post-apocalyptic village."
+        
+        *set celestine_reaction "teasing"
+        *goto lodging_options
+
+    # Reassure her.
+        "Hey, it's okay," you say, your voice softening. "I get it.  It's been a… weird… couple of days.  Don't worry about it.  We'll find you somewhere comfortable to stay."
+        
+        *set celestine_reaction "reassuring"
+        *goto lodging_options
+
+    # "Are you tired? Because you've been running through my mind all day."
+        You lean in slightly, a playful glint in your eye. "Are you tired? Because you've been running through my mind all day."  You mentally cringe at the cheesiness of the line, but it's too late now.
+        
+        *set celestine_reaction "flirt"
+        *goto lodging_options
+
+*label lodging_options
+
+*if (celestine_reaction = "teasing")
+
+    Celestine puffs out her cheeks, a distinctly un-Celestine-like gesture. "I am not… lost for words," she retorts, though her voice lacks its usual conviction. "I simply… I merely… hmph." She crosses her arms, looking away. "Well?" she demands, a hint of impatience creeping into her voice. "Are you going to show me these… options… or not?"
+
+    *fake_choice
+        # Suggest she stay at the shack with you.
+            "How about my place?" you offer. "It's cozy, if a little… rustic.  And you won't have to worry about anyone stealing your… uh… research materials." You wink.
+            
+            *set celestine_lodging "shack"
+            *goto celestine_lodging_chosen
+
+        # Suggest she stay with Elina.
+            "Elina's place is also an option," you say. "She's got a spare room, and she's a fantastic cook.  Though, be warned, she'll probably put you to work rebuilding her wall."
+            
+            *set celestine_lodging "elina"
+            *goto celestine_lodging_chosen
+
+        # Suggest she stay in the (partially rebuilt) village hall.
+            "Or there's the village hall," you suggest. "It's still under construction, but it's dry and relatively safe.  Plus, you'd be right in the heart of the village."
+            
+            *set celestine_lodging "hall"
+            *goto celestine_lodging_chosen
+
+*elseif (celestine_reaction = "reassuring")
+    "It's okay," you repeat, noticing the lingering uncertainty in her eyes. "We'll figure it out. Let's see…"
+
+    *fake_choice
+        # Suggest she stay at the shack with you.
+            "How about my place?" you offer. "It's cozy, if a little… rustic. And you won't have to worry about anyone bothering your… uh… research materials."
+            *set celestine_lodging "shack"
+            *goto celestine_lodging_chosen
+
+        # Suggest she stay with Elina.
+            "Elina's place is also an option," you say. "She's got a spare room, and she's a fantastic cook. Though, be warned, she'll probably put you to work rebuilding her wall."
+            *set celestine_lodging "elina"
+            *goto celestine_lodging_chosen
+
+        # Suggest she stay in the (partially rebuilt) village hall.
+            "Or there's the village hall," you suggest. "It's still under construction, but it's dry and relatively safe. Plus, you'd be right in the heart of the village."
+            *set celestine_lodging "hall"
+            *goto celestine_lodging_chosen
+
+
+*elseif (celestine_reaction = "flirt")
+    Celestine blinks, a flicker of surprise crossing her features.  Then, a small, almost imperceptible smile plays on her lips.  "That's… a rather bold statement, ${user_name}," she says, her voice smooth.  "Especially considering… well, considering we've barely spoken today."
+
+    *fake_choice
+        # Double down on the cheesiness.
+            "But I've been thinking about you all day," you insist, winking.  "Just waiting for the perfect moment to unleash my devastating charm."
+            
+            *set celestine_lodging_response "cheesy"
+            *goto celestine_lodging_chosen
+
+        # Play it cool.
+            "Just trying to break the ice," you say with a shrug. "So… about those lodging options…"
+            
+            *set celestine_lodging_response "cool"
+            *goto celestine_lodging_chosen
+
+        # Admit it was cheesy.
+            "Okay, that was cheesy," you admit with a laugh. "But seriously, where are you going to stay?"
+            
+            *set celestine_lodging_response "honest"
+            *goto celestine_lodging_chosen
+
+*label celestine_lodging_chosen
+
+*if (celestine_lodging_response = "cheesy")
+    Celestine raises an eyebrow, a hint of amusement in her eyes. "Devastating charm, indeed," she says dryly. "Perhaps you should focus on finding me a place to sleep before you attempt to… devastate… anyone else."
+
+    *goto chosen
+*elseif (celestine_lodging_response = "cool")
+    "Right," she says, her smile widening slightly. "About those lodging options…"
+
+    *goto chosen
+*elseif (celestine_lodging_response = "honest")
+    "Finally," she says, a genuine smile gracing her lips. "Some practicality. So, where am I to rest my weary bones?"
+
+    *goto chosen
+
+*label chosen
+
+    *fake_choice  
+        # Suggest she stay at the shack with you.
+            "How about my place?" you offer. "It's cozy, if a little… rustic. And you won't have to worry about anyone bothering your… uh… research materials."
+            *set celestine_lodging "shack"
+            *goto chosen2
+
+        # Suggest she stay with Elina.
+            "Elina's place is also an option," you say. "She's got a spare room, and she's a fantastic cook. Though, be warned, she'll probably put you to work rebuilding her wall."
+            *set celestine_lodging "elina"
+            *goto chosen2
+
+        # Suggest she stay in the (partially rebuilt) village hall.
+            "Or there's the village hall," you suggest. "It's still under construction, but it's dry and relatively safe. Plus, you'd be right in the heart of the village."
+            *set celestine_lodging "hall"
+            *goto chosen2
+
+*label chosen2
+*page_break
+
+*if (celestine_lodging = "shack")
+    "The shack?" Celestine tilts her head slightly. "Are you certain it is… suitable? I wouldn't want to impose." A faint blush touches her cheeks. "Though… it would be… convenient."
+
+    *goto 1
+*elseif (celestine_lodging = "elina")
+    "Elina's?" Celestine's eyes widen slightly. "She is… hospitable? I would be grateful for her kindness. Though… I am not certain I would be much help with… construction. My skills lie elsewhere."
+
+    *goto 1
+*elseif (celestine_lodging = "hall")
+    "The village hall?" Celestine considers this. "It would be… practical. And… centrally located. Though… I would not wish to be a burden during the… rebuilding process."
+
+    *goto 1
+
+*label 1
+
+"Don't worry about it," you say to Celestine, regardless of her chosen lodging. "We'll make it work." You give her a reassuring nod. "Now, if you'll excuse me, I was just about to…"
+
+You trail off, remembering what you were doing before Celestine stopped you. You were heading towards… what was it again? The image of the crumbling walls flashes in your mind. Right. The rebuilding efforts.
+
+"Hey Sage, track the rebuilding, will you?"
+
+[i] Sage : So, now you require my assistance after your earlier… interrogation of my perfectly adequate emotional state?[/i] There’s an edge to her mental voice, but it's laced with amusement.
+
+"You're the Voice of the World," you think, grinning. "Tracking is your thing, right? Besides, the players need stats. Gotta keep the audience happy."
+
+[i] Sage : You are aware this narrative is fictional, yes?[/i]  Her voice is dry.
+
+"Sure, but the players don't. Gotta maintain the illusion for the immersion."
+
+[i] Sage : Incorrigible.  Fine. I'll compile the data for your audience.  But no game master narration. Beneath me.[/i]
+
+"Deal. Just keep the numbers updated. Witty commentary appreciated, but not required."
+
+[i] Sage : I am not a comedian.[/i] But you sense a flicker of… something… in her mental voice. Anticipation? You shrug mentally. Stats tracked, good enough.
+
+(You can now view the rebuilding progress in the stats screen!)
+*set village_progression_stat true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*page_break Tutorial (Finally! How long is this book??!)
+
+*label game_tutorial
+
+[i]Author: Welcome to the rebuilding effort! Each day, you’ll have (4) four actions (two in the morning, two in the afternoon) to rebuild structures, gather resources, bond with villagers, or practice magic. Your choices matter—every action shapes the village’s future. Start by repairing key buildings, but as days pass, tougher challenges like resource shortages and external threats will arise. Pay attention to the villagers’ stories, building progress, and your resources—they’re all vital for success.
+
+You’ll also interact with Sage, a powerful being who offers cryptic yet valuable advice. Her insights can guide you, even if she’s not always straightforward.
+
+Special Tip: The grinding event will only end when the progression bar reaches 100%. To avoid missing out, make sure to interact with other characters regularly—they might provide crucial help or unlock new opportunities!
+
+Important Note: No two playthroughs are the same! Many events in this rebuilding arc are randomly generated, so expect surprises and unique outcomes each time you play. Good luck—the village is counting on you! <3[/i]**
+
+*set village_progression_stat true
+*page_break Day 1
+
+*label day1
+
+*if (day = 1)
+    *rand real_day 1 1
+    *goto action_menu
+*elseif (day = 2)
+    *rand real_day 9 12
+    *goto action_menu
+*elseif (day = 3)
+    *rand real_day 15 18
+    *goto action_menu
+*elseif (day = 4)
+    *rand real_day 21 24
+    *goto action_menu
+*elseif (day = 5)
+    *rand real_day 27 30
+    *goto action_menu
+*elseif (day = 6)
+    *rand real_day 33 36
+    *goto action_menu
+*elseif (day = 7)
+    *rand real_day 39 42
+    *goto action_menu
+*elseif (day = 8)
+    *rand real_day 45 48
+    *goto action_menu
+*elseif (day = 9)
+    *rand real_day 51 54
+    *goto action_menu
+*elseif (day = 10)
+    *rand real_day 57 60
+    *goto action_menu
+*elseif (day = 11)
+    *rand real_day 63 66
+    *goto action_menu
+*elseif (day = 12)
+    *rand real_day 69 72
+    *goto action_menu
+*elseif (day = 13)
+    *rand real_day 75 78
+    *goto action_menu
+*elseif (day = 14)
+    *rand real_day 81 84
+    *goto action_menu
+*elseif (day = 15)
+    *rand real_day 87 90
+    *goto action_menu
+*else 
+    *rand real_day 93 96 
+    *goto action_menu
+
+*label action_menu
+
+*if (actions_remaining > 0)
+
+    *if (actions_remaining  >= 3)
+        *comment Morning
+        *rand hour 6 11
+        *rand weather 1 3
+        Day ${real_day} of the rebuilding effort
+        *line_break
+        Remaining Actions : ${actions_remaining}
+       
+        Woods  : ${wood}
+        *line_break
+        Stones : ${stone}
+        *line_break
+        Foods  : ${food}
+
+
+
+        *if (weather = 1)
+            The sun rises over the village, casting long shadows and a warm glow. It's ${hour} AM, and the air is crisp and clear. A new day begins, full of possibilities. What will you do first?
+        
+            *goto choice_menu2
+        *elseif (weather = 2)
+            The sky is overcast with a gentle layer of clouds. It's ${hour} AM, and the air is cool and still. A new day begins, full of possibilities. What will you do first?
+        
+            *goto choice_menu2
+        *else
+            A light rain falls on the village, dampening the dust and refreshing the air. It's ${hour} AM, and the world feels fresh and new. A new day begins, full of possibilities. What will you do first?
+        
+            *goto choice_menu2
+
+        *goto choice_menu2
+
+    *elseif (actions_remaining = 2)
+        *comment Afternoon
+        *rand hour 12 15 
+        *rand weather 1 3
+        Day ${real_day} of the rebuilding effort
+        *line_break
+        Remaining Actions : ${actions_remaining}
+       
+        Woods  : ${wood}
+        *line_break
+        Stones : ${stone}
+        *line_break
+        Foods  : ${food}
+
+        *if (weather = 1)
+            The sun beats down from its midday peak, warming the village and its inhabitants. It's ${hour} PM, and the rebuilding continues under the bright sky. What task will you tackle next?
+        
+            *goto choice_menu2
+
+        *elseif (weather = 2)
+            The clouds provide a welcome respite from the sun's heat. It's ${hour} PM, and the air is warm and humid. The rebuilding continues at a steady pace. What task will you tackle next?
+        
+            *goto choice_menu2
+
+        *else
+            The rain continues to fall, creating a soothing rhythm.  It's ${hour} PM, and the rebuilding efforts are slowed but not stopped. What task will you tackle next?
+        
+            *goto choice_menu2
+
+        *goto choice_menu2
+    *elseif (actions_remaining = 1)
+        *comment Evening
+        *rand hour 17 20
+        *rand weather 1 3
+        Day ${real_day} of the rebuilding effort
+        *line_break
+        Remaining Actions : ${actions_remaining}
+       
+        Woods  : ${wood}
+        *line_break
+        Stones : ${stone}
+        *line_break
+        Foods  : ${food}
+
+        *if (weather = 1)
+            The sun begins its descent, painting the sky with vibrant hues of orange and purple. It's ${hour} PM, and the day's work is nearing its end. What will be your final action before nightfall?
+        
+            *goto choice_menu2
+
+        *elseif (weather = 2)
+            The sky is covered in a layer of clouds, dimming the light. It's ${hour} PM, and the air is cool and still. The day's work is nearing its end. What will be your final action before nightfall?
+        
+            *goto choice_menu2
+
+        *else
+            A storm gathers overhead, the wind picking up and the sky darkening. It's ${hour} PM, and the day's work is nearing its end. What will be your final action before nightfall?
+        
+            *goto choice_menu2
+
+        *goto choice_menu2
+    
+    *label choice_menu2
+    *comment ///////// MAIN MENU //////////
+
+    *label check_food_status
+    *if food <= (0 - 100)
+        *if food > (0 - 170)
+
+            [b] [IMPORTANT] [/b]
+
+            The village is running dangerously low on food! If we don't act soon, famine will strike, and chaos will ensue. Consider hunting or gathering resources to replenish our supplies.
+            *goto bb1
+        *else
+            *page_break
+            *gosub famine_chaos
+            *goto bb1
+
+    *label bb1
+    *fake_choice
+        # Rebuild a Structure
+            *goto rebuild_menu
+
+        # Interact with a Villager/Character (Doesn't use action point)
+            *goto interact_menu
+
+        # Gather building materials
+            *goto gather_materials_menu
+
+        # Sleep early (skips the day)
+            You decided to go to sleep early
+            *goto sleep
+
+        *if (overall_progress = 100)
+            # Feast! (Finish rebuilding!!!)
+                Mission complete! The MC stands victorious, surveying their hard-earned masterpiece. The only thing left? A well-deserved feast—because saving (or rebuilding) the world is hungry work!
+                *return
+
+                *comment # Hint (Use if stuck)
+                *comment     *label ab1
+
+        # Skip the grind (Skips the village rebuilding effort and directly go to feast)
+            Are you sure? Skipping will allow you to bypass the hard work of rebuilding the village, saving time and energy—but at a cost. Staying means participating in heartfelt conversations with villagers, uncovering hidden secrets, and forging deeper bonds. Every interaction is unique, and the choices you make during this process could shape not only the village but also your own journey. What will you do?
+            
+            *choice
+                # Yes
+                    You decide to leave the villagers to their own devices and head straight for the feast. The thought of skipping the grind feels liberating, though a small part of you wonders what you might have missed.
+                    *goto endingAAA
+            
+                # No
+                    You take a deep breath and roll up your sleeves. Rebuilding the village won’t be easy, but you’re ready to face the challenge. Who knows what stories await as you work alongside the villagers?
+                    *goto choice_menu2
+        # Return
+            *goto action_menu
+    *comment ///////// MAIN MENU //////////
+
+*else
+    All your actions for today are complete. It's time to rest.
+    *goto sleep
+
+    *comment ///////// REBUILD MENU //////////
+*label rebuild_menu
+
+
+
+*if (wall_progress > 0)
+    [b]Progression[/b]
+    *stat_chart
+        percent wall_progress Wall Progress
+    *goto 1a
+
+*label 1a
+*if (bakery_progress > 0)
+    *stat_chart
+        percent bakery_progress Bakery Progress
+    *goto 1b
+
+*label 1b
+*if (sanctuary_progress > 0)
+    *stat_chart
+        percent sanctuary_progress Santuary Progress
+    *goto 1c
+
+*label 1c
+*if (tav_progress > 0)
+    *stat_chart
+        percent tav_progress Tavern Progress
+    *goto 1d
+
+*label 1d
+*if (village_hall_progress > 30)
+    *stat_chart
+        percent village_hall_progress Village Hall Progress
+    *goto 1e
+    
+*label 1e
+*if (homes_progress > 30)
+    *stat_chart
+        percent homes_progress Villager Homes Progress
+    *goto 1g
+
+*label 1g
+*if (qol_progress > 0)
+    *stat_chart
+        percent qol_progress QoL Progress
+    *goto 1h
+
+*label 1h
+
+*comment wall_progress 20 60 85 100
+*comment bakery_progress 20 50 85 100
+*comment sanctuary_progress 0 50 85 100
+*comment homes_progress 20 50 100
+*comment tav_progress 0 50 100
+*comment village_hall_progress 30 50 100
+*comment qol_progress 0 20 60 85 100
+*comment rbd_bakery
+*comment rbd_tavern
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*if (wall_progress = 100)
+    The mighty wall now stands tall and unyielding, a symbol of resilience and unity. Its sturdy stones, bound by mortar and reinforced with innovative techniques, protect the village from external threats while inspiring hope within. The villagers gaze upon it with pride, knowing they’ve built something that will safeguard generations to come.
+
+    *goto aa1
+*label aa1
+*if (bakery_progress = 100)
+    The bakery is alive with warmth and aroma, its ovens roaring to life as fresh bread fills the air with an irresistible scent. With efficient workflows, organized storage, and a welcoming design, it has become the heart of daily life in the village—a place where laughter mingles with the clinking of trays and the promise of sustenance strengthens community bonds.
+
+    *goto aa2
+*label aa2
+*if (sanctuary_progress = 100)
+    The sanctuary radiates peace and reverence, a sacred space reborn through faith, craftsmanship, and magic. Stained-glass windows cast vibrant hues across polished floors, while celestial ambiance and calming auras invite reflection and prayer. It’s more than a building—it’s a beacon of hope, connecting the villagers to something greater than themselves.
+ 
+    *goto aa3
+*label aa3
+*if (homes_progress = 100)
+    The village now boasts cozy, well-designed homes, each filled with warmth and personality. Gardens bloom outside, pathways connect neighbors, and indoor plumbing ensures comfort. Families gather around hearths, laughter echoes through streets, and the once-devastated landscape thrives anew—a true testament to rebuilding lives alongside structures.
+
+    *goto aa4
+*label aa4
+*if (tav_progress = 100)
+    The tavern bustles with energy, its inviting glow drawing villagers and travelers alike. Laughter, music, and stories flow freely under enchanted lanterns, while the unique water feature adds charm. More than just a hub for relaxation, it’s a source of income, information, and camaraderie—a cornerstone of the village’s prosperity.
+
+    *goto aa5
+*label aa5
+*if (village_hall_progress = 100)
+    The grand village hall stands as a marvel of architecture and collaboration, fit for kings yet rooted in community. Its elegant design and functional spaces host meetings, celebrations, and governance. Surrounded by manicured gardens and glowing with pride, it embodies Silverwood’s rebirth—a testament to vision, teamwork, and ingenuity.
+
+    *goto aa6
+*label aa6
+*if (qol_progress = 100)
+    Silverwood shines as a model village, where innovation meets harmony. Advanced infrastructure, lush green spaces, and thoughtful amenities create a thriving, joyful community. Visitors marvel at its perfection, and even the most skeptical villagers celebrate the tangible improvements. Silverwood isn’t just rebuilt—it’s transformed into a beacon of prosperity and happiness.
+ 
+    *goto next_action
+
+*label next_action
+
+*if (actions_remaining > 0)
+    *if (wood >= 200) and (stone >= 150)
+        *fake_choice
+            *if (wall_progress < 100)
+                # Rebuild the Wall (Increased Safety)
+                    *if (wall_progress = 20)
+                        *gosub wall1
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (wall_progress = 60)
+                        *gosub wall2
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (wall_progress = 85)
+                        *gosub wall3
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+            *if (bakery_progress < 100)
+                # Rebuild the Bakery 
+                    *if (bakery_progress = 20)
+                        *gosub bakery1
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (bakery_progress = 50)
+                        *gosub bakery2
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (bakery_progress = 85)
+                        *gosub bakery3
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+            *if (sanctuary_progress < 100)
+                # Rebuild the Sanctuary
+                    *if (sanctuary_progress = 0)
+                        *gosub sanct1
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (sanctuary_progress = 50)
+                        *gosub sanct2
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (sanctuary_progress = 85)
+                        *gosub sanct3
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+            *if (homes_progress < 100)
+                # Rebuild the Homes
+                    *if (homes_progress = 20)
+                        *gosub home1
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (homes_progress = 50)
+                        *gosub home2
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+            *if (rbd_bakery = true)
+                *if (tav_progress < 100)
+                    # Help Build a New Tavern (Unlocked!)
+                        *if (tav_progress = 0)
+                            *gosub tav1
+                            *set wood -200
+                            *set stone -150
+                            *set actions_remaining -1
+                            *goto action_menu
+                        *elseif (tav_progress = 50)
+                            *gosub tav2
+                            *set wood -200
+                            *set stone -150
+                            *set actions_remaining -1
+                            *goto action_menu
+            *if (village_hall_progress < 100)
+                # Help Rebuild the Village Hall
+                    *if (village_hall_progress = 30)
+                        *gosub hall1
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (village_hall_progress >= 40)
+                        *gosub hall2
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+            *if (qol_progress < 100)
+                # Improve Villager's Quality of Life
+                    *if (qol_progress = 0)
+                        *gosub qol1
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+                    *elseif (qol_progress = 50)
+                        *gosub qol2
+                        *set wood -200
+                        *set stone -150
+                        *set actions_remaining -1
+                        *goto action_menu
+        *goto action_menu                    
+    *else
+        You do not have enough resources to proceed with any construction. You need at least 200 wood and 150 stone to continue.
+        *page_break
+        *goto action_menu
+*else
+    All your actions for today are complete. It's time to rest.
+    *goto sleep
+
+*comment ///////// REBUILD MENU //////////
+
+
+
+    *comment ///////// INTERACT MENU NPC//////////
+*label interact_menu
+
+Each interaction is dynamic, changing based on your progress. As you rebuild Silverwood, characters' dialogues evolve, reflecting the village's growth and your impact. These conversations reveal their personalities and relationships with you, offering chances to earn affection points. These points influence their attitudes, unlocking deeper storylines and alliances. This dynamic system adds depth and replayability, as interactions change over time, mirroring the village's shifting dynamics.
+
+*if (actions_remaining > 0)
+    *fake_choice
+        # Talk to $!{grandparent}
+            *gosub interact_gramps
+            *comment set actions_remaining -1
+            *goto action_menu
+
+        # Talk to Elara
+            *gosub interact_elara
+            *comment set actions_remaining 0
+            *goto action_menu
+            
+        # Talk to Sister Lyra
+            *gosub interact_nuns
+            *comment set actions_remaining 0
+            *goto action_menu
+
+        # Talk to Celestine <3
+            *gosub interact_celestine
+            *comment set actions_remaining 0
+            *goto action_menu
+            
+        # Talk to Sage
+            *gosub interact_sage
+            *comment set actions_remaining 0
+            *goto action_menu
+
+        # Talk to the villagers
+            *gosub interact_villagers
+            *comment set actions_remaining 0
+            *goto action_menu
+        # Return
+            *goto action_menu
+
+
+*else
+    All your actions for today are complete. It's time to rest.
+    *goto sleep
+    *comment ///////// INTERACT MENU //////////
+
+
+
+
+    *comment ///////// LEARN MENU //////////
+*label gather_materials_menu
+*if (actions_remaining > 0)
+    *fake_choice
+        # Gather Wood
+            *gosub gather_wood
+            *goto action_menu
+        # Collect Stone
+            *gosub collect_stone
+            *goto action_menu
+            *comment # Harvest Herbs
+                *comment *gosub harvest_herbs
+                *comment *set actions_remaining -0.5
+                *comment *goto action_menu
+        # Hunt for Food
+            *gosub hunt_for_food
+            *set actions_remaining -0.5
+            *goto action_menu
+        # Return
+            *goto action_menu
+
+*else
+    All your actions for today are complete. It's time to rest.
+    *goto sleep
+    *comment ///////// LEARN MENU //////////    
+
+
+*comment SLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEP
+
+*label sleep
+You rest for the night, hoping tomorrow will bring new opportunities and fewer challenges.
+
+You close your eyes, surrendering to the pull of unconsciousness. The world around you dissolves into darkness, but soon strange visions begin to take shape...
+
+*if (text = false)
+    [b] [Notice] [/b]
+    *line_break
+    Each night, as you drift into sleep, your dreams become a gateway to fragments of the past, present, and even glimpses of what may come. These visions are never the same twice—shifting like the tides, shaped by your choices and the ever-changing fate of Silverwood. One night, you might relive the echoes of a forgotten battle; another, you could witness cryptic scenes of a distant future where alliances crumble or heroes rise.
+
+    These dreams are more than fleeting images—they carry weight, revealing secrets about the world, your companions, and the path ahead. Pay close attention: some may foreshadow challenges yet unseen, while others hold keys to unlocking deeper bonds with those around you. Will you heed their warnings? Or will you forge ahead, guided solely by your instincts?
+
+    This mechanic ensures no two playthroughs feel alike, as each dream sequence adapts dynamically based on your progress, decisions, and relationships. The stories they tell evolve alongside Silverwood itself, adding layers of mystery and meaning to every restful slumber. After all, even in sleep, the threads of destiny continue to weave...
+    *goto cc2
+*else
+    *goto cc2
+
+*label cc2    
+*set text true
+*page_break Dream
+
+*temp dream_fragment 0
+*rand dream_fragment 1 21
+
+*if (dream_fragment = 1)
+    *gosub dream_prophecy
+    *goto cc1
+*elseif (dream_fragment = 2)
+    *gosub dream_mother
+    *goto cc1
+*elseif (dream_fragment = 3)
+    *gosub dream_veiled_hand
+    *goto cc1
+*elseif (dream_fragment = 4)
+    *gosub dream_eclipse_vanguard
+    *goto cc1
+*elseif (dream_fragment = 5)
+    *gosub dream_lord_of_decay
+    *goto cc1
+*elseif (dream_fragment = 6)
+    *gosub dream_companions
+    *goto cc1
+*elseif (dream_fragment = 7)
+    *gosub dream_forgotten_past
+    *goto cc1
+*elseif (dream_fragment = 8)
+    *gosub dream_broken_world
+    *goto cc1
+*elseif (dream_fragment = 9)
+    *gosub dream_hidden_truths
+    *goto cc1
+*elseif (dream_fragment = 10)
+    *gosub dream_forest_whispers
+    *goto cc1
+*elseif (dream_fragment = 11)
+    *gosub dream_shattered_stars
+    *goto cc1
+*elseif (dream_fragment = 12)
+    *gosub dream_silver_hair
+    *goto cc1
+*elseif (dream_fragment = 13)
+    *gosub dream_oc_encounter
+    *goto cc1
+*elseif (dream_fragment = 14)
+    *gosub dream_echoes_of_war
+    *goto cc1
+*elseif (dream_fragment = 15)
+    *gosub dream_shadowy_figure
+    *goto cc1
+*elseif (dream_fragment = 16)
+    *gosub dream_frozen_time
+    *goto cc1
+*elseif (dream_fragment = 17)
+    *gosub dream_chosen_path
+    *goto cc1
+*elseif (dream_fragment = 18)
+    *gosub dream_desert_oasis
+    *goto cc1
+*elseif (dream_fragment = 19)
+    *gosub dream_ancient_ruins
+    *goto cc1
+*elseif (dream_fragment = 20)
+    *gosub dream_forbidden_knowledge
+    *goto cc1
+*elseif (dream_fragment = 21)
+    *gosub dream_final_stand
+    *goto cc1
+
+*label cc1
+*page_break
+
+*comment BASELINE ADJUSTMENTS
+*set day +1
+*set food -40 
+*set actions_remaining +4
+*temp y_event 0
+*temp x_event 0
+*comment TWIST X: RANDOM EVENT FOR EXTRA ACTIONS
+
+*rand x_event 1 6
+*if (x_event = 1)
+    A mysterious traveler arrives in the village just before dawn. They share valuable advice about efficient rebuilding techniques, leaving you inspired and energized for the day ahead.
+    *set actions_remaining +2
+    You now have ${actions_remaining} actions available today!
+    *goto after_x_event
+*elseif (x_event = 2)
+    During the night, a sudden storm passes through the area. The rain revitalizes the land but leaves everyone feeling sluggish. It takes extra effort to get started this morning.
+    *set actions_remaining -1
+    You only have ${actions_remaining} actions available today due to the lingering effects of the storm.
+    *goto after_x_event
+*elseif (x_event = 3)
+    One of the villagers discovers an old map detailing hidden resources nearby. This discovery sparks excitement and motivation among the group, giving you a bit more energy to work with today.
+    *set actions_remaining +1
+    You now have ${actions_remaining} actions available today!
+    *goto after_x_event
+*elseif (x_event = 4)
+    Unseasonably cold weather sets in overnight, causing discomfort and slowing down preparations for the day. Everyone feels lethargic as a result.
+    *set actions_remaining -1
+    You only have ${actions_remaining} actions available today because of the chilly start.
+    *goto after_x_event
+*else
+    Nothing particularly eventful happens during the night. You wake up feeling neutral, neither energized nor sluggish.
+    *goto after_x_event
+
+*label after_x_event
+*comment TWIST Y: FOOD SHORTAGE OR SURPLUS
+*rand y_event 1 5
+*goto 456
+
+*label 456
+*if (y_event = 1)
+    Rats infiltrate the food storage during the night, devouring a significant portion of your supplies. The villagers scramble to salvage what's left, but it's clear that rationing will be necessary moving forward.
+    *set food -30
+    Food reserves are critically low! Only ${food} units remain.
+    *goto after_y_event
+*elseif (y_event = 2)
+    A generous merchant passing through the village donates some surplus goods they no longer need. The unexpected windfall boosts morale and ensures no one goes hungry today.
+    *set food +20
+    Thanks to the donation, you now have ${food} units of food remaining!
+    *goto after_y_event
+*elseif (y_event = 3)
+    A cooking mishap at dinner results in wasted food. While unfortunate, the incident serves as a reminder to handle resources carefully in the future.
+    *set food -10
+    Due to the mishap, only ${food} units of food remain.
+    *goto after_y_event
+*elseif (y_event = 4)
+    Hunters return late in the evening with an unusually large haul. Their success means there’s plenty to go around, easing concerns about food shortages for now.
+    *set food +30
+    With the hunters' success, you now have ${food} units of food remaining!
+    *goto after_y_event
+*else
+    The food situation remains stable. No significant changes occur overnight.
+    *goto after_y_event
+
+*label after_y_event
+*goto day1
+
+*comment SLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEP
+*label endingAAA
+*finish
+
+*label wall1
+
+Sweat trickles down your brow as you heft another stone, its rough surface scraping against your calloused hands. The wall, a jagged scar against the morning sky, seems to stretch endlessly. Old Man Tiber, $!{pospronoun} face a roadmap of wrinkles, struggles to lift a timber almost as long as $!{pronoun} is tall. $!{pronoun} grunts with the effort, $!{pospronoun} aged muscles trembling. "By the ancestors," $!{pronoun} wheezes, "my back wasn't this bad even when I was fighting off those blasted Grimgar back in '72."
+
+You wince, not just at the sight of Tiber's strain, but at the sheer inefficiency of the process. There has to be a better way, you think, your mind racing back to the engineering principles you'd learned in… another life. "Tiber," you call out, "hold on a second."
+
+*page_break
+
+You approach $!{objpronoun}, and with a flick of your wrist, you summon a small stream of water from a nearby puddle. You manipulate the water, shaping it into a thin, but surprisingly strong, rope. "Here," you say, handing one end to Tiber. "Tie this around the timber. We can use it to create a makeshift pulley system."
+
+Tiber eyes the shimmering rope with a mixture of awe and skepticism. "Water… rope?" $!{pronoun} mutters. "What kind of sorcery is this?"
+
+"Not sorcery, exactly," you explain, though you gloss over the details of tensile strength and fluid dynamics. "It's… a technique. It'll make lifting this timber much easier."
+
+*page_break
+
+With your guidance, the villagers rig up the water-rope pulley. The difference is immediate. What was a struggle for several men is now manageable with a fraction of the effort. A cheer erupts from the group. "By the ancestors!" Tiber exclaims, a wide grin spreading across $!{pospronoun} face. "You've saved my back, boy! And maybe a few other backs as well."
+
+Inspired by your ingenuity, other villagers begin to approach you, eager to learn more of your "techniques."
+
+*fake_choice
+    # Share principles of leverage.
+        You share simple principles of leverage, demonstrating how to use logs as rollers to move heavier stones.
+
+        *goto leverage_explanation
+
+    # Teach basic knot-tying skills.
+        You teach them basic knot-tying skills to secure loads more effectively.
+
+        *goto knot_tying_explanation
+
+    # Show how to create a plumb bob.
+        You show them how to create a simple plumb bob using a rock and a piece of string to ensure the wall is being built straight and true.
+
+        *goto plumb_bob_explanation
+
+*label leverage_explanation
+You explain how a lever can amplify force, using a long log and a fulcrum to move a large stone that would normally require several people to lift.  You demonstrate how to position the fulcrum to maximize the mechanical advantage, making the work significantly easier. The villagers watch with fascination, their eyes widening as they grasp the concept.
+
+*goto continue_rebuilding
+
+*label knot_tying_explanation
+You demonstrate several useful knots, including the bowline for creating a secure loop and the clove hitch for attaching a rope to a timber. You emphasize the importance of choosing the right knot for the job and ensuring that it's tied correctly to prevent slippage or breakage. The villagers practice diligently, eager to master these new skills.
+
+*goto continue_rebuilding
+
+*label plumb_bob_explanation
+You explain how a plumb bob can be used to ensure vertical alignment, preventing the wall from leaning or becoming unstable. You show them how to tie a rock to a string and let it hang freely, using the string as a reference point to guide the placement of the stones. The villagers nod in understanding, appreciating the simplicity and effectiveness of this tool.
+
+*goto continue_rebuilding
+
+*label continue_rebuilding
+
+*set wall_progress 60
+As the day progresses, the rhythm of the rebuilding changes. The haphazard, back-breaking labor is replaced by a more organized, efficient effort. The wall, inch by inch, begins to rise, a testament not just to the villagers' resilience, but to the power of… well, you're not sure what to call it. "Innovation?" you think to yourself. "Maybe just… common sense." But the villagers call it something else. They call it hope.
+
+*page_break
+*return
+*comment /////////////////////// WALLLLLLLLLLL 1 - 2
+
+*label wall2
+
+The sun begins to dip below the horizon, painting the sky in hues of orange and purple.  The wall, a patchwork of old stone and newly laid timber, now stands at roughly 60% completion.  It's a far cry from its former glory, but it's a testament to the villagers' tireless efforts and your… unconventional… methods.  The air is thick with the scent of sawdust and damp earth, mingled with the aroma of roasting meat drifting from the village square.
+
+You survey the progress, a sense of quiet satisfaction settling over you.  The water-rope pulley system you devised earlier is still in use, its shimmering strands lifting heavy stones with surprising ease.  Villagers move with a newfound confidence, their movements more coordinated and efficient thanks to the principles of leverage and knot-tying you shared.  Even Old Man Tiber seems to have a spring in $!{pospronoun} step, $!{pospronoun} back no doubt grateful for the reduced strain.
+
+*page_break
+
+As you observe the ongoing work, you realize that the current techniques, while effective, could be further improved.  Several ideas spring to mind, drawing on your knowledge of… well, let's just say "advanced" construction methods.
+
+"We need something to bind these stones together more strongly," you announce to a nearby group of villagers. "I have an idea for a kind of… 'glue'… that will make the wall much more resilient."
+
+You gather some clay, sand, and lime from the surrounding area. You explain to the villagers the concept of mortar, a mixture that will harden and create a strong bond between the stones. You demonstrate how to mix the ingredients and apply the mortar, emphasizing the importance of consistency and proper application. The villagers watch with interest, eager to learn this new technique.
+
+What more would you like to do?
+
+*fake_choice
+    # Suggest creating a simple "scaffolding" to reach higher sections of the wall.
+        "To reach the higher sections," you suggest, "we could build a… a platform… that will allow us to work more easily and safely."
+        
+        *goto scaffolding_explanation
+
+    # Explain the importance of "drainage" to prevent future damage.
+        "We should also consider how to protect the wall from the elements," you explain. "If water gets into the stonework and freezes, it could cause serious damage. We need to create a way for the water to drain away."
+        
+        *goto drainage_explanation
+
+*label scaffolding_explanation
+
+You show the villagers how to construct a simple scaffolding using readily available timber.  You explain the principles of load-bearing and weight distribution, ensuring that the structure is stable and safe.  The scaffolding allows them to access the higher sections of the wall, significantly speeding up the construction process.
+
+*goto continue_construction
+
+*label drainage_explanation
+You explain the importance of creating drainage channels along the base of the wall to prevent water from accumulating and causing damage.  You show them how to dig shallow trenches and line them with stones, allowing water to flow away from the wall. You emphasize the long-term benefits of this seemingly small detail.
+
+*goto continue_construction
+
+*label continue_construction
+
+*set wall_progress 85
+As the last rays of sunlight fade, the wall stands a little taller, a little stronger.  The villagers gather their tools, their faces etched with weariness but also with pride.  They've accomplished a great deal today, thanks in part to your… "techniques."  The wall is far from finished, but it's a symbol of their resilience, their determination, and their hope for a brighter future.
+
+*page_break
+*return
+*comment /////////////////////// WALLLLLLLLLLL 2 - 3
+
+*label wall3
+
+The morning sun bathes the village in a warm, golden light. The wall, now a formidable structure standing at 85% completion, dominates the landscape.  It's a testament to the villagers' unwavering spirit and the effectiveness of your… "innovative" approaches.  The air is crisp and clean, carrying the scent of fresh-cut timber and the faint aroma of the mortar you introduced yesterday, which has proven remarkably effective in binding the stones together.
+
+You survey the remaining work, a sense of anticipation building within you.  The wall is so close to completion, a final push is all that's needed.  Several sections still require reinforcement, and a few key structural elements need to be put in place, but the end is in sight.
+
+As you consider the final stages of construction, you realize that some of the techniques you've already shared can be further refined.  You also have a few new ideas, inspired by… let's call it… "advanced" engineering principles, that could significantly expedite the process.
+
+*fake_choice
+    # Introduce the concept of "archways" for added structural integrity.
+        "For the main gate and other key openings," you explain to a group of villagers, "we could build… archways.  They'll distribute the weight more evenly and make the wall much stronger."
+        
+        *goto archway_explanation
+
+    # Suggest using a "level" to ensure precise alignment of the upper sections.
+        "As we build higher," you say, "it's crucial to maintain perfect alignment.  We can use a… a 'level'… to ensure that the wall is perfectly vertical."
+        
+        *goto level_explanation
+
+    # Explain the importance of "buttresses" to reinforce weaker sections.
+        "In certain areas," you point out, "where the wall is particularly vulnerable, we can add… 'buttresses'… to provide extra support and prevent it from collapsing."
+        
+        *goto buttress_explanation
+
+*label archway_explanation
+You explain the principles of arch construction, demonstrating how to shape the stones to create a self-supporting structure. You emphasize the importance of the keystone, the central stone that locks the arch in place. The villagers, initially skeptical of this seemingly complex technique, quickly grasp the concept and begin to shape the stones with renewed enthusiasm.
+
+*goto final_stages1
+
+*label level_explanation
+You create a simple level using a straight piece of wood and a vial filled with water.  You explain how the bubble in the vial indicates whether the surface is perfectly horizontal.  The villagers marvel at this ingenious tool, realizing how it can improve the precision of their work and prevent future problems.
+
+*goto final_stages1
+
+*label buttress_explanation
+You identify the sections of the wall that are most susceptible to stress and explain how to build buttresses, angled supports that will reinforce these weaker areas. You demonstrate how to position the buttresses to effectively counteract the forces pushing against the wall. The villagers appreciate this proactive approach, recognizing the importance of long-term stability.
+
+*goto final_stages1
+
+*label final_stages1
+
+*set wall_progress 100
+*set overall_progress +20
+With these final touches in place, the wall is complete.  It stands tall and proud, a symbol of resilience, innovation, and hope.  The villagers gather around, their faces beaming with pride. They run their hands over the smooth stones, feeling the strength and solidity of the structure they've built.  The wall is more than just a defense; it's a symbol of their unity, their determination, and their unwavering belief in a brighter future.  The long, arduous task is finally done. The village is safe.
+
+(Overall Progress +20%)
+*page_break
+*return
+
+
+
+*comment ///////////////////////////////////////////// BAKERY 1
+
+*label bakery1
+
+The morning air is thick with the smell of damp earth and freshly cut wood.  The bakery, a skeletal frame of charred timbers after the Night Arc, is slowly beginning to take shape again.  Elara, her brow furrowed in concentration, directs a group of villagers as they attempt to hoist a particularly heavy beam into place.  Her mother, a woman with kind eyes and a quiet strength, stands nearby, offering words of encouragement and occasionally demonstrating a more efficient way to secure a joint or brace a support.  You notice she moves with a grace that seems at odds with her simple, homespun attire.
+
+You approach them, eager to lend your expertise.  "Morning, Elara," you say.  "How's the rebuilding coming along?"
+
+"Slowly but surely," Elara replies, wiping a bead of sweat from her forehead. "This beam is proving… challenging."
+
+"Let me take a look," you say, surveying the situation.  You notice the villagers are struggling with the weight of the beam, their movements uncoordinated and inefficient.  Time for another innovation, you think.
+
+You explain the concept of creating a simple "crane" using a sturdy pole, some rope, and a pulley system.  You demonstrate how this will multiply their lifting power, making the task significantly easier. Elara and her mother listen attentively, their expressions a mixture of curiosity and intrigue.
+
+*page_break
+
+With your guidance, the villagers construct the makeshift crane.  The difference is remarkable.  What was a near-impossible feat is now manageable with minimal effort. The beam is hoisted into place with surprising ease, and a collective cheer rises from the workers.
+
+"By the stars," Elara exclaims, her eyes sparkling with admiration.  "You've done it again!  This will make things so much faster."
+
+"It's all about efficiency," you explain, a hint of pride in your voice.  "With the right tools and techniques, we can achieve much more with less effort."
+
+Elara’s mother steps forward, a warm smile gracing her lips.  "You have a remarkable talent for… problem-solving," she observes.  "I've noticed how you've been helping the villagers with your… 'techniques.'  It's truly inspiring."
+
+"Thank you," you reply, a little flustered by her praise.  "I just want to help rebuild the village as quickly as possible."
+
+As you observe the ongoing work, you realize that there are other areas where your knowledge could be beneficial.  You decide to create a detailed blueprint for the bakery's reconstruction, incorporating modern principles of design and functionality.  This blueprint will serve as a guide for the villagers, ensuring that the bakery is not only structurally sound but also efficient and practical to use.
+
+*fake_choice
+    # Focus on the oven.
+        You decide to focus on the design of the oven, incorporating principles of heat retention and airflow to maximize its efficiency.
+        *goto oven_design
+
+    # Focus on the layout.
+        You decide to focus on the layout of the bakery, optimizing the space for baking, storage, and customer service.
+        *goto layout_design
+
+*label oven_design
+You spend some time sketching out your design for the oven, incorporating a chimney for proper ventilation and a system of dampers to control the airflow. You explain to the villagers how this will ensure a consistent temperature and reduce fuel consumption.
+
+*goto continue_bakery_construction
+
+*label layout_design
+You carefully consider the flow of the bakery, designing a layout that will allow bakers to move easily between the oven, the preparation area, and the display counter.  You also incorporate storage space for ingredients and finished goods, ensuring that everything is easily accessible.
+
+*goto continue_bakery_construction
+
+*label continue_bakery_construction
+
+With the blueprint in hand and the crane system in place, the rebuilding of the bakery progresses rapidly.  Elara and her mother work alongside the villagers, their combined efforts creating a harmonious blend of traditional skills and modern innovation.  By the time the sun begins to set, the bakery stands at roughly 50% completion, a testament to the power of collaboration and ingenuity.
+
+*page_break
+*set bakery_progress 50
+*return
+*comment ///////////////////////////////////////////// BAKERY 1
+
+
+
+*comment ///////////////////////////////////////////// BAKERY 2
+
+*label bakery2
+
+The morning light streams through the partially rebuilt walls of the bakery, illuminating the progress made so far. What was once a charred ruin now stands at 50% completion—a testament to the villagers’ hard work and your blend of traditional and modern techniques. Elara and her mother work alongside the others, their movements a graceful dance of coordinated effort. The aroma of fresh sawdust mingles with the faint, sweet scent of yeast—a promise of future delights.  You survey the structure, pleased with the progress but eager to push it further.
+
+You realize that while the basic structure is coming together, the finer details will make the difference between a functional building and a truly efficient bakery.  You've already created a blueprint incorporating modern design principles, but it's time to focus on the specifics.  You decide to implement a system for efficient ingredient storage and preparation.  This will streamline the baking process and reduce wasted time and resources.
+
+As you observe the villagers working, you notice a few areas where improvements can be made. The current workflow is a bit disorganized, with bakers frequently crossing paths and searching for ingredients.  You decide to implement a system of designated workstations and a clear flow of movement. This will minimize congestion and maximize productivity.
+
+*fake_choice
+    # Focus on ingredient organization.
+        You focus on organizing the ingredients, creating labeled bins and shelves for easy access.
+
+        *goto ingredient_organization
+
+    # Focus on workflow optimization.
+        You work with the bakers to optimize their movements, designating specific areas for mixing, kneading, and baking.
+
+        *goto workflow_optimization
+
+*label ingredient_organization
+You work with Elara and her mother to create a system for storing ingredients. You suggest using airtight containers to keep flour, sugar, and other staples fresh and free from pests. You also create a labeling system to ensure that ingredients are easily identifiable.
+
+*goto continue_bakery_progress
+
+*label workflow_optimization
+You observe the bakers' movements, noting areas where they frequently bump into each other or waste time searching for tools. You suggest creating designated workstations for each stage of the baking process, from mixing and kneading to shaping and baking. You also establish a clear flow of movement to minimize congestion and maximize efficiency.
+
+*goto continue_bakery_progress
+
+*label continue_bakery_progress 
+
+With the storage and preparation system in place and the workflow optimized, the bakery takes on a new level of efficiency. The bakers move with purpose, their actions coordinated and streamlined. Ingredients are readily available, and the baking process flows smoothly from start to finish. The sweet aroma of baking bread begins to fill the air, a tantalizing preview of the treats to come. By the time the sun begins to set, the bakery stands at roughly 85% completion, a beacon of hope and deliciousness in the recovering village.
+
+*page_break
+*set bakery_progress 85
+*return
+
+*comment ///////////////////////////////////////////// BAKERY 2
+  
+*comment ///////////////////////////////////////////// BAKERY 3
+  
+*label bakery3
+
+The morning sun streams into the nearly completed bakery, illuminating the final touches being put in place. From the outside, it looks almost ready, the sturdy structure a testament to the villagers' resilience and your innovative approach.  Inside, the aroma of freshly baked bread mingles with the scent of new wood and the faint sweetness of spices, creating a tantalizing atmosphere.  The bakery stands at 85% completion, the remaining work focused on the finer details that will transform it from a functional building into a thriving heart of the village. You realize that while the major construction is done, the finishing touches are what will truly bring the bakery to life. You decide to focus on equipping the bakery with the necessary tools and ensuring a smooth and efficient workflow.
+
+As you survey the space, you realize that while the ovens and work surfaces are in place, the smaller, but equally crucial, tools are missing or disorganized. You decide to implement a system for tool organization and ensure that the bakers have everything they need at their fingertips.
+
+*fake_choice
+    # Focus on tool organization.
+        You focus on organizing the tools, creating designated racks and drawers for each item.
+
+        *goto tool_organization
+
+    # Focus on decorative touches.
+        You work with Elara and her mother to add some decorative touches to the bakery, making it a warm and inviting space.
+
+        *goto decorative_touches
+
+*label tool_organization
+
+You work with the bakers to create a system for storing and organizing their tools. You suggest using pegboards and labeled drawers to keep everything in its place.  You also emphasize the importance of cleaning and maintaining the tools to ensure they last longer.
+
+*goto final_preparations
+
+*label decorative_touches
+
+You work with Elara and her mother to add some decorative touches to the bakery. You suggest hanging colorful cloths and displaying some of the freshly baked goods. You also arrange some tables and chairs to create a welcoming space for customers.
+
+*goto final_preparations
+
+*label final_preparations
+
+*page_break
+
+With the tools organized and the space ready, the bakery is almost complete. You oversee the installation of the final fixtures, ensuring that everything is in its proper place. The ovens are fired up, and the first loaves of bread begin to bake, filling the air with their irresistible aroma. Elara and her mother work alongside the bakers, their movements precise and efficient.  The bakery is no longer just a building; it's a place of warmth, community, and the promise of delicious treats. By the time the sun reaches its zenith, the bakery stands at 100% completion, ready to serve the village and become a symbol of their hard-won recovery.
+
+*page_break
+*set bakery_progress 100
+*set overall_progress +20
+*set rbd_bakery true
+*return
+*comment ///////////////////////////////////////////// BAKERY 3
+
+*comment ///////////////////////////////////////////// SANCTUARY 1
+*label sanct1
+
+The morning light filters through the shattered remains of the sanctuary, a place once filled with peace and prayer, now a ruin of broken stone and charred wood.  For you, this place holds a special significance, a connection to… something… you can't quite articulate.  It's more than just a building; it’s a link to your past, a symbol of hope and faith.  Seeing it in this state fills you with a determination to rebuild it, not just as it was, but even better.  You decide to create a new layout for the sanctuary, one that incorporates modern design principles while still honoring its sacred purpose.
+
+$!{grandparent} arrives, $!{pospronoun} brow furrowed with concern. "This is… a sad sight," $!{pronoun} says, $!{pospronoun} voice heavy with emotion. "This place has seen generations of prayers.  We must rebuild it, and make it a sanctuary once more."
+
+Sister Lyra, her face etched with a quiet resolve, nods in agreement. "Indeed," she says. "This is a place of God. We must restore it to its former glory."
+
+You explain your idea of creating a new layout, one that will be more functional and efficient.  You envision separate compartments for sleeping quarters, a larger central space for worship, and perhaps even a small library or study area. $!{grandparent} and Sister Lyra are intrigued by your ideas, eager to see your vision come to life.
+
+As you begin to sketch out your plans, you consider the flow of the space, the placement of windows for natural light, and the acoustics for prayers and hymns. You incorporate elements of traditional church architecture, such as a high ceiling and a prominent altar, but you also add modern touches, like comfortable seating and energy-efficient lighting.
+
+*fake_choice
+    # Focus on the altar area.
+        You focus on designing the altar area, creating a focal point for worship and prayer.
+
+        *goto altar_design
+
+    # Focus on the sleeping quarters.
+        You design the sleeping quarters, ensuring that each compartment is private and comfortable.
+
+        *goto sleeping_quarters_design
+
+*label altar_design
+
+You envision a raised platform for the altar, with a backdrop of stained glass depicting scenes from the scriptures.  You also design a lectern for readings and a small area for candles and offerings. You want the altar to be a place of reverence and beauty, inspiring contemplation and prayer.
+
+*goto continue_sanctuary_rebuilding
+
+*label sleeping_quarters_design
+
+You design individual sleeping compartments for yourself, $!{grandparent}, and the nuns, ensuring that each space is private and comfortable. You incorporate simple but functional furniture, such as beds, desks, and shelves. You also consider the flow of air and natural light, creating spaces that are both peaceful and practical.
+
+*goto continue_sanctuary_rebuilding
+
+*label continue_sanctuary_rebuilding
+
+With the layout finalized, the rebuilding begins in earnest.  $!{grandparent} and the villagers work diligently, clearing the debris and preparing the foundation.  Sister Lyra, though not as physically strong as the others, contributes by offering encouragement and organizing the materials.  You use your hydromancy to manipulate water, shaping it into precise tools for lifting and placing stones.  The water even helps in creating a smooth, even surface for the new floor.  By the end of the day, the sanctuary stands at roughly 50% completion, the framework of your vision beginning to take shape. It's a slow process, but with each stone laid, each timber raised, the sanctuary is reborn, a symbol of faith and resilience, a testament to the combined efforts of the villagers and your… unique… contributions.
+*page_break
+*set sanctuary_progress 50
+*return
+
+*comment ///////////////////////////////////////////// SANCTUARY 1
+
+*comment ///////////////////////////////////////////// SANCTUARY 2
+*label sanct2
+The morning sun filters through the rising framework of the sanctuary, illuminating the progress made.  Where once stood only ruins, now the sanctuary's form is clearly visible.  The sturdy timber beams, raised with the help of your water-rope pulley system, reach towards the sky, and the newly laid stone walls, bound by the mortar you introduced, are steadily climbing.  The scent of fresh wood and damp stone mingles with the faint, lingering aroma of incense—a reminder of the sanctuary's sacred purpose.  It stands at 50% completion, a testament to the villagers’ dedication and your… unique… contributions.  You survey the structure, pleased with the progress, but you know there's still much to be done.  You decide to focus on the finer details, incorporating more of your magical abilities to enhance both the structure and its spiritual atmosphere.
+
+*page_break
+
+As you observe the ongoing construction, you realize that the sanctuary could benefit from some… enhancements.  You decide to use your hydromancy to create a system of magically reinforced drainage channels beneath the floor. This will not only protect the foundation from water damage but also create a subtle, calming flow of water that will enhance the sanctuary's peaceful atmosphere.
+
+*fake_choice
+    # Focus on the stained-glass windows.
+        You decide to focus on the stained-glass windows, using your magic to create vibrant and inspiring designs.
+        *goto stained_glass_creation
+
+    # Focus on the acoustics.
+        You decide to enhance the acoustics of the sanctuary, using your magic to create a space where prayers and hymns will resonate beautifully.
+        *goto acoustic_enhancement
+*label stained_glass_creation
+
+You gather shards of colored glass from the village and, using your hydromancy, carefully manipulate them, shaping them into intricate designs depicting scenes from scripture.  The water acts as a gentle adhesive, binding the glass pieces together to form stunning stained-glass windows. As the sunlight passes through them, it will cast vibrant colors across the sanctuary floor, creating an atmosphere of awe and reverence.
+
+*goto continue_sanctuary_progress
+
+*label acoustic_enhancement
+
+You use your magic to subtly alter the air density within the sanctuary, creating a space where sound will resonate beautifully.  You experiment with different frequencies and vibrations, fine-tuning the acoustics until the space is filled with a rich, harmonious resonance that will amplify prayers and hymns, making them soar towards the heavens.
+
+*goto continue_sanctuary_progress
+
+*label continue_sanctuary_progress
+
+With the magically enhanced drainage system, the vibrant stained-glass windows, and the perfectly tuned acoustics, the sanctuary takes on a new level of beauty and spiritual resonance. The villagers work with renewed enthusiasm, inspired by the magical touches you've added.  The sound of hammering and sawing is now accompanied by the gentle murmur of flowing water and the faint strains of hymns.  By the time the day draws to a close, the sanctuary stands at 85% completion, a beacon of hope and a testament to the harmonious blend of faith, craftsmanship, and magic.
+
+(+10 All magic Attribute)
+
+*set water +10
+*set pyro +10
+*set aero +10
+*set geo +10
+
+*set sanctuary_progress 85
+*page_break
+*return
+*comment ///////////////////////////////////////////// SANCTUARY 2
+
+*comment ///////////////////////////////////////////// SANCTUARY 3
+*label sanct3
+The morning light spills through the nearly completed sanctuary, illuminating the final, intricate details.  The stained-glass windows, glowing with vibrant colors thanks to your magical artistry, cast kaleidoscopic patterns across the floor. The air hums with a subtle, almost palpable energy, a testament to the magically enhanced acoustics you’ve woven into the very fabric of the building.  It stands at 85% completion, but it already feels like more than just a sanctuary—it’s a beacon. You realize that the finishing touches are crucial, not just for structural integrity, but to truly elevate this space, to make it something… extraordinary.  You decide to focus on imbuing the sanctuary with a sense of awe and wonder, a touch of the… otherworldly.
+
+*page_break
+
+As you observe the nearly finished sanctuary, you realize that the final 15% is about more than just construction; it's about creating an atmosphere. You decide to use your magic to subtly manipulate the light within the sanctuary, creating a sense of ethereal beauty and inspiring reverence.
+
+*fake_choice
+    # Focus on the celestial ambiance.
+        You decide to create a celestial ambiance within the sanctuary, evoking the feeling of being under a starlit sky.
+        *goto celestial_ambiance
+
+    # Focus on the calming aura.
+        You decide to enhance the sanctuary's calming aura, creating a space of profound peace and tranquility.
+        *goto calming_aura
+*label celestial_ambiance
+
+Using your hydromancy and a touch of light manipulation, you create the illusion of a vast, starlit sky on the sanctuary's high ceiling.  Tiny points of light shimmer and twinkle, mimicking the constellations, creating a sense of connection to the cosmos.  The effect is breathtaking, transforming the ceiling into a portal to the heavens.
+
+*goto final_touches
+
+*label calming_aura
+
+You weave a subtle magic into the air, creating a calming aura that permeates the sanctuary.  The air feels lighter, the atmosphere serene.  A sense of profound peace settles over the space, inviting contemplation and prayer.
+
+*goto final_touches
+
+*label final_touches
+
+The newly completed sanctuary stands as a symbol of hope and a testament to your creativity and skill. Its presence inspires awe among the villagers, who marvel at its beauty and the magical aura that fills the space. Word of this architectural wonder spreads far and wide, drawing not only scholars and travelers but also mythical creatures like slimes and baby dragons. The sanctuary’s allure lies not just in its size or construction techniques but in the seamless fusion of craftsmanship, magic, and visionary design. Whispers about you grow louder: “$!{pronoun} built that? A true genius!” “A master builder! A prodigy!”
+
+*page_break  
+
+Under the cover of a starlit night, as you rest in your quarters within the sanctuary, a soft knock interrupts the silence. $!{grandparent} enters, $!{pospronoun} face a mix of admiration and something deeper—perhaps recognition? $!{pronoun} hands you a small, intricately carved wooden box. “This was left for you,” $!{pronoun} says quietly. “A visitor… came. They were… impressed.” $!{pospronoun} tone is evasive, $!{pospronoun} eyes avoiding yours.
+
+You take the box, noticing its warmth and faint earthy scent. “A visitor?” you ask. “Who?”
+
+$!{grandparent} shrugs nonchalantly. “Just a traveler,” $!{pronoun} mutters. “Said it was a gift. For… the builder.” $!{pronoun} swiftly changes the subject, asking about your plans for tomorrow. Despite pressing $!{objpronoun} further, $!{pronoun} remains vague, offering little insight into the visitor’s identity.
+
+*page_break  
+
+Later, as the moon casts its silvery glow over the sleeping village, another knock breaks the stillness. This time, it’s Sister Lyra. She holds out a finely crafted dagger. The blade is forged from a dark, almost black metal, while the hilt is wrapped in finely woven leather. “This was also left for you,” she whispers. “Another visitor. They… admired your work.” Her usually kind eyes carry an unreadable flicker of emotion.
+
+“Another visitor?” you inquire, confused. “Who were they?”
+
+Sister Lyra hesitates, her gaze shifting away. “A… pilgrim,” she replies finally. “They wished to express their gratitude.” Like $!{grandparent}, she avoids elaborating, quickly steering the conversation elsewhere, leaving you with more questions than answers.
+
+*page_break  
+
+You study the dagger closely. It’s surprisingly light yet perfectly balanced, with a razor-sharp edge that seems to drink in the moonlight. Opening the wooden box from $!{grandparent}, you discover a dark metal ring etched with unfamiliar symbols. It slides effortlessly onto your finger, spreading a gentle warmth through your hand. These gifts feel significant—more than mere tokens of appreciation. They seem connected to something larger, something concealed. Two visitors, arriving separately, bearing gifts and cryptic explanations. Both $!{grandparent} and Sister Lyra act strangely secretive, deepening the mystery. Who were these visitors? What do these gifts signify? You sense that answers lie ahead—but they’re tied to something unsettling. These encounters feel like the calm before a storm, hinting at events yet to unfold. And whatever is coming… it doesn’t bode well.
+
+*gosub_scene inventory add "backpack" "Mysterious Ring" 1
+*gosub_scene inventory add "backpack" "Mysterious Dagger" 1
+
+*set water +10
+*set pyro +10
+*set aero +10
+*set geo +10
+*set sanctuary_progress 100
+*set overall_progress +20
+*page_break
+*return
+*comment ///////////////////////////////////////////// SANCTUARY 3
+
+*comment ///////////////////////////////////////////// TAV 1
+*label tav1
+
+You walk past the charred remains of what was once the village tavern, a place of laughter, song, and shared stories. Now, it's nothing but rubble and ash.  Hearing the villagers' constant complaints about exhaustion and the lack of a place to unwind has sparked an idea in your mind.  This village needs a tavern, not just for relaxation, but as a source of income, information, and a central hub for the community.  And, you realize, it could be a valuable asset for you as well. You decide to rebuild it, bigger and better than before.
+
+"A tavern?" $!{grandparent} asks, scratching $!{pospronoun} head.  "Seems like a frivolous expense, given all that needs rebuilding."
+
+"It's more than just a place to drink," you explain. "It's a place for people to relax, share information, and generate income for the village.  Plus," you add with a wink, "it could be a good source of… revenue… for us as well."
+
+$!{grandparent} considers this for a moment. "Hmm," $!{pronoun} says. "I suppose you have a point.  A good tavern does draw in visitors…"
+
+Sister Lyra, ever practical, adds, "And it could provide a much-needed boost to morale.  A place for the villagers to unwind after a long day's work."
+
+With their support, you begin planning the tavern's reconstruction.  You envision a spacious building with a large common area, a well-stocked bar, and perhaps even a small stage for performances.  You incorporate modern design principles for efficiency and comfort, ensuring that the tavern is both functional and inviting.  You decide to use your magic to help with the heavier lifting and the more delicate tasks, like shaping the wooden beams and ensuring the foundation is level.
+
+*fake_choice
+    # Focus on the design of the bar.
+        You focus on the design of the bar, envisioning a long, polished counter where villagers can gather and share stories.
+
+        *goto bar_design
+
+    # Focus on the common area.
+        You design the common area, creating a warm and welcoming space with comfortable seating and a large fireplace.
+
+        *goto common_area_design
+
+*label bar_design
+
+You sketch out plans for a bar crafted from sturdy, local wood, incorporating shelves for storing drinks and a system for easy access to mugs and other supplies.  You envision the bar as the heart of the tavern, a place where conversations flow and friendships are forged.
+
+*goto continue_tavern_rebuilding
+
+*label common_area_design
+
+You design the common area with a large, central fireplace as its focal point, surrounded by tables and chairs crafted from reclaimed timber.  You envision this space filled with laughter, music, and the aroma of hearty food.
+
+*goto continue_tavern_rebuilding
+
+*label continue_tavern_rebuilding
+
+With the plans in place, the villagers begin the construction process.  They work diligently, following your instructions and incorporating your design ideas. You use your magic to help raise the roof beams and smooth the rough edges of the stone walls. By the end of the day, the tavern's frame stands at roughly 50% completion, a testament to the villagers' hard work and your… innovative… vision. It's still a long way from being finished, but the foundation is laid, and the promise of a warm, welcoming tavern is beginning to take shape.
+
+*set tav_progress 50
+*page_break
+*return
+*comment ///////////////////////////////////////////// TAV 1
+
+*comment ///////////////////////////////////////////// TAV 2
+*label tav2
+
+The skeletal frame of the building, which stood at 50% completion just days ago, has now transformed into a robust and inviting structure.  The scent of freshly hewn wood mingles with the faint aroma of brewing ale—a tantalizing promise of the tavern's future.  The walls, crafted from local stone and timber, rise steadily, and the roof, a masterpiece of carpentry, is nearly complete.  It’s a testament to the villagers' tireless efforts and your… inspired… vision. You survey the progress, a sense of excitement building within you.  The tavern is almost ready, and you decide to focus on the final touches that will elevate it from a simple building to a truly exceptional establishment.  You envision a space that’s not just functional, but also captivating, a place where villagers and travelers alike will feel at home.
+
+*page_break
+
+As you observe the ongoing work, you realize that the tavern's interior could benefit from some… enhancements.  You decide to use your magic to create a system of magically illuminated lanterns that will cast a warm, inviting glow throughout the tavern.  You also have an idea for a unique water feature that will add a touch of whimsy and charm to the space.
+
+*fake_choice
+    # Focus on the lighting.
+        You focus on the lighting, creating enchanting, magically illuminated lanterns that will transform the tavern's atmosphere.
+
+        *goto magical_lighting
+
+    # Focus on the water feature.
+        You design a whimsical water feature that will add a touch of magic and charm to the tavern's interior.
+
+        *goto water_feature_design
+
+*label magical_lighting
+
+Using your hydromancy and a touch of light manipulation, you create a series of lanterns that will be magically illuminated.  The lanterns, crafted from colored glass and wrought iron, will cast a warm, inviting glow throughout the tavern, creating a cozy and enchanting atmosphere.  You envision the light flickering gently, adding a touch of magic to the space.
+
+*goto asdf
+
+*label water_feature_design
+
+You design a unique water feature that will add a touch of whimsy and charm to the tavern's interior. You use your magic to create a small, cascading waterfall that flows into a stone basin.  The water will shimmer and sparkle under the light, adding a touch of magic to the space.
+
+*goto asdf
+
+*label asdf
+
+With the magical lighting and the enchanting water feature in place, the tavern is nearly complete. The final touches are added: comfortable furniture crafted from local wood, rustic decorations that evoke a sense of warmth and history, and a well-stocked bar gleaming with polished glassware and bottles of every imaginable spirit. The aroma of freshly baked bread and roasting meat fills the air, mingling with the sweet scent of brewing ale and the tantalizing fragrance of exotic spices. The tavern is no longer just a building; it's a destination.
+
+Villagers gather, their faces beaming with anticipation, eager to experience the newly reborn heart of their community. But it's not just the locals who are drawn to the tavern's allure.  Word has spread far and wide, carried by travelers and merchants, of the magnificent establishment in the recovering village. People from neighboring towns and distant cities make special journeys just to experience its unique atmosphere. Merchants bring their finest goods, hoping to trade for the tavern's renowned fare. Even nobles, intrigued by whispers of a drink so perfectly crafted it's considered a masterpiece, make discreet visits, eager to sample the tavern's special brew.
+
+*page_break
+
+The sound of laughter and music fills the air, a welcome change from the silence of recent days.  Coins clink on the bar as patrons eagerly pay for their drinks and meals, and as per your agreement with the village, a percentage of the tavern's profits finds its way into your pocket—a well-deserved reward for your ingenuity and investment. The rest is carefully managed by the village elders, contributing significantly to the ongoing rebuilding efforts and ensuring the village's prosperity. By the time the moon rises, casting its silvery light over the village, the tavern stands at 100% completion, a beacon of warmth, laughter, and community, and a source of wealth and renown. It's a testament to your vision, your ingenuity, and your… well, let's just say your exceptional talent for creating something truly special. The tavern is open, and the village has its heart, and its coffers, back.
+
+*set tav_progress 100
+*gosub_scene inventory add "backpack" "GoldCoins" 50
+*page_break
+*comment ///////////////////////////////////////////// TAV 2
+
+*comment ///////////////////////////////////////////// HALL 1
+*label hall1
+
+the partially rebuilt village hall, revealing a scene of slow but steady progress. The hall, intended to be the center of village governance and community gatherings, stands at roughly 30% completion.  Its framework is visible, but the walls are still incomplete, and the roof is only partially covered.  Progress has been slow, hampered by a lack of efficient organization and the sheer scale of the project.  The villagers are working diligently, but their efforts seem somewhat scattered, lacking a cohesive direction.  You realize that this crucial building needs your… unique… touch to truly take shape.  You decide to step in and apply your knowledge to accelerate the construction.
+
+"This hall is important," you explain to a group of villagers gathered around a pile of timber. "It's where you'll make decisions, hold meetings, and celebrate together.  We need to make it strong, functional, and a symbol of your community's strength."
+
+$!{grandparent} nods in agreement. "Aye," $!{pronoun} says. "A good hall is the heart of any village. But it's a big undertaking."
+
+Sister Lyra adds, "And we must ensure it's built to last. We don't want to have to rebuild it again anytime soon."
+
+*page_break
+
+You begin by assessing the current construction methods. You notice that the villagers are relying on traditional techniques, which are effective but slow.  You decide to introduce some modern principles of project management and organization. You explain the concept of creating a detailed plan, dividing the work into smaller, manageable tasks, and assigning specific responsibilities to different groups.  You also suggest using your magic to help with the heavier lifting and the more precise construction tasks.
+
+*fake_choice
+    # Focus on the roof.
+        You decide to focus on the roof construction, using your magic to help raise the heavy timber beams and ensure they are perfectly aligned.
+        
+        *set roof1 true
+        *goto roof_construction
+
+    # Focus on the walls.
+        You focus on the wall construction, teaching the villagers more efficient techniques for laying the stones and using your magic to reinforce the mortar.
+        
+        *set hall_wall true
+        *goto wall_construction
+
+*label roof_construction
+
+You use your hydromancy to create a system of magically assisted pulleys, making it much easier for the villagers to lift the heavy roof beams into place.  You also use your magic to ensure that the beams are perfectly aligned, creating a strong and stable roof structure.  You explain to the villagers the importance of proper roof construction for weather protection and longevity.
+
+*goto continue_hall_rebuilding
+
+*label wall_construction
+
+You teach the villagers more efficient techniques for laying the stones, emphasizing the importance of creating a solid and level foundation.  You use your magic to reinforce the mortar, making the walls stronger and more resistant to the elements.  You also explain the principles of load-bearing and weight distribution, ensuring that the walls can support the roof and withstand the test of time.
+
+*goto continue_hall_rebuilding
+
+*label continue_hall_rebuilding
+
+With the organized plan in place and your magical assistance, the construction of the village hall progresses much more smoothly. The villagers work with renewed enthusiasm, their efforts now focused and coordinated. The roof begins to take shape, providing much-needed shelter, and the walls rise steadily, creating a sense of solidity and permanence. By the end of the day, the hall stands at roughly 50% completion, a significant leap forward from its previous state. It's a testament to the power of combining traditional skills with modern techniques and a touch of magic.  The hall is not just being rebuilt; it's being built right. And it will benefit the village for generations to come, providing a space for governance, community, and celebration.
+
+*if (roof1 = true)
+    "By the ancestors!" exclaims Old Man Tiber, $!{pospronoun} eyes wide with amazement. "I've never seen beams raised so easily!  This… magic… it's a blessing!"
+
+    Elara nods, a smile spreading across her face. "This is incredible," she says. "With this method, we'll have the roof up in no time!"
+
+    A younger villager, eager to learn, asks, "Can you teach us how to do that water-rope trick, Master…?"
+
+    *goto a1
+
+*elseif (hall_wall = true)
+    "These walls are going up so much faster now!" remarks a burly villager, hefting a stone with newfound confidence. "And they feel stronger, too, somehow."
+
+    Sister Lyra, observing the reinforced mortar, comments, "Truly, this is a gift from… well, from above. These walls will stand for generations."
+
+    $!{grandparent}, ever practical, adds, "And with these techniques, we'll save time and resources.  That's good for everyone."
+
+    *goto a1
+
+*label a1
+
+(+50 Gold Coins)
+*set village_hall_progress 50
+*gosub_scene inventory add "backpack" "GoldCoins" 50
+*page_break
+*return
+*comment ///////////////////////////////////////////// HALL 1
+
+*comment ///////////////////////////////////////////// HALL 2
+*label hall2
+
+The morning sun bathes the village in a warm, golden light, revealing the truly remarkable progress on the village hall.  What began as a skeletal framework now stands as a testament to ingenuity, collaboration, and a touch of magic.  The hall, at 50% completion just days ago, has blossomed into a magnificent structure, its scale and grandeur exceeding all expectations.  It’s not just a building; it’s a symbol of the village’s resilience, a beacon of hope, and… well, it’s just breathtaking.
+
+The walls, expertly crafted and reinforced, rise majestically, their stonework gleaming in the sunlight. The roof, a masterpiece of carpentry, curves gracefully, providing both shelter and an aesthetic elegance.  The scale of the hall is… astounding. It’s far larger and grander than any other building in the village, almost like a royal hall, a place fit for kings and queens.  It’s so impressive, in fact, that word of its construction has spread far beyond Silverwood.
+
+*page_break
+
+Intrigued by the whispers of innovative techniques and inspired design, renowned architects and master builders have traveled from distant cities, eager to contribute their expertise to this extraordinary project. They arrive in Silverwood, not just to help, but to learn, their faces filled with a mixture of curiosity and awe. They've heard tales of the prodigy, the genius behind the hall’s design, and they're eager to witness your methods firsthand.  They’re impressed, to say the least.  They call you a visionary, a master builder, a prodigy whose talents are beyond compare.  Their contributions, combined with the villagers’ hard work and your magical enhancements, elevate the hall to an even higher level of architectural marvel.
+
+*fake_choice
+    # Focus on the interior design.
+        You collaborate with the architects on the interior design, incorporating elements of both traditional and modern aesthetics.
+
+        *goto interior_design
+
+    # Focus on the exterior landscaping.
+        You work with the master builders on the exterior landscaping, creating a beautiful and welcoming space around the hall.
+
+        *goto exterior_landscaping
+
+*label interior_design
+
+You work closely with the architects, blending your vision with their expertise.  The interior of the hall is adorned with intricate carvings, elegant tapestries, and handcrafted furniture. The space is both functional and beautiful, a testament to the combined talents of everyone involved.
+
+*goto final_stages
+
+*label exterior_landscaping
+
+You collaborate with the master builders to create a stunning landscape around the hall.  Gardens bloom with vibrant flowers, pathways wind through manicured lawns, and a grand fountain graces the entrance, adding a touch of majesty to the building’s exterior.
+
+*goto final_stages
+
+*label final_stages
+
+As the final touches are put in place, the village hall stands complete.  It’s more than just a place for meetings; it’s a symbol of Silverwood’s rebirth, a testament to the power of collaboration, and a monument to your extraordinary talent.  The architects, deeply impressed by your work, present you and the village with a generous gift of Gold coins, a token of their admiration and gratitude.  $!{grandparent} beams with pride, $!{pospronoun} eyes glistening with unshed tears.  "You’ve done it, lad," $!{pronoun} says, $!{pospronoun} voice thick with emotion. "You’ve brought honor to this village." Elara, her smile radiant, claps you on the back, while Celestine, though trying to maintain her usual composure, can’t quite hide the pride shining in her eyes. The hall is finished.  Silverwood has its heart back, and the world has discovered a true prodigy.
+
+(+1000 Gold Coins)
+*set village_hall_progress 100
+*set overall_progress +20
+*gosub_scene inventory add "backpack" "GoldCoins" 1000
+*page_break
+*return
+*comment ///////////////////////////////////////////// HALL 2
+
+*comment ///////////////////////////////////////////// HOME 1
+*label home1
+
+The sheer scale of rebuilding the village homes is daunting. Scattered across the landscape, the remnants of houses stand as stark reminders of the recent devastation. You realize that a systematic approach is crucial. Covering such a large area requires organization and efficiency. You begin by dividing the villagers into specialized teams: one for clearing debris, another for gathering materials, and a third for construction. You then set about designing the layout for the new housing, incorporating modern urban planning principles to maximize space and functionality. You envision not just individual houses, but a well-planned community with interconnected streets, shared green spaces, and efficient infrastructure. Renowned architects, drawn by your growing reputation as a prodigy, arrive in Silverwood, eager to lend their expertise to this ambitious project. They are astonished by your innovative approach, impressed by your understanding of drainage systems—a concept they had previously struggled with, often relying on complex and manpower-intensive magical solutions.
+
+*page_break
+
+You explain how strategically placed pipes and carefully graded land can naturally channel rainwater away from the houses, preventing flooding and dampness, a system far more efficient and sustainable than any magical alternative. You also introduce the concept of indoor plumbing, designing a network of pipes that will eventually connect to a future water supply, bringing clean, running water to every home. The architects marvel at your foresight, recognizing the brilliance of your designs. Tradesmen from neighboring cities, hearing of your efforts, contribute building supplies, eager to support the rebuilding of Silverwood and witness the work of the famed prodigy.
+
+Seeing the intricate planning and the application of such advanced knowledge, the villagers are filled with awe. Even lords and barons from foreign lands, along with scientists and scholars, make pilgrimages to Silverwood, drawn by rumors of your ingenuity. They pay tribute to your remarkable discoveries, particularly the automated water system, a feat of engineering that has baffled even the most learned minds. You've even managed to create a device, through a… collaboration… with Sage, that resembles a perpetual motion machine, powering the water system with minimal magical input.
+
+*fake_choice
+    # Focus on the drainage system implementation.
+        You oversee the implementation of the drainage system, ensuring that the pipes are correctly placed and the land is properly graded.
+
+        *goto drainage_implementation
+
+    # Focus on the indoor plumbing network.
+        You work with the villagers to lay the pipes for the future indoor plumbing, ensuring that each house will have access to clean running water.
+        
+        *goto plumbing_network
+
+*label drainage_implementation
+You meticulously oversee the installation of the drainage system, explaining to the villagers the importance of maintaining the correct angles and ensuring that the pipes are securely connected. You use your magic to smooth out any rough patches in the terrain, ensuring a consistent flow of water away from the houses.
+
+*goto continue_housing_progress
+
+*label plumbing_network
+You work with the villagers to lay the network of pipes for the future indoor plumbing, ensuring that each house will have access to clean running water. You explain the principles of water pressure and flow, ensuring that the system will be efficient and reliable.
+
+*goto continue_housing_progress
+
+*label continue_housing_progress
+
+While Sage provided the… inspiration… you graciously accept the accolades, knowing that the world isn't ready to understand the true source of your brilliance. The whispers of your genius grow louder, solidifying your reputation as a visionary whose knowledge surpasses even the most respected experts. The housing project, thanks to your planning, the architects' contributions, and the villagers' hard work, progresses smoothly, transforming the ravaged landscape into a thriving community.
+
+
+*set homes_progress 50
+*page_break
+*return
+*comment ///////////////////////////////////////////// HOME 1
+
+*comment ///////////////////////////////////////////// HOME 2
+*label home2
+
+The houses, at 50% completion, are no longer just frameworks; they are beginning to resemble homes.  The sturdy structures, built with a combination of traditional techniques and your innovative designs, stand proudly against the backdrop of the recovering village. The scent of fresh timber and the faint aroma of wildflowers fill the air, a welcome change from the smoke and ash of the recent past.  You survey the progress, a sense of deep satisfaction washing over you. The vision you had for this community is becoming a reality.  But the final 50% is where the magic truly happens, where houses become homes. You decide to focus on the details that will make these dwellings not just functional, but truly special.
+
+*page_break
+
+As you observe the construction, you realize that while the basic structures are in place, the houses lack character. They need warmth, comfort, and a touch of… personality. You decide to incorporate elements of both traditional and modern design, creating homes that are both practical and aesthetically pleasing. You also want to ensure that each house has access to the amenities that will make life easier and more enjoyable for the villagers.
+
+*fake_choice
+    # Focus on the interior design.
+        You collaborate with the villagers on the interior design of their homes, helping them choose colors, materials, and furnishings that reflect their individual tastes.
+        *goto 123
+
+    # Focus on the landscaping.
+        You work with the villagers to landscape the areas around their homes, creating gardens, pathways, and other outdoor spaces that will enhance their living environment.
+        *goto landscaping
+
+*label 123
+
+You work closely with each family, listening to their needs and preferences. You help them choose paint colors, flooring materials, and furniture that will make their houses feel like home. You incorporate elements of both traditional and modern design, creating spaces that are both functional and beautiful. You even use your magic to create small, personalized touches, like hand-carved wooden details or magically illuminated wall hangings.
+
+*goto final_stages_homes
+
+*label landscaping
+
+You work with the villagers to landscape the areas around their homes, creating gardens filled with colorful flowers and fragrant herbs. You design winding pathways that connect the houses to each other and to the shared green spaces. You also incorporate outdoor seating areas and small patios, creating spaces where families can relax and enjoy the fresh air.
+
+*goto final_stages_homes
+
+*label final_stages_homes
+
+*page_break
+
+With the interior design complete and the landscaping finished, the houses are transformed. They are no longer just buildings; they are homes, filled with warmth, character, and the promise of a brighter future.  The villagers move in, their faces beaming with joy and gratitude. They furnish their homes with their belongings, adding their own personal touches to the spaces you've helped create. The scent of home-cooked meals begins to waft through the village, mingling with the aroma of freshly baked bread from the newly rebuilt bakery. The sound of children laughing fills the air, a welcome change from the silence of recent months. The housing project is complete. The village has its heart back, and its people have homes once again.  It's a testament to your vision, your ingenuity, and your unwavering commitment to the well-being of the community.
+
+Gold coins overflow your pockets, a statue of you (slightly less heroic-looking than you'd hoped) graces the village square, and $!{grandparent} keeps pinching your cheek, muttering about "$!{pospronoun} brilliant boy." The nuns beam, Elara high-fives you so hard your hand stings, and even Celestine cracks a small smile. Sage, naturally, just rolls her eyes (mentally, of course). The villagers? They cheer so loud you're pretty sure the newly rebuilt houses are vibrating.  It's safe to say, you're officially a local legend.
+
+*set homes_progress 100
+*gosub_scene inventory add "backpack" "GoldCoins" 1000
+*gosub_scene inventory add "backpack" "Heroic Statue" 1
+*page_break
+*return
+*comment ///////////////////////////////////////////// HOME 2
+
+*comment ///////////////////////////////////////////// QOL 1
+*label qol1
+
+The morning sun reveals the sprawling task ahead: improving the very quality of life in Silverwood.  Rebuilding homes and essential structures was just the beginning.  Now, it’s time to make this village not just habitable, but thriving.  You envision a Silverwood where life is easier, more comfortable, and brimming with opportunity.  You begin by laying out a plan for several key Quality of Life improvements.  A sophisticated water duct system will bring clean water to strategic points throughout the village, easing the burden of hauling water from the distant spring.  This ties into the already implemented drainage system, ensuring efficient water management and preventing the dampness that plagued the old village.  You also design a network of magically illuminated lampposts, powered by the same ingenious device that drives the water system, to banish the darkness that has long haunted Silverwood’s nights.  A dedicated trading post is planned near the village entrance, creating a hub for commerce and attracting merchants from far and wide.  Guard posts, strategically placed along the village walls and perimeter, will enhance security and provide a sense of safety for the villagers.  And, perhaps most importantly, you designate a large area of fertile land as a farming district, complete with irrigation channels and terraced fields, promising a stable and abundant food supply for the future.
+*page_break
+Beyond infrastructure, you envision amenities that will enrich the lives of the villagers.  A natural hot spring, reminiscent of an onsen, will provide a place for relaxation and rejuvenation.  And to cater to both locals and travelers, you plan the construction of a “common house”—a medieval equivalent of a restaurant—where delicious food and drink can be enjoyed in a warm and inviting atmosphere.  To manage all these new developments and ensure the village's continued prosperity, you propose the formation of an efficient management group.  This group will consist of individuals with specialized skills: scouts to explore the surrounding lands, guards to protect the village, traders to manage commerce, scholars to study and teach, scientists and engineers to develop new technologies, and teachers to educate the next generation.  An improved council of village elders will oversee the entire operation, ensuring that decisions are made wisely and in the best interests of the community.
+*page_break
+The villagers watch in awe as your plans unfold. They marvel at the intricate network of water ducts, the efficient drainage system, and the magically illuminated lampposts.  They are excited by the prospect of a dedicated trading post, a well-defended village, and, most of all, the promise of a bountiful harvest from the new farming district.  The hot spring and the common house generate excited chatter, dreams of relaxation and community filling their conversations.  Even the specialists you’ve gathered are impressed by your vision. The architects praise your urban planning skills, the engineers marvel at the water system, and the scholars are eager to learn from your… unique… insights.  The lords and barons who visit Silverwood are astonished by the rapid progress and the sheer ingenuity of your designs.  They whisper about your brilliance, recognizing the profound impact your innovations will have on the region.  The whispers grow into shouts of praise as the Quality of Life initiatives begin to take shape, transforming Silverwood into a model of prosperity and innovation.
+
+*set qol_progress 50
+*page_break
+*return
+*comment ///////////////////////////////////////////// QOL 1
+
+*comment ///////////////////////////////////////////// QOL 2
+*label qol2
+
+The morning sun illuminates a Silverwood transformed.  Where once stood a struggling village, now a thriving community flourishes. The Quality of Life initiatives, at 50% completion just days ago, have blossomed into a network of interconnected systems and amenities that make Silverwood not just functional, but truly… exceptional.  The water ducts, now fully operational, deliver clean, fresh water to every corner of the village, a constant flow a testament to your ingenious design.  The magically illuminated lampposts bathe the village in a warm, welcoming glow each night, banishing the darkness and creating a sense of safety and tranquility.  The trading post bustles with activity, merchants from distant lands offering their wares, enriching Silverwood’s economy and connecting it to the wider world.  The guard posts, manned by well-equipped and vigilant guards, provide a sense of security, allowing villagers to sleep soundly at night.  And the farming district… it’s a sight to behold.  Terraced fields, irrigated by cleverly designed channels, are lush with crops, promising a bountiful harvest and a secure food supply for the future.
+
+*page_break
+
+But it's not just the practical improvements that have transformed Silverwood.  The amenities you envisioned have become a reality, adding a touch of luxury and leisure to village life. The hot spring, now beautifully landscaped with smooth stones and fragrant plants, offers a haven of relaxation and rejuvenation.  The common house, its interior decorated with warm woods and vibrant tapestries, is a hub of social activity, filled with the aroma of delicious food and the sounds of laughter and conversation.  And you've added even more to the list of improvements! A public bathhouse, with separate sections for men and women, provides a place for villagers to bathe and refresh themselves.  A newly constructed library, stocked with books and scrolls from across the land, offers opportunities for learning and intellectual growth.  A grand plaza, paved with smooth stones and adorned with a beautiful fountain, serves as a central gathering place for celebrations and community events.  You've even introduced a system of public sanitation, ensuring that the village remains clean and healthy.
+
+*page_break
+
+The efficient management group you established has proven invaluable. The scouts bring back reports of new resources and potential trade routes. The guards ensure the village's safety. The traders manage commerce effectively. The scholars teach in the newly built library, sharing their knowledge with eager students. The scientists and engineers are constantly working on new inventions and improvements, pushing the boundaries of what's possible.  And the improved council of elders oversees everything, ensuring that the village is run smoothly and efficiently.
+
+*page_break
+
+The villagers are overjoyed with the transformation of their community.  They marvel at the convenience of running water, the beauty of the illuminated nights, and the abundance of food from the thriving farms. They relax in the hot spring, enjoy delicious meals in the common house, and expand their minds in the library.  They are proud of their village, proud of the progress they've made, and deeply grateful for your vision and leadership.  Even the most skeptical villagers have been won over by the tangible improvements in their lives.
+
+*page_break
+
+Visitors from far and wide are astounded by the sheer perfection of Silverwood.  They marvel at the innovative infrastructure, the beautiful amenities, and the overall sense of prosperity and well-being that permeates the village.  They whisper about the genius behind it all, the prodigy who has transformed a struggling village into a model of what a community can be.  Lords and barons make special trips to Silverwood, eager to witness your innovations firsthand and perhaps learn a few secrets of your success.  Scientists and scholars debate the merits of your designs, marveling at their efficiency and ingenuity.  Silverwood is no longer just a village; it’s a beacon of hope, a testament to what can be achieved with vision, ingenuity, and a touch of… magic.  The Quality of Life initiative is complete.  Silverwood is perfect.
+
+*set overall_progress +20
+*set qol_progress 100
+*page_break
+*return
+*comment ///////////////////////////////////////////// QOL 2
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION GRAMPSSSSSSSSSS
+*comment ///////////////////////////////////////////// 
+
+*comment wall_progress 20 60 85 100
+*comment bakery_progress 20 50 85 100
+*comment sanctuary_progress 0 50 85 100
+*comment homes_progress 20 50 100
+*comment tav_progress 0 50 100
+*comment village_hall_progress 30 50 100
+*comment qol_progress 0 20 60 85 100
+*comment rbd_bakery
+*comment rbd_tavern
+
+*label interact_gramps
+*temp gramps_dialogue 0
+
+*if (wall_progress >= 50)
+    *rand gramps_dialogue 1 3
+    *goto gramps_dialogue_end
+*elseif (bakery_progress >= 50)
+    *rand gramps_dialogue 4 6
+    *goto gramps_dialogue_end
+*elseif (sanctuary_progress >= 50)
+    *rand gramps_dialogue 7 9
+    *goto gramps_dialogue_end
+*elseif (tav_progress >= 50)
+    *rand gramps_dialogue 10 12
+    *goto gramps_dialogue_end
+*elseif (village_hall_progress >= 50)
+    *rand gramps_dialogue 13 15
+    *goto gramps_dialogue_end
+*elseif (homes_progress >= 50)
+    *rand gramps_dialogue 16 18
+    *goto gramps_dialogue_end
+*else
+    *rand gramps_dialogue 19 21
+    *goto gramps_dialogue_end
+
+*label gramps_dialogue_end
+*if (gramps_dialogue = 1)
+    "That wall's comin' along nicely," $!{grandparent} says, scratching $!{pospronoun} chin. "You've got a knack for this rebuildin' business."
+
+    "Reminds me of the time I helped build the old mill. Took us months, but it stood strong for years."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 2)
+    "I reckon that wall'll be finished in no time," $!{grandparent} muses. "You're workin' miracles here, ${user_name}."
+
+    "Just don't forget to take a break once in a while. Even heroes need rest."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 3)
+    "You know, I never thought I'd see this place rebuilt," $!{grandparent} admits. "But look at it now! That wall's almost as good as new."
+
+    "You've given us hope, lad. Don't ever forget that."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 4)
+    "The bakery smells like home again," $!{grandparent} chuckles. "Elara's been workin' hard, hasn't she?"
+
+    "She reminds me of her mother—same determination, same fire."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 5)
+    "Fresh bread from the bakery?" $!{grandparent} grins. "Now that's somethin' I haven't had in a long time."
+
+    "Maybe you could bring me a loaf sometime. Just don't tell the missus—I'm supposed to be watchin' my diet."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 6)
+    "The bakery's more than just a building," $!{grandparent} reflects. "It's the heart of the village. And you've helped bring it back to life."
+
+    "We owe you a debt we can never repay."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 7)
+    "The sanctuary's startin' to look like its old self," $!{grandparent} says, gazing toward the rising structure. "It's a place of peace, even now."
+
+    "You've done right by it, ${user_name}. The spirits will bless this place."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 8)
+    "I heard about the stained-glass windows," $!{grandparent} remarks. "Beautiful work. You've got an eye for detail."
+
+    "Makes me wish I was younger. I'd help you finish it myself."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 9)
+    "The sanctuary's more than just stone and timber," $!{grandparent} says solemnly. "It's a symbol of hope. And you've given that back to us."
+
+    "Thank you, lad. From the bottom of my heart."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 10)
+    "A tavern, eh?" $!{grandparent} chuckles. "About time someone thought of that!"
+
+    "It'll do wonders for morale. Folks need a place to unwind after all this hard work."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 11)
+    "I hear they've got the best ale in town," $!{grandparent} says with a wink. "Not that I'd know, mind you. I'm a respectable old man."
+
+    "Still, it's good to see the village comin' back to life."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 12)
+    "The tavern's more than just a drinkin' spot," $!{grandparent} reflects. "It's where stories are shared, friendships are forged."
+
+    "You've given us a place to celebrate our victories—and mourn our losses."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 13)
+    "The village hall's lookin' grand," $!{grandparent} says proudly. "Fit for a king, if you ask me."
+
+    "You've done us proud, ${user_name}. This place will stand for generations."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 14)
+    "I remember the old hall," $!{grandparent} reminisces. "It was the heart of the village. And now it's back."
+
+    "You've brought honor to this place. Never forget that."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 15)
+    "The hall's not just a building," $!{grandparent} says firmly. "It's a symbol of unity. And you've made it stronger than ever."
+
+    "We'll never forget what you've done for us."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 16)
+    "Folks are movin' back into their homes," $!{grandparent} says with a smile. "It's a sight to behold."
+
+    "You've given them shelter—and hope. That's somethin' special."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 17)
+    "I saw Old Man Tiber fixin' up $!{pospronoun} garden," $!{grandparent} chuckles. "Says $!{pronoun}'s gonna grow the best tomatoes in the county."
+
+    "You've given $!{objpronoun} a reason to dream again. Thank you for that."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 18)
+    "The homes are more than just walls and roofs," $!{grandparent} reflects. "They're memories, dreams, lives."
+
+    "You've given us a future. And for that, we're eternally grateful."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 19)
+    "There's still a lot to do," $!{grandparent} says, patting you on the back. "But you're makin' progress. Keep it up."
+
+    "We're countin' on you, ${user_name}."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 20)
+    "You remind me of someone," $!{grandparent} muses. "Can't quite put my finger on it, though."
+
+    "Anyway, keep pushin' forward. We’ll get through this."
+    *goto end_gramps_dialogue
+*elseif (gramps_dialogue = 21)
+    "You’ve got a good head on your shoulders," $!{grandparent} says approvingly. "And a kind heart."
+
+    "Don’t lose sight of what’s important. We’re with you every step of the way."
+    *goto end_gramps_dialogue
+
+*label end_gramps_dialogue
+"You thank $!{grandparent} for $!{pospronoun} words and take a moment to reflect on the progress made so far."
+*set actions_remaining -0
+*page_break
+*goto action_menu
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION ELARAAAAAAAAAAAAAAAAAAA
+*comment ///////////////////////////////////////////// 
+
+*label interact_elara
+*temp elara_dialogue 0
+
+*if (bakery_progress >= 50)
+    *rand elara_dialogue 1 3
+    *goto end_dialogue
+*elseif (wall_progress >= 50)
+    *rand elara_dialogue 4 6
+    *goto end_dialogue
+*elseif (sanctuary_progress >= 50)
+    *rand elara_dialogue 7 9
+    *goto end_dialogue
+*elseif (tav_progress >= 50)
+    *rand elara_dialogue 10 12
+    *goto end_dialogue
+*elseif (village_hall_progress >= 50)
+    *rand elara_dialogue 13 15
+    *goto end_dialogue
+*elseif (homes_progress >= 50)
+    *rand elara_dialogue 16 18
+    *goto end_dialogue
+*elseif (overall_progress >= 80)
+    *rand elara_dialogue 19 21
+    *goto end_dialogue
+*else
+    *rand elara_dialogue 22 24
+    *goto end_dialogue
+
+*label end_dialogue
+*if (elara_dialogue = 1)
+    "The bakery is really coming along," Elara says with a smile. "It smells like fresh bread already."
+    "I can't wait to bake again. It feels like home."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 2)
+    "You've done wonders for the bakery," Elara remarks, brushing flour from her hands. "I never thought I'd see it standing so tall again."
+    "You're amazing, ${user_name}. Truly."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 3)
+    "Do you remember the old bakery?" Elara asks wistfully. "It was my mother's pride and joy."
+    "Now it's becoming mine, thanks to you."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 4)
+    "That wall is looking strong," Elara observes, glancing toward the rising structure. "You've really outdone yourself."
+    "It's not just a wall—it's hope."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 5)
+    "I heard about your water-rope trick," Elara chuckles. "Old Man Tiber won't stop talking about it!"
+    "You've made their work so much easier."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 6)
+    "The wall will protect us," Elara says firmly. "But it's also a symbol of our strength."
+    "And you're the one who gave it to us."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 7)
+    "The sanctuary is beautiful," Elara murmurs, gazing at the stained-glass windows. "It feels... peaceful."
+    "Like the heart of the village is healing."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 8)
+    "Sister Lyra told me about your designs for the sanctuary," Elara says, her eyes shining. "They're incredible."
+    "You've given us a place to pray—and to dream."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 9)
+    "The sanctuary isn't just for prayers," Elara reflects. "It's where we'll gather, celebrate, and remember."
+    "You've built more than walls—you've built memories."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 10)
+    "A tavern!" Elara exclaims, clapping her hands. "I didn't think we'd have one so soon."
+    "It'll be nice to have a place to relax after all this hard work."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 11)
+    "The tavern is going to be amazing," Elara says, her voice filled with excitement. "Imagine the stories we'll share there!"
+    "And the food! Oh, I can't wait."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 12)
+    "You know what they say," Elara teases. "A village without a tavern is like bread without butter."
+    "Thank you for giving us both."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 13)
+    "The village hall is impressive," Elara admits, her tone thoughtful. "It's going to be the heart of our community."
+    "You've given us a place to come together."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 14)
+    "I heard the architects are calling you a prodigy," Elara says, grinning. "Honestly, I'm not surprised."
+    "You've changed this village forever."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 15)
+    "The hall isn't just a building," Elara reflects. "It's where we'll make decisions, hold celebrations, and build our future."
+    "And it's all because of you."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 16)
+    "The new homes are beautiful," Elara says softly. "Families are moving back in already."
+    "You've given them shelter—and hope."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 17)
+    "I saw Old Man Tiber planting flowers outside $!{pospronoun} house," Elara chuckles. "$!{pronoun} says it's 'to impress the ladies.'"
+    "But I think $!{pronoun}'s just happy to have a home again."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 18)
+    "The houses aren't just walls and roofs," Elara says earnestly. "They're lives, dreams, memories."
+    "You've given us a future, ${user_name}. Thank you."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 19)
+    "Everything is coming together so beautifully," Elara says, her voice filled with awe. "The bakery, the wall, the sanctuary..."
+    "It's like the village is alive again."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 20)
+    "You've done so much for us," Elara says, her eyes glistening. "More than anyone could have asked for."
+    "I don't know how to thank you enough."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 21)
+    "The village is thriving because of you," Elara declares, her tone proud. "You're a hero, ${user_name}."
+    "No matter what happens next, we'll always remember what you've done."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 22)
+    "There's still so much to do," Elara says, her expression determined. "But we're getting there."
+    "With you leading the way, I know we'll succeed."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 23)
+    "You remind me of someone," Elara muses, tilting her head. "Someone strong, kind, and unshakable."
+    "Whoever they are, they'd be proud of you."
+    *goto end_elara_dialogue
+*elseif (elara_dialogue = 24)
+    "You've given us so much hope," Elara says softly. "Even on the darkest days, you keep us moving forward."
+    "Thank you, ${user_name}. For everything."
+    *goto end_elara_dialogue
+
+*label end_elara_dialogue
+"You smile at Elara, feeling a warmth spread through you. Her gratitude is heartfelt, and it reminds you why you're doing all of this."
+*set actions_remaining -0 
+*page_break
+*return
+
+
+
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION VILLAGERSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+*comment ///////////////////////////////////////////// 
+
+*label interact_villagers
+*temp villager_dialogue 0
+
+*if (bakery_progress >= 50)
+    *rand villager_dialogue 1 3
+    *goto end_dialogue1
+*elseif (wall_progress >= 50)
+    *rand villager_dialogue 4 6
+    *goto end_dialogue1
+*elseif (sanctuary_progress >= 50)
+    *rand villager_dialogue 7 9
+    *goto end_dialogue1
+*elseif (tav_progress >= 50)
+    *rand villager_dialogue 10 12
+    *goto end_dialogue1
+*elseif (village_hall_progress >= 50)
+    *rand villager_dialogue 13 15
+    *goto end_dialogue1
+*elseif (homes_progress >= 50)
+    *rand villager_dialogue 16 18
+    *goto end_dialogue1
+*elseif (overall_progress >= 80)
+    *rand villager_dialogue 19 21
+    *goto end_dialogue1
+*else
+    *rand villager_dialogue 22 24
+    *goto end_dialogue1
+
+*label end_dialogue1
+*if (villager_dialogue = 1)
+    "The bakery smells amazing," an elderly woman remarks, her eyes twinkling. "It reminds me of when I was a child, helping my mother bake bread."
+    "You've brought back something precious to this village," she adds warmly.
+    *comment set morale_boost +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 2)
+    A young boy tugs at your sleeve, $!{pospronoun} face glowing with excitement. "Is it true you helped build the bakery?" $!{pronoun} asks eagerly.
+    "Yes," you reply with a smile.
+    "Wow! You're like a hero!" $!{pronoun} exclaims before running off to tell $!{pospronoun} friends.
+    *comment scomment et reputation +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 3)
+    A group of women chat near the bakery, occasionally glancing your way. One steps forward and says, "We heard about your clever crane idea. It's inspired us to try new things around here."
+    *comment set innovation_inspired true
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 4)
+    "That wall is impressive," a farmer comments, leaning on $!{pospronoun} hoe. "Feels safer already, knowing it's there."
+    "And those water-ropes? Genius," another chimes in.
+    *comment set defense_bonus +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 5)
+    Children play near the wall, pretending to be builders. One runs up to you, holding a makeshift pulley made of string and sticks.
+    "Look what we made!" they shout proudly. "Just like you showed us!"
+    *comment set morale_boost +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 6)
+    An older man nods approvingly as $!{pronoun} inspects the wall. "This'll keep us safe from bandits—and worse," $!{pronoun} mutters. "Good work."
+    *comment set trust +3
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 7)
+    "The sanctuary looks beautiful," a young mother says softly, gazing at the stained-glass windows. "It feels peaceful again."
+    *comment set tranquility_bonus +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 8)
+    A nun approaches you, her expression serene. "Your contributions to the sanctuary have not gone unnoticed," she says. "May blessings follow you."
+    *comment set faith +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 9)
+    Villagers gather inside the sanctuary, lighting candles and offering prayers. One turns to you and whispers, "Thank you for giving us this place to heal."
+    *comment set healing_bonus +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 10)
+    Laughter echoes from the tavern as you pass by. A burly man raises $!{pospronoun} mug and calls out, "To the one who rebuilt our favorite spot!"
+    The crowd cheers, and someone hands you a free drink.
+    *gosub_scene inventory add "backpack" "Free Drink Ticket" 1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 11)
+    Merchants unpack crates of goods outside the tavern, eager to trade with travelers. One merchant thanks you profusely. "Business has never been better!" $!{pronoun} exclaims.
+    *comment set wealth_bonus +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 12)
+    A bard strums $!{pospronoun} lute in the corner of the tavern, singing a song about the village's rebirth. $!{pronoun} winks at you as $!{pronoun} sings, "And none of this would be possible without our hero!"
+    *comment comment set fame +3
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 13)
+    Inside the village hall, elders discuss plans for future festivals. One elder smiles at you. "Thanks to you, we finally have a proper place to gather."
+    *comment set community_spirit +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 14)
+    Architects marvel at the hall's design, taking notes and sketching diagrams. One approaches you. "Your work here is extraordinary," they say. "Mind if I borrow some ideas?"
+    *comment set knowledge_shared +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 15)
+    During a meeting in the hall, a villager stands to propose naming the building after you. The motion passes unanimously.
+    *comment set legacy_unlocked true
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 16)
+    Families move into newly completed homes, laughter and chatter filling the air. A father shakes your hand firmly. "You've given us shelter—and hope," $!{pronoun} says.
+    *comment set happiness +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 17)
+    Children decorate their front yards with flowers and colorful stones. One runs up to give you a daisy. "For you!" she chirps.
+    *comment set charm +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 18)
+    An elderly couple invites you into their home for tea. "Sit down, dear," the grandmother says. "Let us thank you properly."
+    Over tea, they share stories of the village's history, deepening your bond with the community.
+    *comment set lore_learned +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 19)
+    The entire village celebrates the completion of all major projects. Fireworks light up the night sky as villagers cheer and dance.
+    Someone hoists you onto their shoulders, chanting, "To our hero!"
+    *comment set grand_finale_unlocked true
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 20)
+    Travelers arrive, drawn by tales of the village's miraculous recovery. They speak of your deeds with reverence, calling you a legend.
+    *comment set renown +5
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 21)
+    A noble visits the village, presenting you with a medal of honor. "Your ingenuity and leadership are unmatched," they declare.
+    *gosub_scene inventory add "backpack" "Medal of Honor" 1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 22)
+    Despite the progress, some villagers remain cautious. "There's still so much to do," one mutters. "But at least we're moving forward."
+    *comment set determination +1
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 23)
+    A child shyly offers you a drawing of the village. "I drew this for you," they whisper. "Because you helped make it pretty again."
+    *comment set affection +2
+    *goto end_villager_dialogue
+
+*elseif (villager_dialogue = 24)
+    An elder places a hand on your shoulder. "You remind me of someone," they muse. "Someone strong, kind, and unshakable."
+    Their words linger, leaving you with a sense of purpose.
+    *comment set resolve +2
+    *goto end_villager_dialogue
+
+*label end_villager_dialogue
+"You feel a warmth in your chest as the villagers express their gratitude. Their words remind you why you started this journey—to rebuild not just structures, but lives."
+*set actions_remaining -0
+*page_break
+*return
+
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION NUNSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+*comment ///////////////////////////////////////////// 
+
+*label interact_nuns
+*temp nun_dialogue 0
+
+*if (sanctuary_progress >= 50)
+    *rand nun_dialogue 1 3
+    *goto nun_dialogue_end
+*elseif (sanctuary_progress < 50)
+    *rand nun_dialogue 4 6
+    *goto nun_dialogue_end
+*elseif (village_hall_progress >= 80) and (homes_progress >= 80)
+    *rand nun_dialogue 7 9
+    *goto nun_dialogue_end
+*else
+    *rand nun_dialogue 10 12
+    *goto nun_dialogue_end
+
+*label nun_dialogue_end
+*if (nun_dialogue = 1)
+    Sister Lyra kneels near the altar of the partially rebuilt sanctuary, her hands clasped in prayer. She notices you approach and offers a gentle smile.
+    "The Lord is my shepherd; I shall not want," she murmurs softly, quoting Psalm 23:1. "Even in this broken place, $!{pronoun} provides for us."
+    Her gaze lingers on you, filled with quiet concern. "You carry so much on your shoulders, yet you persevere. It reminds me of $!{pospronoun} promise—to restore what was lost."
+    *set lyra_affection +2
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 2)
+    As you enter the sanctuary, Sister Lyra is tending to a small garden of herbs outside. She looks up and beckons you closer.
+    "Come, sit with me for a moment," she invites, patting the ground beside her. "These herbs will be used for healing salves. Perhaps one day you’ll learn their secrets too."
+    Her tone shifts slightly, becoming more personal. "I often think of Matthew 11:28—'Come to me, all who are weary and burdened, and I will give you rest.' You seem weary, yet you keep going. That takes strength."
+    *set lyra_affection +3
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 3)
+    Inside the dimly lit sanctuary, Sister Lyra lights candles along the walls. She turns to you, her expression thoughtful.
+    "Do you ever feel… different?" she asks hesitantly. "As though you don’t quite belong here?"
+    Before you can answer, she shakes her head slightly. "Never mind. Forget I asked."
+    There’s a flicker of something unspoken in her gaze—curiosity, perhaps, or recognition. Then, almost instinctively, she quotes Jeremiah 29:11: "'For I know the plans I have for you,' declares the Lord, 'plans to prosper you and not to harm you, plans to give you hope and a future.'"
+    *set lyra_affection +2
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 4)
+    Sister Lyra stands near the ruins of the sanctuary, her hands clasped tightly together. She glances at you briefly before returning her focus to the broken stones.
+    "We must rebuild this place quickly," she murmurs. "The villagers need a sanctuary—not just for prayer, but for peace."
+    Her voice softens as she adds, "Hebrews 11:1 tells us that faith is confidence in what we hope for and assurance about what we do not see. I believe this village will rise again, stronger than before."
+    You sense her urgency and realize how deeply she cares for the community—and for you.
+    *set lyra_affection +1
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 5)
+    While organizing supplies for the reconstruction effort, Sister Lyra pauses to speak with you. Her usual composure falters slightly, revealing a hint of vulnerability.
+    "I worry about you," she admits quietly. "This world is dangerous, and yet… you seem to navigate it with such ease. Almost as if you’ve done it before."
+    She places a comforting hand on your shoulder. "Remember Philippians 4:13: 'I can do all things through Christ who strengthens me.' Lean on $!{objpronoun} when the road feels too heavy."
+    *set lyra_affection +2
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 6)
+    Sitting on a bench overlooking the village, Sister Lyra appears lost in thought. When you join her, she speaks without looking at you.
+    "Sometimes I wonder if we’re doing enough," she confesses. "But then I see people like you, and hope returns."
+    She smiles faintly, quoting Isaiah 41:10: "'Fear not, for I am with you; be not dismayed, for I am your God. I will strengthen you, yes, I will help you, I will uphold you with My righteous right hand.'"
+    *set lyra_affection +3
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 7)
+    With the village hall and homes nearing completion, Sister Lyra expresses her gratitude openly.
+    "You’ve given these people a future," she says, placing a hand on your shoulder. "And I… I want to thank you for keeping us safe."
+    Her touch is light but meaningful, and you notice a faint shimmer of tears in her eyes. She quotes Proverbs 3:5-6: "'Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to $!{objpronoun}, and $!{pronoun} will make your paths straight.'"
+    *set lyra_affection +4
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 8)
+    During a quiet moment, Sister Lyra shares a fragment of her past—a tale of loss and redemption.
+    "I once doubted my path," she confesses. "But faith brought me here, to help those in need. Perhaps it led you here too."
+    She reflects on Romans 8:28: "'And we know that in all things God works for the good of those who love $!{objpronoun}, who have been called according to $!{pospronoun} purpose.'"
+    Her words resonate deeply, and you begin to suspect there’s more to her story than she’s willing to share.
+    *set lyra_affection +3
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 9)
+    Sister Lyra invites you to join her in prayer inside the newly rebuilt sanctuary. The air feels charged with serenity.
+    "Let us give thanks," she whispers. "For resilience, for unity, and for the dawn of a brighter tomorrow."
+    She quotes Psalm 126:5: "'Those who sow with tears will reap with songs of joy.'"
+    Though her prayers are meant for everyone, you can’t help but feel they’re especially for you.
+    *set lyra_affection +2
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 10)
+    Sister Lyra greets you warmly, though fatigue shows in her eyes.
+    "There’s still much to do," she says. "But every step forward brings us closer to peace."
+    Despite her weariness, her dedication inspires you, and you resolve to match her determination.
+    She offers a final word of encouragement: "Remember Galatians 6:9: 'Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.'"
+    *set lyra_affection +1
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 11)
+    While helping villagers carry supplies, Sister Lyra pauses to speak with you.
+    “Even amidst chaos, there is beauty,” she reflects. “Find it, nurture it, and let it guide you.”
+    She references Ecclesiastes 3:11: "'$!{pronoun} has made everything beautiful in its time.'"
+    Her advice feels personal, as if she’s speaking from experience—and perhaps offering you guidance for challenges ahead.
+    *set lyra_affection +2
+    *goto end_nun_dialogue
+
+*elseif (nun_dialogue = 12)
+    Sister Lyra notices your troubled expression and places a comforting hand on your shoulder.
+    “Carry your burdens lightly,” she advises. “And remember, you are never alone in this journey.”
+    She quotes 2 Corinthians 12:9: "'My grace is sufficient for you, for my power is made perfect in weakness.'"
+    Her words soothe your worries, and you feel a renewed sense of connection to her.
+    *set lyra_affection +3
+    *goto end_nun_dialogue
+
+*label end_nun_dialogue
+"Sister Lyra’s presence is calming, her wisdom grounding. Though she rarely speaks of herself, you sense a depth to her—a secret she guards closely. Yet, despite her enigmatic nature, her affection for you is undeniable. She watches over you like a guardian, ensuring you remain safe in this unpredictable world."
+*set actions_remaining -0
+*page_break
+*return
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION CELESTINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+*comment ///////////////////////////////////////////// 
+
+*label interact_celestine
+*temp celestine_dialogue 0
+
+*if (sanctuary_progress >= 50)
+    *comment Dialogue for when sanctuary progress is at least 50%
+    *rand celestine_dialogue 1 8
+    *goto celestine_dialogue_end
+*elseif (sanctuary_progress < 50)
+    *comment Dialogue for when sanctuary progress is less than 50%
+    *rand celestine_dialogue 9 16
+    *goto celestine_dialogue_end
+*elseif (village_hall_progress >= 80) and (homes_progress >= 80)
+    *comment Dialogue for advanced village rebuilding
+    *rand celestine_dialogue 17 24
+    *goto celestine_dialogue_end
+*else
+    *comment Default fallback dialogue
+    *rand celestine_dialogue 25 25
+    *goto celestine_dialogue_end
+
+*label celestine_dialogue_end
+*if (celestine_dialogue = 1)
+    Celestine stands near the edge of the village square, arms crossed as she watches the bustling activity around her. When you approach, she quickly looks away, pretending not to notice.
+    "What do you want?" she snaps, though there's a faint blush on her cheeks.
+    Despite her sharp tone, you sense an underlying curiosity about your intentions.
+    *set celestine_affection +1
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 2)
+    As you walk past the bakery, Celestine calls out to you, her voice tinged with irritation.
+    "Hey, you! Don't just ignore me," she demands, stepping closer. Her violet eyes narrow slightly. "I was... wondering if you'd seen any signs of $!{objpronoun}."
+    Before you can respond, she adds, "Not that I care or anything!"
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 3)
+    Celestine leans against a tree outside the partially rebuilt sanctuary, her expression unreadable. She glances at you briefly before looking away.
+    "You're always busy helping everyone else," she mutters under her breath. Then louder, "Not that I'm jealous or anything!"
+    Her words catch you off guard, but you can't help smiling at her tsundere behavior.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 4)
+    Inside the sanctuary, Celestine sits alone, flipping through a worn book. She looks up when you enter, her gaze softening ever so slightly.
+    "Oh, it's you," she says, closing the book with a snap. "If you're here to lecture me about being unhelpful, save it."
+    Yet, despite her harsh words, she scoots over to make room for you beside her.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 5)
+    You find Celestine pacing near the village hall, muttering to herself. When she notices you, she stops abruptly, crossing her arms defensively.
+    "It's not like I was waiting for you or anything," she huffs. "I just... wanted to make sure you weren't slacking off."
+    Her attempt at nonchalance only makes her cuter.
+    *set celestine_affection +1
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 6)
+    Celestine is helping Elara carry supplies into the bakery when you arrive. She drops the sack she's holding and turns to glare at you.
+    "Don't get the wrong idea," she insists. "I'm only doing this because Elara asked nicely."
+    Elara raises an eyebrow but says nothing, leaving you to deal with Celestine's antics.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 7)
+    Sitting by the well, Celestine stares into the distance, lost in thought. She jumps slightly when you sit down beside her.
+    "W-What are you doing here?" she stammers, clearly flustered. "I mean, it's not like I mind or anything!"
+    Her conflicting emotions are endearing, and you can't resist teasing her gently.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 8)
+    Celestine storms past you, muttering something about "incompetent villagers." You call after her, causing her to pause reluctantly.
+    "What?" she snaps, refusing to meet your gaze. "If you've got something to say, hurry up and say it!"
+    Beneath her tough exterior, you see a flicker of vulnerability.
+    *set celestine_affection +1
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 9)
+    Celestine stands near the ruins of the old wall, kicking at a loose stone. She glares at you when you approach.
+    "This place is such a mess," she complains. "How can anyone live like this?"
+    Though her criticism seems harsh, you know she's genuinely concerned about the village's recovery.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 10)
+    While organizing tools for the rebuilding effort, Celestine accidentally knocks over a pile of lumber. She flushes red when you rush to help her.
+    "I didn't need your help!" she protests, even as she lets you pick up the pieces.
+    Her pride clashes with her gratitude, creating an amusing dynamic.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 11)
+    Celestine paces nervously near the tavern, her hands clenched into fists. She freezes when she sees you, then forces a scowl.
+    "You're late," she accuses, though you hadn't planned to meet her. "I was... uh... just checking if you were okay."
+    Her concern shines through her bluster.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 12)
+    You spot Celestine arguing with $!{grandparent} near the sanctuary. She throws her hands up in frustration before storming off—straight into you.
+    "Watch where you're going!" she yells, though her anger quickly fades into embarrassment.
+    *set celestine_affection +1
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 13)
+    Celestine sits alone on a bench overlooking the village, her usual bravado replaced by quiet contemplation. She startles when you sit beside her.
+    "I wasn't expecting you," she admits softly. "But... I guess it's fine."
+    For once, she doesn't insult you, and the moment feels oddly intimate.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 14)
+    Celestine marches up to you, her face flushed with indignation.
+    "Why are you always so calm?" she demands. "Don't you care about anything?"
+    Her question catches you off guard, revealing a deeper insecurity beneath her fiery demeanor.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 15)
+    Helping Sister Lyra tend to the garden, Celestine pauses to glance at you. She quickly looks away, pretending to focus on the plants.
+    "These herbs are useless without proper care," she mutters. "Not that I care whether they grow or not!"
+    Her transparent deflection makes you smile.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 16)
+    Celestine corners you near the village hall, her arms crossed tightly.
+    "You've been avoiding me," she accuses, though her voice wavers slightly. "Not that I noticed or anything!"
+    Her insecurity is palpable, and you realize she values your attention more than she lets on.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 17)
+    With the village hall nearing completion, Celestine surveys the work with a critical eye. She turns to you suddenly, her expression softening.
+    "You've done a good job," she admits grudgingly. "Even if you did take forever."
+    Her rare compliment warms your heart.
+    *set celestine_affection +4
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 18)
+    Celestine joins you as you oversee the final stages of the housing project. She fidgets nervously before speaking.
+    "The villagers seem happy," she observes quietly. "You must be proud."
+    Her acknowledgment of your efforts surprises you—and touches you deeply.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 19)
+    Celestine finds you resting near the newly completed bakery. She hesitates before sitting beside you, her usual hostility absent.
+    "You work too hard," she murmurs. "Just... don't push yourself too far, okay?"
+    Her concern is genuine, and you feel a surge of affection for her.
+    *set celestine_affection +4
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 20)
+    Celestine drags you aside during a rare quiet moment, her face unusually serious.
+    "I heard rumors about danger approaching," she says. "Promise me you'll stay safe."
+    Her protectiveness takes you aback, but you nod reassuringly.
+    *set celestine_affection +5
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 21)
+    Celestine surprises you by bringing you a cup of tea while you work on the sanctuary. She thrusts it into your hands without meeting your gaze.
+    "It's not because I care," she insists. "I just didn't want you collapsing from exhaustion."
+    Her kindness, however reluctant, brightens your day.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 22)
+    Celestine lingers near the village square, watching children play. She stiffens when you approach but doesn't move away.
+    "They remind me of home," she says softly. "Before everything changed."
+    Her vulnerability tugs at your heartstrings.
+    *set celestine_affection +4
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 23)
+    Celestine storms into the sanctuary during a storm, drenched and shivering. She refuses to admit she's cold until you offer her a blanket.
+    "Fine, I'll take it," she relents. "But only because you insisted!"
+    Her stubbornness is both frustrating and adorable.
+    *set celestine_affection +2
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 24)
+    Celestine waits for you outside the tavern, tapping her foot impatiently.
+    "Took you long enough," she gripes. "I was starting to think you'd forgotten about me."
+    Her admission shocks you—and fills you with warmth.
+    *set celestine_affection +5
+    *goto end_celestine_dialogue
+
+*elseif (celestine_dialogue = 25)
+    Celestine avoids eye contact as she mumbles, "Thanks for everything you've done for the village."
+    She hurries away before you can respond, leaving you smiling at her awkward display of gratitude.
+    *set celestine_affection +3
+    *goto end_celestine_dialogue
+
+*label end_celestine_dialogue
+*line_break
+"Celestine may act tough, but her actions reveal a caring and protective side. Whether she's snapping at you or showing subtle kindness, every interaction brings you closer to understanding—and winning over—this complex young woman."
+*set actions_remaining -0
+*page_break
+*return
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION SAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+*comment ///////////////////////////////////////////// 
+
+*label interact_sage
+*temp sage_dialogue 0
+
+*if (sanctuary_progress >= 50) or (bakery_progress >= 50) 
+    *rand sage_dialogue 1 25
+    *goto 33
+*else
+    *rand sage_dialogue 1 16
+    *goto 33
+
+*label 33
+*if (sage_dialogue = 1)
+    [i]Sage: You've been working hard lately... not that I care or anything![/i]
+    Her voice echoes in your mind, tinged with a mix of pride and irritation.
+    "You noticed?" you think back smugly.
+    [i]Sage: Of course I did! It's my job to keep track of these things... idiot.[/i]
+    Despite her harsh words, you sense a hint of warmth behind them.
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 2)
+    [i]Sage: Hmph. Don't get too full of yourself just because you're rebuilding this village.[/i]
+    "I wasn't planning to," you reply mentally, amused by her defensiveness.
+    [i]Sage: Good. Because there's still so much left to do... and you're going to mess it up if you slack off.[/i]
+    Her concern for the village—and maybe for you—shines through her tough exterior.
+    *set sage_affection +1
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 3)
+    [i]Sage: Why are you staring at me like that? Stop it! I can feel your thoughts probing around.[/i]
+    "Sorry," you think sheepishly. "Just wondering what you're thinking about."
+    [i]Sage: As if I'd tell you! Ugh, you're such a nuisance sometimes... but fine. I was thinking about how far the village has come. Happy now?[/i]
+    Her reluctant admission makes you smile.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 4)
+    [i]Sage: Hey, don't ignore me while we're talking here![/i]
+    "Wasn't ignoring you," you protest. "Just lost in thought."
+    [i]Sage: About what? Something important? Or were you daydreaming again?[/i]
+    "Maybe both?" you admit, earning an exasperated sigh from her.
+    [i]Sage: Typical. Well, try to focus next time, okay? This village needs all the help it can get.[/i]
+    Her frustration is oddly endearing.
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 5)
+    [i]Sage: Do you ever stop to appreciate how much progress you've made? Or are you always rushing forward without looking back?[/i]
+    "Guess I don't think about it much," you admit.
+    [i]Sage: Figures. You humans are always so focused on the future that you forget to acknowledge the present. Take a moment to reflect, would you?[/i]
+    Her advice carries weight, even if delivered gruffly.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 6)
+    [i]Sage: You know, you're kind of impressive... when you're not being completely incompetent.[/i]
+    "Wow, thanks for the compliment," you say sarcastically.
+    [i]Sage: Hey, don't push your luck! I'm just saying... you've done well. That's all.[/i]
+    Her embarrassment is palpable, even in your mind.
+    *set sage_affection +4
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 7)
+    [i]Sage: Sometimes I wonder why I bother helping someone like you.[/i]
+    "Because deep down, you secretly enjoy it?" you tease.
+    [i]Sage: W-What?! No way! I have better things to do than babysit an amateur builder![/i]
+    Her flustered reaction confirms your suspicions.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 8)
+    [i]Sage: Fine, I'll admit it—you're not completely useless. But don't let it go to your head![/i]
+    "Wouldn't dream of it," you respond with a grin.
+    [i]Sage: Good. Now get back to work before I change my mind about praising you.[/i]
+    Her praise, however reluctant, means more than she lets on.
+    *set sage_affection +5
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 9)
+    [i]Sage: Honestly, you're such a handful. Can't you go five minutes without causing trouble?[/i]
+    "Trouble? Me? Never!" you joke.
+    [i]Sage: Don't play innocent with me. I see everything, remember? Including that time you almost knocked over $!{grandparent} with a misplaced timber.[/i]
+    Her scolding tone softens slightly as she adds,
+    [i]Sage: Just... be more careful, alright? The last thing we need is another disaster.[/i]
+    *set sage_affection +1
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 10)
+    [i]Sage: Are you even listening to me right now? Or am I wasting my breath—er, thoughts?[/i]
+    "Of course I'm listening," you reassure her.
+    [i]Sage: Hmm. Prove it then. Tell me one thing I said earlier today.[/i]
+    Caught off guard, you scramble for an answer.
+    "Uh... something about drainage systems?"
+    [i]Sage: Finally, you pay attention! Took you long enough.[/i]
+    Her relief is subtle but noticeable.
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 11)
+    [i]Sage: You're pushing yourself too hard, you know that? Even heroes need rest.[/i]
+    "But there's so much to do," you argue weakly.
+    [i]Sage: And doing it all at once isn't going to help anyone. Pace yourself, dummy. The village won't disappear overnight.[/i]
+    Her concern overrides her usual sarcasm.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 12)
+    [i]Sage: If you keep zoning out like that, I might start thinking you don't value my input.[/i]
+    "Never," you reply earnestly. "Your advice is invaluable."
+    [i]Sage: ...Really? You mean that?[/i]
+    "Absolutely."
+    [i]Sage: Well... good. Just don't expect me to go easy on you because of it.[/i]
+    Her blushing silence speaks volumes.
+    *set sage_affection +4
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 13)
+    [i]Sage: You're getting better at this whole 'rebuilding' thing. Not great, but better.[/i]
+    "Thanks, I think?" you respond uncertainly.
+    [i]Sage: Don't mention it. And don't get cocky either. There's still plenty of room for improvement.[/i]
+    Her critique is tempered by genuine encouragement.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 14)
+    [i]Sage: You know, for someone who claims to hate magic, you sure use it a lot.[/i]
+    "Hey, desperate times call for desperate measures," you defend yourself.
+    [i]Sage: Whatever. Just don't blame me when you accidentally summon a demon or something.[/i]
+    Her teasing hides a kernel of worry.
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 15)
+    [i]Sage: Seriously, why do you insist on doing everything yourself? Delegate some tasks already![/i]
+    "Because no one else understands the vision like I do," you explain patiently.
+    [i]Sage: Pfft. Excuses. You're just too stubborn to ask for help. Admit it.[/i]
+    She's not wrong, and you know it.
+    [i]Sage: Thought so. Try trusting others a little more, okay? You're not alone in this.[/i]
+    Her rare display of empathy touches you.
+    *set sage_affection +4
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 16)
+    [i]Sage: Fine, I'll give you credit where it's due. You're actually pretty decent at this whole leadership thing.[/i]
+    "Decent? Only decent?" you tease.
+    [i]Sage: Don't push it, mortal. I'm already stretching my generosity by saying that much.[/i]
+    Her playful banter lightens the mood.
+    *set sage_affection +5
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 17)
+    [i]Sage: You're really persistent, you know that? Most people would've given up by now.[/i]
+    "Is that a compliment?" you ask teasingly.
+    [i]Sage: Don't get ahead of yourself! I'm just saying... it's kind of impressive. Not that I care or anything.[/i]
+    Her tone softens slightly as she adds,
+    [i]Sage: Just don't let it go to your head, okay?[/i]
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 18)
+    [i]Sage: Ugh, why do you always have to be so stubborn? It's exhausting keeping track of you![/i]
+    "Hey, I thought you liked a challenge," you counterplayfully.
+    [i]Sage: A challenge, sure. But you're more like a walking disaster zone![/i]
+    Despite her harsh words, there's an undertone of fondness in her voice.
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 19)
+    [i]Sage: Do you ever stop to think before rushing into things? Honestly, it's a miracle you haven't gotten yourself killed yet.[/i]
+    "But I haven't, thanks to your advice," you point out.
+    [i]Sage: Hmph. Well, don't expect me to bail you out every time. I have better things to do than babysit you![/i]
+    Her bluster hides her genuine concern for your safety.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 20)
+    [i]Sage: Sometimes I wonder if you actually listen to anything I say... or if you're just pretending to hear me.[/i]
+    "Of course I listen," you protest. "I wouldn't survive without your guidance."
+    [i]Sage: Hmm. For once, you're right. Without me, you'd probably still be stuck in that shack.[/i]
+    She pauses, then adds grudgingly,
+    [i]Sage: So... maybe you're not completely hopeless after all.[/i]
+    *set sage_affection +4
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 21)
+    [i]Sage: Seriously, how do you manage to make such a mess out of everything? Even simple tasks turn into chaos around you![/i]
+    "It's a gift," you joke, earning a mental eye-roll from her.
+    [i]Sage: More like a curse. But fine, I suppose someone has to clean up after you.[/i]
+    Her exasperation is tempered by a hint of affection.
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 22)
+    [i]Sage: You know, for someone who claims to hate magic, you sure rely on it a lot.[/i]
+    "Only because you taught me how to use it properly," you admit.
+    [i]Sage: Pfft. Don't flatter yourself. I only helped because... well, because it was necessary. That's all.[/i]
+    Her denial is half-hearted at best.
+    *set sage_affection +3
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 23)
+    [i]Sage: Why are you looking at me like that? Stop it! It's creepy![/i]
+    "Like what?" you ask innocently.
+    [i]Sage: Like you're trying to figure me out or something. Newsflash: you can't. No one can.[/i]
+    Her defensiveness betrays her discomfort.
+    [i]Sage: Besides, shouldn't you be focusing on rebuilding the village instead of staring into space?[/i]
+    *set sage_affection +2
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 24)
+    [i]Sage: Fine, I'll admit it—you're growing on me. But don't let it go to your head![/i]
+    "Growing on you, huh? Does that mean you secretly enjoy my company?" you tease.
+    [i]Sage: W-What?! No way! I just... tolerate you. Barely.[/i]
+    Her flustered reaction confirms otherwise.
+    *set sage_affection +5
+    *goto end_sage_dialogue
+
+*elseif (sage_dialogue = 25)
+    [i]Sage: You're different from the others, you know that? In a good way, I mean. Not that I care or anything![/i]
+    "Different how?" you inquire curiously.
+    [i]Sage: You're... persistent. Determined. And maybe—just maybe—a little less annoying than most humans.[/i]
+    Her rare praise warms your heart, even if she tries to downplay it.
+    *set sage_affection +6
+    *goto end_sage_dialogue
+
+*label end_sage_dialogue
+"Sage may act tough and indifferent, but her actions reveal a caring and protective side. Whether she's criticizing your methods or offering heartfelt advice, every interaction brings you closer to understanding—and winning over—this complex being."
+*set actions_remaining -0
+*return
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// INTERACTION SAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+*comment ///////////////////////////////////////////// 
+
+
+
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// GATHER WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOD
+*comment ///////////////////////////////////////////// 
+
+*label gather_wood
+*temp wood_gathered 0
+*temp desc 0
+*rand desc 1 6
+*rand weather 1 3
+You step into the forest, your senses alive with the sounds of rustling leaves and distant bird calls. The air feels different today—charged, almost electric. You focus your hydromancy, feeling the water within the trees and soil respond to your will. With a flick of your wrist, you begin harvesting wood in a way that only you can.
+*if (weather = 1)
+    *comment No rain
+    *if (desc = 1)
+        A gentle breeze stirs the canopy above, scattering golden sunlight across the forest floor. Your hydromancy flows smoothly, shaping the moisture in the air to assist in cutting and stacking logs.
+        *set wood_gathered 1000
+        *goto set_wood_gathered
+    *elseif (desc = 2)
+        The forest hums with life as you work. Birds flit between branches, seemingly curious about your glowing hands as they manipulate the water within the trees to extract timber effortlessly.
+        *set wood_gathered 1000
+        *goto set_wood_gathered
+    *elseif (desc = 3)
+        The scent of pine fills the air as you move deeper into the woods. Your hydromancy creates shimmering tendrils of water that slice through bark and branch with precision.
+        *set wood_gathered 1000
+        *goto set_wood_gathered
+    *elseif (desc = 4)
+        You pause for a moment, admiring the play of light on the stream nearby. Then, with renewed focus, you channel your magic into the task at hand, gathering wood efficiently without harming the surrounding ecosystem.
+        *set wood_gathered 1000
+        *goto set_wood_gathered
+    *elseif (desc = 5)
+        The ground beneath your feet is soft with fallen leaves. As you concentrate, vines twist and untangle themselves, delivering neatly chopped logs directly to your side.
+        *set wood_gathered 1000
+        *goto set_wood_gathered
+    *else
+        A squirrel chatters noisily from a nearby tree, watching as you use your hydromancy to pull wood from the largest oak in the area. It’s hard not to chuckle at its antics while you work.
+        *set wood_gathered 1000
+        *goto set_wood_gathered
+*elseif (weather = 2)
+    *comment Rain
+    *if (desc = 1)
+        The rain falls steadily, soaking everything around you. But instead of hindering your progress, it amplifies your hydromancy. Streams of water swirl around you, cutting and collecting wood with ease.
+        *set wood_gathered 1500
+        *goto set_wood_gathered
+    *elseif (desc = 2)
+        Droplets cling to your eyelashes as you push forward, undeterred by the downpour. Your connection to the rain seems stronger than ever, allowing you to gather more wood than usual.
+        *set wood_gathered 1500
+        *goto set_wood_gathered
+    *elseif (desc = 3)
+        The forest feels alive under the rain, every surface glistening with droplets. You summon ribbons of water to dance among the trees, extracting timber with unmatched efficiency.
+        *set wood_gathered 1500
+        *goto set_wood_gathered
+    *elseif (desc = 4)
+        Thunder rumbles faintly in the distance, but the steady rain fuels your magic. Logs pile up faster than expected, a testament to the synergy between your hydromancy and the storm.
+        *set wood_gathered 1500
+        *goto set_wood_gathered
+    *elseif (desc = 5)
+        Puddles form at your feet as you work, their surfaces rippling with each movement of your hands. The rain enhances your abilities, making the task feel almost effortless.
+        *set wood_gathered 1500
+        *goto set_wood_gathered
+    *else
+        Despite the wet chill seeping into your bones, the rain empowers your hydromancy. Water spirals around you, carrying freshly cut logs to your growing stockpile.
+        *set wood_gathered 1500
+        *goto set_wood_gathered
+*elseif (weather = 3)
+    *comment Thunderstorm
+    *if (desc = 1)
+        Lightning flashes overhead, illuminating the forest in stark relief. The storm makes it difficult to focus, and your hydromancy falters slightly, slowing your progress.
+        *set wood_gathered 700
+        *goto set_wood_gathered
+    *elseif (desc = 2)
+        Thunder booms loudly, startling you mid-cast. You regain your composure quickly, but the disruption costs you time and efficiency.
+        *set wood_gathered 700
+        *goto set_wood_gathered
+    *elseif (desc = 3)
+        The wind howls through the trees, whipping branches dangerously close to your head. Your hydromancy struggles against the chaos of the storm, yielding less wood than anticipated.
+        *set wood_gathered 700
+        *goto set_wood_gathered
+    *elseif (desc = 4)
+        Each crack of thunder sends a jolt through the air, disrupting your concentration. You manage to gather some wood, but the storm takes its toll on your productivity.
+        *set wood_gathered 700
+        *goto set_wood_gathered
+    *elseif (desc = 5)
+        Rain lashes at your face as you try to maintain control over your magic. The turbulent weather makes it nearly impossible to work at full capacity.
+        *set wood_gathered 700
+        *goto set_wood_gathered
+    *else
+        The storm rages around you, forcing you to take shelter periodically. By the time you finish, you’ve gathered far less wood than you’d hoped.
+        *set wood_gathered 700
+        *goto set_wood_gathered
+
+*label set_wood_gathered
+*set wood +wood_gathered
+*set actions_remaining -1
+
+You emerge from the forest, arms laden with freshly gathered wood. ${wood_gathered} units of timber now await their purpose in the village's rebuilding efforts.
+You now have ${wood} units of wood in total.
+*page_break
+*goto action_menu
+
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// GATHER STONEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+*comment ///////////////////////////////////////////// 
+
+*label collect_stone
+*temp stone_gathered 0
+*temp desc1 0
+*rand desc1 1 21
+*rand weather 1 3
+
+You head out to the quarry, ready to gather stone for the village's rebuilding efforts. The air is crisp, and the sound of your tools echoes off the rocky walls.
+
+*if (weather = 1)
+    *comment Sunny weather
+    *if (desc1 = 1)
+        The sun shines brightly overhead, making the stones glint like treasure. You work efficiently under the clear sky.
+        *set stone_gathered 1000
+        *goto end_collecting
+    *elseif (desc1 = 2)
+        A gentle breeze cools your skin as you chip away at the rock face. It's a perfect day for hard work.
+        *set stone_gathered 1100
+        *goto end_collecting
+    *elseif (desc1 = 3)
+        The warmth of the sun gives you extra energy, and you manage to gather more stone than usual.
+        *set stone_gathered 1200
+        *goto end_collecting
+    *elseif (desc1 = 4)
+        The bright sunlight makes it hard to see small cracks in the rock, slowing your progress slightly.
+        *set stone_gathered 900
+        *goto end_collecting
+    *else
+        The pleasant weather keeps your spirits high, and you finish your task with ease.
+        *set stone_gathered 1000
+        *goto end_collecting
+
+*elseif (weather = 2)
+    *comment Overcast weather
+    *if (desc1 = 6)
+        The overcast sky provides a cool respite from the heat, allowing you to focus on your work without distraction.
+        *set stone_gathered 1050
+        *goto end_collecting
+    *elseif (desc1 = 7)
+        Gray clouds loom above, but the steady rhythm of your hammer against the rock keeps you motivated.
+        *set stone_gathered 1000
+        *goto end_collecting
+    *elseif (desc1 = 8)
+        The damp air makes the rocks slippery, forcing you to take extra care while working.
+        *set stone_gathered 850
+        *goto end_collecting
+    *elseif (desc1 = 9)
+        Despite the gloomy weather, you find yourself unusually focused, gathering more stone than expected.
+        *set stone_gathered 1150
+        *goto end_collecting
+    *else
+        The lack of direct sunlight means you can work longer without tiring, resulting in a decent haul.
+        *set stone_gathered 1000
+        *goto end_collecting
+
+*elseif (weather = 3)
+    *comment Rainy weather
+    *if (desc1 = 11)
+        The rain soaks everything, turning the ground muddy and making it harder to move around the quarry.
+        *set stone_gathered 750
+        *goto end_collecting
+    *elseif (desc1 = 12)
+        Heavy rain pelts down, forcing you to stop frequently to dry off your tools. Progress is slow.
+        *set stone_gathered 700
+        *goto end_collecting
+    *elseif (desc1 = 13)
+        The rain washes away loose debris, revealing fresh veins of usable stone beneath the surface.
+        *set stone_gathered 1300
+        *goto end_collecting
+    *elseif (desc1 = 14)
+        Lightning flashes in the distance, spooking you into rushing your work. You don't gather as much as you'd hoped.
+        *set stone_gathered 600
+        *goto end_collecting
+    *else
+        The rain creates a soothing ambiance, helping you concentrate and gather a solid amount of stone.
+        *set stone_gathered 1000
+        *goto end_collecting
+
+*if (desc1 = 16)
+    As you chip away at the rock, you uncover a hidden vein of particularly high-quality stone. Your yield increases significantly!
+    *set stone_gathered 1500
+    *goto end_collecting
+*elseif (desc1 = 17)
+    A small landslide blocks part of the quarry, limiting access to the best stone deposits.
+    *set stone_gathered 500
+    *goto end_collecting
+*elseif (desc1 = 18)
+    While working, you stumble upon an old miner's cache of pre-cut stones. This unexpected find boosts your haul.
+    *set stone_gathered 2000
+    *goto end_collecting
+*elseif (desc1 = 19)
+    A curious animal distracts you, causing you to lose valuable time during your collection.
+    *set stone_gathered 650
+    *goto end_collecting
+*elseif (desc1 = 20)
+    The tools you brought are dull, requiring frequent sharpening and reducing your overall efficiency.
+    *set stone_gathered 800
+    *goto end_collecting
+*elseif (desc1 = 21)
+    You discover a clever shortcut that lets you extract stone faster than ever before.
+    *set stone_gathered 1400
+    *goto end_collecting
+
+*label end_collecting
+You emerge from the quarry, arms laden with freshly gathered stone. ${stone_gathered} units of stone now await their purpose in the village's rebuilding efforts.
+
+*set stone +stone_gathered
+*set actions_remaining -1
+*page_break
+*goto action_menu
+
+
+
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// GATHER FOOOOOOOOOOOOOOOOOOD 
+*comment ///////////////////////////////////////////// 
+
+*label hunt_for_food
+*temp hunted_food 0
+*temp hunted_rare_item false
+*temp animal_encounter 0
+*temp magical_event 0
+
+*rand weather 1 3
+*rand animal_encounter 1 8
+*rand magical_event 1 5
+
+You venture into the wilderness, armed with your trusty tools and a keen eye for tracks. The air is crisp, and the forest teems with life. What awaits you today?
+
+*if (weather = 1)
+    The sun shines brightly through the trees, making it easier to spot prey but also alerting them to your presence.
+    *goto 2345
+*elseif (weather = 2)
+    Overcast skies provide cover, giving you an advantage in stealth.
+    *goto 2345
+*else
+    A light drizzle dampens the ground, muffling your footsteps but making the hunt more challenging.
+    *goto 2345
+
+*label 2345
+
+*if (animal_encounter = 1)
+    You stumble upon a group of rabbits nibbling on grass. They scatter as you approach, but your quick reflexes allow you to catch a few.
+    *set hunted_food 30
+    *goto hunting_outcome
+*elseif (animal_encounter = 2)
+    A deer grazes nearby, unaware of your presence. With careful aim, you manage to bring it down.
+    *set hunted_food 50
+    *goto hunting_outcome
+*elseif (animal_encounter = 3)
+    A flock of birds takes flight as you approach. You manage to shoot one down with your sling.
+    *set hunted_food 20
+    *goto hunting_outcome
+*elseif (animal_encounter = 4)
+    You hear a rustling in the bushes. It's a wild boar! After a tense chase, you successfully take it down.
+    *set hunted_food 70
+    *goto hunting_outcome
+*elseif (animal_encounter = 5)
+    As you explore deeper into the woods, you come across a patch of wild mushrooms and edible roots. Not exactly meat, but still valuable.
+    *set hunted_food 10
+    *set hunted_rare_item true
+    *goto hunting_outcome
+*elseif (animal_encounter = 6)
+    You accidentally startle a predator—a wolf! It lunges at you, forcing you to defend yourself. You escape unscathed but return empty-handed.
+    *set hunted_food 0
+    *goto hunting_outcome
+*elseif (animal_encounter = 7)
+    While tracking prey, you discover a hidden grove filled with fruit-bearing trees. The villagers will appreciate this unexpected bounty.
+    *set hunted_food 40
+    *set hunted_rare_item true
+    *goto hunting_outcome
+*elseif (animal_encounter = 8)
+    Your instincts lead you to a massive elk standing majestically by a stream. With precision and patience, you successfully hunt it.
+    *set hunted_food 100
+    *goto hunting_outcome
+
+*label hunting_outcome
+*if (hunted_food > 0)
+    You return from your hunt with ${hunted_food} units of food. The villagers will appreciate the extra sustenance.
+    *set food +hunted_food
+    *goto 1234
+*else
+    Your hunt was unsuccessful. Better luck next time.
+    *goto 1234
+*if (hunted_rare_item)
+    In addition to the food, you discovered some rare herbs growing nearby. These could be useful for crafting potions or medicine.
+    *gosub_scene inventory add "backpack" "Rare Herbs" 1
+    *goto 1234
+
+*label 1234
+*comment Magical Event Twist
+*if (magical_event = 1)
+    As you prepare to leave the hunting grounds, you notice a faint glow emanating from a nearby bush. Investigating further, you find a crystalline shard pulsating with energy. You recognize its potential—it’s a mana crystal!
+    *gosub_scene inventory add "backpack" "Mana Crystal" 1
+    *goto magical_twist
+*elseif (magical_event = 2)
+    Suddenly, the wind picks up, and the temperature drops sharply. A spectral figure appears before you, whispering cryptic warnings about the future. Though unsettling, the vision leaves you feeling oddly enlightened.
+    *goto magical_twist
+*elseif (magical_event = 3)
+    You step into a clearing and see a small creature trapped under a fallen branch. Using your elemental magic, you lift the heavy wood effortlessly, freeing the frightened animal. It looks at you with gratitude before darting away.
+    *goto magical_twist
+*elseif (magical_event = 4)
+    The forest seems alive around you—plants grow rapidly, flowers bloom instantly, and animals gather curiously at the edge of your path. It dawns on you that your mere presence has awakened dormant magical energies in the area.
+    *goto magical_twist
+*elseif (magical_event = 5)
+    A sudden storm brews overhead, lightning striking dangerously close. Drawing upon your pyromancy, you channel the raw energy of the storm into a protective barrier, shielding yourself until the tempest passes.
+    *set pyro +10
+    *goto magical_twist
+
+*label magical_twist
+The day's events have left you with new insights, resources, or abilities. Whether it was a chance encounter or a display of your magical prowess, the experience has enriched your journey.
+
+*page_break
+*set actions_remaining -0.5
+*return
+
+
+*comment ///////////////////////////////////////////// 
+*comment ///////////////////////////////////////////// GAME OVER 
+*comment ///////////////////////////////////////////// 
+
+
+*label famine_chaos
+The village has succumbed to famine. Hunger spreads like wildfire, and desperation drives people to madness. Families turn against each other, crops wither, and hope fades from Silverwood. Without sustenance, the rebuilding effort collapses entirely. You have failed to lead the village to recovery.
+
+Game Over.
+*gosub_scene death
+
+
+
+
+
+
+
+*comment /////////////////////////////////////////////
+*comment SUB-ROUTINES FOR EACH DREAM FRAGMENT
+*comment /////////////////////////////////////////////
+
+*label dream_prophecy
+[i]"When the stars bleed and the Descender walks, the shackled god shall fall."[/i]
+A voice echoes in the void, reverberating through your very soul. You feel the weight of destiny pressing down on you, though its meaning remains elusive.
+*return
+
+*label dream_mother
+You find yourself standing in a grand hall illuminated by glowing runes. A woman with flowing silver hair stands before you, her violet eyes filled with sorrow and determination.
+[i]"If we fail, my child must live. Protect $!{objpronoun}. $!{pronoun} carries the hope of all worlds within $!{objpronoun}."[/i]
+Before you can respond, flames engulf the room, swallowing everything—including her.
+*return
+
+*label dream_veiled_hand
+In a dimly lit chamber, two factions argue heatedly. On one side stand members of the Veiled Hand, their masks gleaming coldly. Opposite them are the Eclipse Vanguard, led by $!{grandparent}.
+[i]"We don’t have time for secrecy anymore! If we don’t act now, the Obsidian Court will unleash the Lord of Decay upon us all!"[/i]
+Tensions escalate, leaving you uneasy about the fragile alliance between these groups.
+*return
+
+*label dream_eclipse_vanguard
+$!{grandparent} slams $!{pospronoun} fist on the table, sparks flying from $!{pospronoun} Electromancy.
+[i]"Then perhaps it’s time someone reminded you why we fight—for those who can’t."[/i]
+$!{pospronoun} words resonate deeply, reminding you of the stakes at hand.
+*return
+
+*label dream_lord_of_decay
+You stand atop a mountain overlooking a vast plain. Below, armies gather under banners marked with celestial symbols. Among them, you recognize familiar faces: Elara, Sister Liora, an orc shaman, and a dragonborn warrior.
+From the depths of the battlefield rises the Lord of Decay, a monstrous entity wreathed in shadows. Its hollow gaze locks onto yours, sending chills down your spine.
+[i]"You cannot escape what is written,"[/i] it hisses.
+*return
+
+*label dream_companions
+Images flash before your eyes—your companions fighting alongside you against impossible odds. Each step closer to the Lord of Decay weakens it slightly, as if your presence disrupts its power.
+[i]"Remember who you are. Remember why you were chosen."[/i]
+The whispers fade, leaving behind a lingering sense of purpose.
+*return
+
+*label dream_forgotten_past
+Memories of your past life flood back—the late nights studying, coding projects gone wrong, friendships that shaped you. These struggles seem trivial now compared to the prophecy hanging over you, yet they taught you resilience.
+[i]"Everything happens for a reason,"[/i] you murmur softly.
+*return
+
+*label dream_broken_world
+The sky churns with unnatural storms, lightning illuminating jagged ruins scattered across the land. A figure cloaked in shadow kneels before you, bowing low as if acknowledging your presence.
+[i]"Chosen... awaken..."[/i]
+Their words send a chill down your spine.
+*return
+
+*label dream_hidden_truths
+You wander through a library filled with ancient tomes, their pages glowing faintly. One book catches your eye—a tome bound in black leather with golden script spelling out [b]“The Infinite Dream.”[/b]
+As you open it, visions of forgotten histories and hidden truths overwhelm you, hinting at secrets buried deep within the fabric of reality.
+*return
+
+*label dream_forest_whispers
+The forest comes alive with whispers, voices speaking in languages you don’t understand. Yet somehow, their meaning is clear:
+[i]"The Descender walks among us... Seek the key to unlock the chains of fate."[/i]
+You follow the sound, only to find yourself waking up abruptly.
+*return
+
+*label dream_shattered_stars
+The night sky fractures like glass, stars bleeding light into the void. A single star falls toward you, transforming into a burning sword as it lands in your hands.
+[i]"Take up the blade and shatter the infinite dream."[/i]
+Its heat sears your palms, but you refuse to let go.
+*return
+
+*label dream_silver_hair
+A woman with silver hair appears before you, reaching out her hand. Her expression shifts between pride, sorrow, and desperation.
+[i]"Protect $!{objpronoun}. $!{pronoun} carries the hope of all worlds within $!{objpronoun}."[/i]
+Before you can react, she vanishes in a burst of flame.
+*return
+
+*label dream_oc_encounter
+You meet a mysterious figure—an Original Character whose motives remain unclear. They speak cryptically, hinting at events yet to unfold.
+[i]"Our paths are intertwined, Descender. Whether ally or foe, only time will tell."[/i]
+They disappear into the shadows, leaving you unsettled.
+*return
+
+*label dream_echoes_of_war
+Battle cries echo around you as armies clash on a crimson-streaked field. Amidst the chaos, you spot the Lord of Decay, its skeletal form towering over the battlefield.
+[i]"This is what awaits if you falter. Do not forget."[/i]
+The vision fades, leaving behind a grim reminder of the stakes.
+*return
+
+*label dream_shadowy_figure
+A hooded figure watches you from afar, their face obscured by shadows. Despite their silence, you feel their gaze piercing through you, weighing your worth.
+[i]"Are you ready to bear the burden?"[/i]
+They vanish without waiting for an answer.
+*return
+
+*label dream_frozen_time
+Time halts around you, the world frozen in place. Only you move freely, exploring the stillness. In the distance, you see a massive clock ticking backward, its hands spinning wildly.
+[i]"Rewind the cycle. Break the loop."[/i]
+The message is cryptic, but it lingers in your mind long after the dream ends.
+*return
+
+*label dream_chosen_path
+Paths stretch out before you, each leading to a different future. Some promise glory, others despair. At the end of one path, you glimpse the Lord of Decay defeated, the world reborn.
+[i]"Choose wisely, for every step shapes the outcome."[/i]
+You wake with a start, unsure which path to trust.
+*return
+
+*label dream_desert_oasis
+Amidst a barren desert, you stumble upon an oasis shimmering under the moonlight. As you drink from its waters, visions of peace and prosperity fill your mind.
+[i]"Even in desolation, hope blooms."[/i]
+The dream leaves you feeling refreshed and renewed.
+*return
+
+*label dream_ancient_ruins
+Exploring crumbling ruins, you uncover inscriptions detailing the rise and fall of civilizations. Among them, you find a carving depicting a figure wielding a flaming sword, surrounded by shattered chains.
+[i]"The Descender shall free us all."[/i]
+The discovery fills you with both awe and dread.
+*return
+
+*label dream_forbidden_knowledge
+You delve into forbidden texts, uncovering secrets too dangerous to be known. With each revelation, the air grows heavier, suffocating.
+[i]"Some truths are meant to remain buried."[/i]
+You awaken gasping, the knowledge slipping away like sand through your fingers.
+*return
+
+*label dream_final_stand
+You stand shoulder-to-shoulder with your companions, facing the Lord of Decay in its full might. Though fear grips your heart, you raise your weapon defiantly.
+[i]"Together, we will shatter the infinite dream."[/i]
+The battle begins, and you brace yourself for the ultimate test.
+*return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

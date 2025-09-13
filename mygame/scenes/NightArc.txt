@@ -1,0 +1,522 @@
+*label ominous_feeling_continues
+
+(The ominous feeling persists. Outside, the wind howls with mournful cries, punctuated by sharp gusts that batter the shutters. Shadows in the room twist and writhe under the swaying lantern’s light, their movements as chaotic as your racing thoughts. The pot roast at the center of the table sits forgotten, steam rising in a silent testament to the altered mood.)
+
+$!{grandparent} stands abruptly, $!{pospronoun} chair scraping the wooden floor with a piercing screech. $!{pospronoun} eyes dart to the window, scanning the darkness beyond. $!{pospronoun} jaw tightens as $!{pronoun} mutters in a low, urgent tone:  
+
+“Something’s coming.”
+
+Sister Lyra and Sister Cecilia exchange a brief, weighted glance—resolute expressions replacing their usual serenity. In that fleeting moment, you sense they’ve been expecting this all along.
+
+Before anyone can speak further, a deafening *howl* rips through the night. It isn’t the mere cry of the wind; it’s guttural, filled with malice. Your heart hammers in your chest as the sound reverberates through the village, a primal warning of approaching danger.
+
+Almost simultaneously, the ground trembles. Plates clatter on the table, and the lantern swings violently, casting wild, distorted shadows across the walls. Faint whispers rise from the dark corners, as if ancient voices murmur:  
+
+[b]“They are here.” [/b]
+
+The room closes in, the warmth fading into a biting chill that seeps into your skin. The familiar aromas twist into something metallic and unnerving. Every instinct screams to flee—but where, when terror has rooted you in place?
+
+*fake_choice
+    #Ask $!{grandparent} what’s happening.
+        “What’s going on?” you manage to ask, your voice a dry rasp in your throat, your hands trembling slightly as you grip the table's edge.
+
+        $!{grandparent} doesn’t tear $!{pospronoun} gaze from the window. “Trouble,” $!{pronoun} replies simply, $!{pospronoun} knuckles whitening as $!{pronoun} grips the table’s edge. Electricity dances faintly around $!{pospronoun} fingers.
+        *goto next_step
+    #Look to the nuns for answers.
+        You turn toward Sister Lyra and Sister Cecilia, seeking reassurance. Instead, they exchange a meaningful glance before rising from the table.
+        
+        “Stay close,” Lyra murmurs, her violet eyes burning with quiet intensity.
+
+        Cecilia places a gentle hand on your shoulder. “We’ll protect you,” she whispers over the rising chaos.
+
+        *goto next_step
+    #Focus on the whispers.
+        The whispers swell, almost deafening now, their unintelligible words coalescing into one clear phrase: *“The end begins.”*
+
+        A cold dread fills you as Sage’s voice echoes in your mind: [i]"These are the voices of the forgotten. Be wary—they herald doom."[/i]
+
+        *goto next_step
+    #Try to steady your breathing.
+        You close your eyes, drawing slow, deliberate breaths. Though the trembling subsides ever so slightly, the tension remains palpable.
+
+        Sage interjects softly: [i]"Calmness is admirable, ${user_name}, but do not mistake stillness for safety. Danger approaches."[/i]
+
+        *goto next_step
+    #Stare at the flickering lantern.
+        The lantern’s flame dances erratically, casting shifting silhouettes that seem to come alive—a human form here, a monstrous clawed figure there. As the flame flickers dangerously low, an inexplicable urge to keep the light burning overtakes you.
+        
+        *goto next_step
+    #Check the window for signs of movement.
+        You edge toward the window, peering into the inky darkness. At first, there’s only swaying silhouettes of trees. Then, a flash of movement—a small, hunched figure darting between the shadows—sends a new wave of panic through you.
+        
+        *goto next_step
+    #Clutch the breadbasket for comfort.
+        You grip the basket of crusty bread tightly, the rough texture grounding you. Sister Cecilia catches your anxious look and offers a gentle smile. “Even the smallest comforts matter,” she murmurs, her smile a flicker of warmth in the growing chill.  A *knowing* glint appears in her eyes for a fleeting moment before she turns back to the window.
+
+        *goto next_step
+
+*label next_step
+
+The door crashes open with a violent shudder, splintering wood and sending shards of debris flying. A goblin staggers inside, its grotesque features briefly illuminated by the lantern’s erratic glow. Its yellow eyes fix on you, and with a blood-curdling shriek, it lunges forward.
+
+*fake_choice
+    #Use hydromancy to defend yourself.
+        Instinct seizes you. You raise your hands and summon a surge of water from a nearby jug. The liquid twists into a whip-like tendril that lashes at the goblin, eliciting a piercing screech as it staggers.
+        
+        Sister Lyra nods in approval. “Impressive,” she comments, her tone brisk as she readies herself.
+
+        *comment set trained_with_gramps +5  
+        *goto combat_scene
+    #Call for help.
+        “$!{grandparent}!” you shout, stumbling backward as the goblin advances.
+
+        Without hesitation, $!{grandparent} steps in front of you, electricity arcing around $!{pospronoun} fists. A swift bolt of lightning slams into the creature, reducing it to twitching ash.
+        
+        “Stay behind me,” $!{pronoun} commands, leaving no room for argument.
+
+        *goto combat_scene
+    #Try to flee.
+        You dart toward the kitchen, seeking refuge among familiar objects. But the goblin is swift—it snags your ankle and yanks you back.
+        
+        Just then, Sister Lyra appears as if summoned by fate, delivering a precise kick to the goblin’s head. “Not today,” she declares, pulling you upright.
+        
+        *goto combat_scene
+    #Freeze in fear.
+        Your body betrays you, rooted in terror. As the goblin looms closer, its jagged teeth gleaming, Sister Cecilia intervenes by hurling a glowing vial at the creature. The vial shatters, unleashing a burst of golden light that forces the goblin to recoil.
+        
+        “You’re safe,” Cecilia assures you, her voice steady amid the chaos.
+
+        *goto combat_scene
+    #Attempt to distract the goblin.
+        You snatch a piece of debris and hurl it at the goblin, hoping to divert its attention. The impact earns a snarl from the creature as it turns its focus on you.
+        
+        Before it can close in, Sister Lyra intercepts with a powerful roundhouse kick that sends the goblin staggering backward.
+        
+        *comment set mc_risk +5  
+        *goto combat_scene
+
+*label combat_scene
+
+More goblins pour into the dining hall, their claws scraping and their shrieks mingling with the chaos. Villagers scream and scatter as the assault intensifies.
+
+$!{grandparent} unleashes volley after volley of electromancy, bolts of lightning striking down multiple foes at once. Yet for every goblin felled, two more surge forward. At the same time, the nuns reveal their true mettle—their robes falling away to expose sleek, battle-ready armor. They move with a precision and grace that belies their gentle titles. One nun disarms a goblin with a spinning kick, while another flips gracefully over an attacker to land a devastating elbow strike.
+
+Despite their valor and skill, the relentless tide of enemies begins to overwhelm the defenses. The sanctuary itself groans under the onslaught—walls crack, the roof creaks ominously, and debris cascades from above.
+
+*page_break The Sanctuary Falls
+
+A massive tremor shudders through the building. In an instant, the ceiling collapses in a cascade of dust and rubble, transforming the once-cozy dining hall into a war-torn battleground. Flames lick at the edges of the wreckage, bathing the scene in an eerie orange glow.
+
+Amid the chaos, a towering figure emerges from the shadows—a golem with a stone body etched with glowing runes, its eyes burning with an unnatural light. It surveys the destruction with a cold, indifferent gaze.
+
+$!{grandparent} steps forward, $!{pospronoun} expression grim. “Leave the villagers alone,” $!{pronoun} bellows, raising $!{pospronoun} hands as electricity gathers in a crackling sphere of energy. $!{pronoun} hurls it at the golem, but the creature shrugs off the attack like a mere inconvenience.
+
+From the darkness, a cold, mocking voice cuts through the tumult. A vampire steps forward, its pale skin gleaming in the firelight. It smirks at $!{grandparent}, clearly amused. “Did you really think you could stand against us?” it sneers.
+
+The nuns converge, forming a protective barrier around you. “We’ll see about that,” Sister Lyra declares, her voice unwavering despite the mounting odds.
+
+*fake_choice
+    #Join the fight using hydromancy.
+        Determination fills you. You focus your magic, summoning a torrent of water from the shattered remnants of the jug. The water surges forward with force, slamming into the vampire and staggering it.
+        
+        Sister Lyra offers a brief nod of approval. “Impressive,” she notes as she prepares for another strike.
+        
+        *comment set mc_contribution +10  
+        *goto final_moments
+    #Hide behind the nuns and observe.
+        You duck behind Sister Cecilia, watching intently as the nuns engage the vampire in swift, brutal combat. Their fluid movements and precise strikes underscore a mastery of martial skills.
+        
+        Cecilia glances back, her gentle brown eyes softening. “It’s okay to be scared,” she whispers. “Courage is acting despite that fear.”
+        
+        *comment set mc_bravery -5  
+        *goto final_moments
+    #Attempt to distract the vampire.
+        You snatch a piece of debris and hurl it at the vampire, hoping to divert its attention from your comrades. The impact draws a sneer from the creature as it turns its gaze upon you.
+        
+        Before it can advance, Sister Lyra intercepts with a powerful roundhouse kick that sends the vampire reeling.
+        
+        *comment set mc_risk +5  
+        *goto final_moments
+
+*label final_moments
+Though the battle rages on, it becomes painfully clear that holding the sanctuary is impossible. The combined forces of the vampire, the golem, and the relentless goblin swarm have overwhelmed the defenses. With a strained voice, $!{grandparent} shouts for everyone to retreat—not into the forest—but toward the heart of the village.
+
+“We can’t let them destroy everything!” $!{pronoun} bellows, $!{pospronoun} voice cracking under the strain. “To the square! Rally the villagers! We make our last stand there!”
+
+As you flee, chaos erupts around you. Flames lick at the edges of buildings, smoke fills the air, and screams echo through the night. Villagers stream out of their homes, clutching whatever weapons they can find—pitchforks, scythes, even kitchen knives. Fear etches itself onto every face, but determination burns brighter still.
+
+*page_break Is that...
+
+Then, amidst the chaos, you see her; Elara. She’s helping an elderly villager escape, dragging them toward safety. But before she can reach the others, a group of goblins emerges from the shadows, cutting her off. One lunges forward, grabbing her by the arm. Her scream pierces the din of battle.
+
+Your blood runs cold.
+
+“No…” you whisper, your fists clenching so tightly your nails dig into your palms.
+
+$!{grandparent} yells for you to keep moving, but your feet refuse to obey. You watch in horror as Elara struggles against her captors, kicking and biting, but it’s no use. They drag her back toward the advancing horde, laughing cruelly.
+
+Something inside you snaps.
+
+*fake_choice
+    #Charge recklessly toward Elara.
+        You sprint forward without thinking, abandoning all caution. Goblins block your path, snarling and raising crude weapons, but you don’t care. Every step feels like fire coursing through your veins.
+        
+        “GET AWAY FROM HER!” you roar, your voice raw with fury.
+        
+        *goto unleash_magic
+    #Scream in rage, drawing upon every ounce of magic within you.
+        You throw your head back and scream—a primal, guttural sound that shakes the very ground beneath your feet. The air crackles with energy, and the hairs on your arms stand on end. Something ancient stirs deep within you, answering your call.
+        
+        *goto unleash_magic
+    #Close your eyes and focus, channeling your anger into pure magic.
+        You shut out the world, focusing solely on the storm raging inside you. Memories flash before your eyes—the whispers of prophecy, the trials you’ve endured, the faces of those who believed in you. And then, you feel it: a surge of power unlike anything you’ve ever known.
+        
+        *goto unleash_magic
+
+*label unleash_magic
+
+*if (hydro_unlocked = true) and (pyro_unlocked = true)
+    
+    The moment stretches, time slowing to a crawl. Your vision blurs, colors bleeding together until everything is bathed in an otherworldly glow. The weight of your dual magic presses down on you, threatening to consume you entirely—but you don’t care. Not anymore.
+
+    Water and wind surge within you, fluid and untamed forces waiting to be unleashed. You raise your hands, and the air hums with moisture while currents spiral around your fingertips. What form will your combined power take?*set hydro_choice_night_arc true
+    
+    *set pyro_choice_night_arc true
+    *set hydro_choice_night_arc true
+    *fake_choice
+        #Summon a towering tidal wave to obliterate the enemy.
+            With a roar of defiance, you thrust your arms forward. A massive wall of water rises from the ground, towering over the battlefield like a vengeful spirit. It crashes down with unstoppable force, sweeping away goblins by the dozen. Their shrieks are drowned out by the deafening roar of the deluge. When the waters recede, only destruction remains.
+            
+            *set water +25
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Shape a colossal water golem to crush your foes.
+            Focusing your energy, you mold the surrounding water into a hulking figure—a golem of liquid fury. Its translucent body gleams under the moonlight as it lumbers forward, each step shaking the earth. With fists like battering rams, it pulverizes goblins beneath its weight, leaving behind nothing but splintered weapons and shattered bones.
+            
+            *set water +30
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Forge a razor-sharp water blade to carve through enemies.
+            You channel your magic into your hands, shaping water into a shimmering sword of crystalline sharpness. The blade hums with latent energy as you leap into the fray, slicing through goblins with effortless precision. Every swing leaves trails of mist in your wake, their cries fading into silence.
+            
+            *set water +20
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Imbue yourself with water’s fluidity and resilience.
+            Closing your eyes, you let the water flow through your veins, merging with your very essence. Your movements become impossibly swift, dodging attacks with ease. When struck, your body absorbs the impact like rippling waves. You move like a storm, striking back with relentless ferocity until the enemy lines crumble before you.
+            
+            *set water +25
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Unleash forbidden blood magic to control your enemies.
+            A darker impulse takes hold. Reaching deep into the reservoirs of your power, you twist the lifeblood coursing through your enemies’ veins. They freeze mid-attack, their bodies contorting against their will. Some collapse, choking on their own blood; others turn on each other, driven mad by your influence. It’s horrifying—and exhilarating.
+            
+            *comment set chaos_affinity +35
+            *comment set morality -10
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+  
+        #Ignite a blazing inferno to incinerate the horde.
+            You unleash a torrent of fire, engulfing the battlefield in a roaring blaze. Goblins scream as the flames consume them, their charred remains collapsing into ash. The heat is unbearable, yet you feel invigorated, alive in a way you’ve never been before. Nothing can stand against your wrath.
+            
+            *set pyro +25
+            *set pyro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Summon a phoenix-like construct to fight alongside you.
+            From the flames, a fiery bird emerges—a creature of pure combustion. It circles overhead, raining molten feathers upon the enemy. Wherever it strikes, fires spread uncontrollably, turning the battlefield into a living hell. Together, you and the phoenix decimate the goblin ranks.
+            
+            *set pyro +30
+            *set pyro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Create a whip of fire to lash out at your foes.
+            Flames coil around your arm, forming a whip of crackling energy. You snap it forward, sending arcs of fire slicing through the air. Goblins stumble back, their crude armor melting under the intense heat. Each strike leaves trails of embers in its wake, lighting up the night with destruction.
+            
+            *set pyro +20
+            *set pyro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Enhance your physical abilities with fiery augmentation.
+            Fire flows through your limbs, enhancing your strength and speed. You charge into battle like a comet, leaving trails of flame in your wake. Every punch ignites explosions, every kick sends shockwaves rippling outward. The goblins fall like wheat before a scythe.
+            
+            *set pyro +25
+            *set pyro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Invoke pyrokinetic rituals to summon a rain of fire.
+            Chanting words you barely understand, you draw upon forbidden knowledge. The sky darkens as fiery meteors descend, crashing into the battlefield with devastating force. Goblins scatter in panic, but there’s no escape. The ground itself seems to burn, reducing everything to cinders.
+            
+            *comment set chaos_affinity +35
+            *comment set morality -10
+            *set pyro_choice_night_arc true
+            
+            *goto aftermath
+
+
+*if (hydro_unlocked = true) and (aero_unlocked = true)
+    *set hydro_choice_night_arc true
+    *set aero_choice_night_arc true
+    *fake_choice
+        #Summon a towering tidal wave to obliterate the enemy.
+            With a roar of defiance, you thrust your arms forward. A massive wall of water rises from the ground, towering over the battlefield like a vengeful spirit. It crashes down with unstoppable force, sweeping away goblins by the dozen. Their shrieks are drowned out by the deafening roar of the deluge. When the waters recede, only destruction remains.
+            
+            *set water +25
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Shape a colossal water golem to crush your foes.
+            Focusing your energy, you mold the surrounding water into a hulking figure—a golem of liquid fury. Its translucent body gleams under the moonlight as it lumbers forward, each step shaking the earth. With fists like battering rams, it pulverizes goblins beneath its weight, leaving behind nothing but splintered weapons and shattered bones.
+            
+            *set water +30
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Forge a razor-sharp water blade to carve through enemies.
+            You channel your magic into your hands, shaping water into a shimmering sword of crystalline sharpness. The blade hums with latent energy as you leap into the fray, slicing through goblins with effortless precision. Every swing leaves trails of mist in your wake, their cries fading into silence.
+            
+            *set water +20
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Imbue yourself with water’s fluidity and resilience.
+            Closing your eyes, you let the water flow through your veins, merging with your very essence. Your movements become impossibly swift, dodging attacks with ease. When struck, your body absorbs the impact like rippling waves. You move like a storm, striking back with relentless ferocity until the enemy lines crumble before you.
+            
+            *set water +25
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Unleash forbidden blood magic to control your enemies.
+            A darker impulse takes hold. Reaching deep into the reservoirs of your power, you twist the lifeblood coursing through your enemies’ veins. They freeze mid-attack, their bodies contorting against their will. Some collapse, choking on their own blood; others turn on each other, driven mad by your influence. It’s horrifying—and exhilarating.
+            
+            *comment set chaos_affinity +35
+            *comment set morality -10
+            *set hydro_choice_night_arc true
+            
+            *goto aftermath
+
+        #Conjure a hurricane to scatter the enemy forces.
+            Raising your arms, you summon a swirling vortex of wind and debris. Trees are uprooted, boulders torn from the earth, and goblins lifted off their feet like leaves in a storm. The hurricane obliterates everything in its path, leaving behind only ruin.
+            
+            set aero +25
+            *set aero_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Craft a barrage of razor-sharp wind blades to slice through foes.
+            Concentrating your magic, you shape the wind into countless spinning blades. With a flick of your wrist, they shoot forward, cutting through goblins with surgical precision. Blood sprays into the air as their bodies collapse, severed by invisible forces.
+            
+            set aero +30
+            *set aero_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Form a protective barrier of wind to defend and counterattack.
+            A dome of swirling winds surrounds you, deflecting arrows and melee strikes alike. From within, you launch concentrated bursts of air, blasting goblins backward with concussive force. They falter, unable to penetrate your defenses, giving you the upper hand.
+            
+            set aero +20
+            *set aero_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Infuse your body with aerodynamic agility to outmaneuver enemies.
+            Air currents swirl around you, granting you unparalleled speed and grace. You dart between attackers, striking with pinpoint accuracy. To the goblins, you’re a blur of motion, impossible to hit. One by one, they fall to your relentless assault.
+            
+            *set aero +25
+            *set aero_choice_night_arc true
+            
+            *goto aftermath
+        
+        #Channel forbidden storm magic to call down lightning strikes.
+            Thunder rumbles overhead as you tap into the heart of the storm. Jagged bolts of lightning streak down from the heavens, striking goblins with lethal precision. The smell of ozone fills the air as the battlefield is illuminated by flashes of electric fury. Those who survive are left trembling in fear.
+            
+            *comment set chaos_affinity +35
+            *comment set morality -10
+            *set aero_choice_night_arc true
+            
+            *goto aftermath
+
+
+*page_break
+
+*label aftermath
+When the dust settles, the battlefield is unrecognizable. Bodies litter the ground, charred, crushed, or swept away entirely. The surviving goblins falter, their confidence shattered. For the first time, fear flickers in their eyes.
+
+Elara lies crumpled on the ground, battered but alive. You rush to her side, pulling her into your arms. She looks up at you, tears streaming down her face. “I… I thought…” she stammers, unable to finish.
+
+“You’re safe now,” you murmur, your voice trembling.
+
+*page_break
+
+But the victory is far from over. Behind you, the vampire and the golem loom closer, their forms silhouetted against the burning ruins of the village. They haven’t been defeated—they’ve merely been delayed. And now, they prepare for one final, devastating assault.
+
+The vampire rises into the air, its tattered cloak billowing as dark energy crackles around it. Its fangs gleam in the firelight, and its eyes burn with an unholy hunger. It lets out a blood-curdling shriek that sends shivers down your spine. The sound echoes through the battlefield, rallying the remnants of the goblin horde. Dozens of them—no, hundreds—begin to swarm toward you, their weapons glinting menacingly.
+
+The golem, meanwhile, slams its massive fists into the earth, creating shockwaves that send cracks racing across the ground. Stones and debris levitate around it, forming jagged projectiles that hover ominously in the air. With a deafening roar, it hurls them forward, each shard whistling like a deadly missile aimed straight at your heart.
+
+$!{grandparent} appears beside you, $!{pospronoun} expression a mixture of awe and fear.  $!{pospronoun} eyes are wide, $!{pospronoun} mouth slightly agape.  $!{pronoun} shakes $!{pospronoun} head in disbelief. "Kid... whatever you just *did*," $!{pronoun} whispers, $!{pospronoun} voice hoarse, "do it again."
+
+The nuns rally behind you, their weapons glowing faintly with divine energy. The villagers form a protective circle around the wounded, their makeshift weapons held high despite the overwhelming odds.
+
+For a moment, despair threatens to overwhelm you. How can you possibly win against such foes?
+
+*page_break
+
+And then, Sage’s voice echoes in your mind.  
+
+[i]“This is not the end. Trust yourself. Trust your allies. Together, you may yet turn the tide.”[/i]
+
+*fake_choice
+    #Lead the charge against the remaining enemies.
+        You raise your hand, summoning every shred of strength left in you. Lightning crackles, water churns, and winds howl as you prepare for one final assault. The villagers follow your lead, charging alongside you with renewed hope.
+        
+        *goto final_blow
+    #Coordinate a strategic counterattack with the nuns and $!{grandparent}.
+        You quickly outline a plan, directing the nuns to flank the vampire while $!{grandparent} distracts the golem. Meanwhile, you focus on decimating the remaining goblins. It’s risky, but it might just work.
+        
+        *goto final_blow
+    #Channel all your remaining magic into a single devastating attack.
+        Closing your eyes, you draw upon every element you’ve mastered, weaving them together into a spell of unimaginable power. When you release it, the resulting explosion obliterates nearly everything in its radius—including the goblins. Only the vampire and the golem remain.
+        
+        *goto final_blow
+
+*label final_blow
+*page_break
+Time seems to slow as the enemy closes in. The vampire dives toward you, claws extended, ready to tear you apart. The golem raises both arms, summoning boulders that glow with molten heat. The goblins scream war cries, their numbers seemingly endless.
+
+But something inside you snaps.
+
+A surge of raw, untamed magic erupts from your core, flooding your veins with an intensity that makes your skin prickle. Your vision blurs with golden light, and the world around you becomes vivid, almost crystalline. Every detail sharpens—the way the vampire’s shadow stretches unnaturally long, the faint hum of energy radiating from the golem’s stone body, the panicked breaths of the goblins as they hesitate, sensing the shift in power.
+
+You step forward, and the ground beneath your feet cracks under the weight of your presence. The air grows heavy, charged with electricity. The sky darkens, swirling with storm clouds that weren’t there moments ago. Rain begins to pour, mixing with the ash and smoke rising from the ruins.
+
+“This ends NOW!” you shout, your voice amplified by the storm itself.
+
+*if (hydro_choice_night_arc = true) and (pyro_choice_night_arc = true)
+    The night air pulsed with tension, as if the forest itself were holding its breath. Every droplet of moisture—the dew glistening on the blades of grass and the gentle murmur of a nearby stream—seemed charged with an otherworldly energy. At the same time, the heat radiating from your core threatened to boil the very air around you. You could feel it deep within, a silent summons stirring your very essence.
+    
+    $!{grandparent} stood close by, $!{pospronoun} Electromancy sparking faintly at $!{pospronoun} fingertips. Despite $!{pospronoun} formidable power, even $!{pronoun} appeared small compared to the raging force building inside you. “Are you ready?” $!{pronoun} asked softly, $!{pospronoun} voice a blend of hope and concern that resonated in the quiet before the storm.
+    
+    *fake_choice
+        #Nod confidently, ready to embrace the fusion of water and fire.
+            You nod firmly, determination blazing in your eyes. “Let’s finish this.”
+
+            *goto unleash_hydro_pyro
+        #Hesitate, glancing at $!{grandparent} for reassurance.
+            You hesitate, searching $!{pospronoun} face for reassurance. $!{pronoun} places a steady hand on your shoulder. “You’ve got this, kid.”
+
+            *goto unleash_hydro_pyro
+    
+    *label unleash_hydro_pyro
+    Closing your eyes, you let the elements of water and fire merge into a single, devastating force. This wasn’t just about control or precision—it was about tapping into an ancient, primal current that pulsed through the veins of the earth and the fury of the sun. In that moment, hydromancy and pyromancy became one, flowing together like liquid starlight and molten flame.
+    
+    A surge erupted from your core, flooding your body with an intense, golden-orange light. Suddenly, every droplet shimmered like liquid magma, and every ripple in the nearby stream sang a secret, timeless song. The power felt almost divine—as if you were momentarily transformed into a deity commanding the flow of life and destruction.
+    
+    With a single, sweeping gesture, you summoned a colossal wave of superheated steam that surged over the battlefield. The water surged and then froze mid-air into intricate shards of ice that rained down upon your foes, while searing flames licked at their edges, consuming everything they touched. The vampire shrieked as holy frost and infernal fire consumed its dark essence, while stone golems crumbled beneath the relentless pressure, and even the goblins faltered, silenced by the overwhelming majesty of your display.
+    
+    Yet, such divine power exacts its toll. As the golden brilliance dimmed, exhaustion overtook you like a tidal wave. Your body trembled, and your strength ebbed away rapidly. In that final moment before darkness claimed you, you heard $!{grandparent} call your name—$!{pospronoun} voice heavy with both awe and dread.
+    
+    *goto Faint
+
+*if (hydro_choice_night_arc = true) and (aero_choice_night_arc = true)
+    The wind howled around you, carrying with it the scent of rain and the promise of chaos. Every breath you took was charged with raw energy, the air crackling with an unseen power just waiting to be unleashed. At the same time, the moisture in the air condensed into swirling mists, responding to your will like a loyal servant. The storm within you stirred, eager to break free.
+    
+    $!{grandparent} stood nearby, $!{pospronoun} Electromancy humming softly in the charged air. Though $!{pospronoun} stance was firm, there was an unmistakable flicker of worry in $!{pospronoun} gaze. “Trust yourself,” $!{pronoun} murmured, $!{pospronoun} voice barely audible over the rising winds.
+    
+    *fake_choice
+        #Smirk, embracing the thrill of the storm and the pull of the tides.
+            You smirk, letting the winds whip around you and the mist swirl at your command. “Let’s cause some chaos.”  
+
+            *goto unleash_hydro_aero
+        #Close your eyes, feeling the sky’s power and the ocean’s depth before releasing them.
+            You inhale deeply, sensing the air shift and the water respond at your command. $!{grandparent} gives a knowing nod.  
+
+            *goto unleash_hydro_aero
+    
+    *label unleash_hydro_aero
+    Closing your eyes, you surrender to the storm and the tide. This was more than a power—it was freedom, a force that could shape the world with a single gust and drown it with a single wave. The wind responded in kind, curling around you like an unseen guardian, whispering secrets of the skies, while the water flowed like a second heartbeat, echoing the depths of the ocean.
+    
+    A surge erupted from your core, and the heavens roared in answer. Lightning fractured the night, illuminating the battlefield in fleeting bursts of silver brilliance, while torrents of water spiraled upward, merging with the cutting winds. With a mere flick of your wrist, the air pressure shifted, and the world moved at your command.
+    
+    A hurricane of electrified currents and razor-sharp water blades tore through your foes. The vampire struggled against the howling gales and slicing waves before being shredded into the storm’s embrace. The stone golems shattered, their heavy bodies weightless in the tempest’s grip. The goblins, too weak to resist, were sent hurtling into the sky, their screams fading into the distance.
+    
+    But even the sky and sea demand balance. As the winds began to die and the waters receded, so too did your strength. Your limbs felt leaden, and a dizziness overtook you as gravity reclaimed its hold. The last thing you saw before darkness consumed you was $!{grandparent} rushing forward, $!{pospronoun} face a storm of emotions.
+    
+    *goto Faint
+
+*label Faint
+*page_break Awe
+
+The air around us grew thick with unspoken awe, like the world itself was holding its breath—not out of fear, but wonder. $!{grandparent}’s usual stern gaze softened, replaced by something brighter, prouder. $!{pronoun} stood tall, $!{pospronoun} Electromancy crackling faintly at $!{pospronoun} fingertips, illuminating the clearing with a warm, electric glow.
+
+“You’ve done it,” $!{pronoun} said, $!{pospronoun} voice trembling—not with dread, but with reverence. “Two elements… Hydromancy and ${user_2nd_element}? That’s unheard of. Absolutely unheard of.”
+
+$!{pronoun} turned to face me, $!{pospronoun} eyes gleaming with admiration. For a moment, I thought $!{pronoun} might cry—or laugh. Instead, $!{pronoun} let out a slow breath, shaking $!{pospronoun} head in disbelief. “I always knew you had potential, but this…” $!{pospronoun} voice dropped to a whisper, almost as if speaking too loudly might shatter the moment. “This is something else.”
+
+$!{pospronoun} words echoed into the trees, met only by the rustling leaves and distant calls of nocturnal creatures. It felt surreal, almost dreamlike. But beneath the surface, my body began to tremble—not from exhaustion, but from something deeper, more invasive.
+
+*page_break The Aftermath
+
+The battlefield was a surreal tableau of devastation and triumph, bathed in the flickering glow of dying flames and the pale light of the moon. The once-cozy village now lay in ruins, its wooden structures reduced to smoldering skeletons, their charred remains crackling softly as embers continued to consume what little was left. Puddles of water shimmered unnaturally under the moonlight, remnants of your hydromancy, mingling with streaks of blood that painted the ground in grotesque patterns. The air smelled of ash, damp earth, and something metallic—death’s calling card.
+
+Goblin bodies littered the scene, some crushed beneath the weight of your elemental fury, others scorched or sliced apart by razor-sharp winds. A few still twitched feebly, their guttural cries fading into silence as life drained from them. Nearby, the shattered remains of the stone golem lay scattered like discarded toys, its glowing runes extinguished, leaving only cold, lifeless rock. The vampire’s tattered cloak fluttered in the breeze, the creature itself having dissolved into a fine mist after succumbing to your combined assault, though its unholy shriek still seemed to echo faintly in the night.
+
+The villagers moved through the wreckage like ghosts, their faces etched with exhaustion and grief. Some carried the wounded on makeshift stretchers, their steps heavy but determined. Others worked hastily to douse lingering fires with buckets of water, their hands trembling not just from fatigue but also from the adrenaline that had kept them alive through the chaos. Despite their weariness, curious glances were cast in your direction, eyes wide with awe and disbelief. Whispers rippled through the survivors: “Did you see that?” “Is this what the prophecy meant?” “How can someone so young wield such power?”
+
+Amidst the destruction, there was an odd beauty to it all—a haunting ambience that felt almost otherworldly. Steam rose from patches of superheated ground where fire and water had collided, creating swirling mists that danced in the cool night air. Broken weapons and debris floated lazily in the residual currents of aeromancy, suspended as if time itself had paused to admire the carnage. Overhead, storm clouds lingered, reluctant to disperse, casting shifting shadows over the battlefield that made it seem alive even in death.
+
+$!{grandparent} stood nearby, $!{pospronoun} Electromancy still sparking faintly at $!{pospronoun} fingertips, illuminating the grim scene with sporadic bursts of electric blue. $!{pospronoun} gaze swept over the aftermath, pride warring with sorrow in $!{pospronoun} expression. $!{pronoun} turned back to you, $!{pospronoun} voice barely audible over the distant crackle of flames and the mournful cries of the injured. “You’ve saved us,” $!{pronoun} said simply, yet the weight of those words hung heavy in the air. 
+
+But despite the victory, the cost was undeniable. Homes were destroyed, lives lost, and the scars of this night would linger long after the physical wounds healed. As the villagers began to regroup, tending to their fallen and salvaging what they could, you couldn’t help but feel the weight of their stares—the unspoken questions about who you truly were and what you had become. Were you their savior? Or something more dangerous? For now, they were too preoccupied with survival to dwell on it, but the curiosity simmered beneath the surface, waiting for answers you weren’t sure you could give.
+
+*page_break Suddenly..
+
+[i] [Sage] Warning: Irregularities detected in user vitals. Heart rate spiking. Neural activity unstable.[/i]
+
+$!{grandparent}’s pride shifted to concern the moment $!{pronoun} noticed my stance falter. “${user_name}? What’s wrong?”
+
+I couldn’t answer. My limbs felt heavy, my thoughts muddled, as though another presence was forcing its way into my mind. Panic bubbled within me, but even that emotion seemed distant, muted.
+
+[i][Sage] Emergency Protocol Activated. Attempting to stabilize user...[/i]
+
+*page_break The world turns dark..
+
+“Sage?” I managed to whisper, clutching my head as pain surged through my skull. “What’s happening?”
+
+Her response came swiftly, her tone unusually urgent. 
+
+[i]“Something—or someone—is attempting to override your consciousness. This isn’t natural, ${user_name}. Hold on—I’m deploying countermeasures.”[/i]
+
+Lines of code flickered across my vision as Sage worked furiously to combat the intrusion. Blue light pulsed faintly around me, her digital barrier struggling to contain whatever force had invaded my mind. But it wasn’t enough.
+
+[i][Sage] Error: Intrusion protocol ineffective. External influence too strong. Initiating emergency shutdown...[/i]
+
+“No!” I gasped, fighting to stay conscious. “Not… again…” The words trailed off, choked by a wave of dizziness. My head swam, the firelight blurring into streaks of orange and red. *What’s happening to me?* I thought, the thought itself feeling distant and distorted, like a whisper carried on a harsh wind. You swayed, and $!{grandparent}’s worried face swam into focus, $!{pospronoun} features etched with concern.
+
+$!{grandparent} dropped to $!{pospronoun} knees beside me, shaking my shoulders desperately. “${user_name}! Stay with me! Come on, kiddo, fight it! Don't you dare fade on me!" $!{pospronoun} voice was rough with urgency, $!{pospronoun} grip surprisingly strong. "Stay awake! You have to stay awake! Going unconscious now... it could be bad. Real bad." $!{pronoun} spoke quickly, $!{pospronoun} words tumbling over each other, $!{pospronoun} concern palpable. $!{pronoun} knew what was happening. $!{pronoun}'d seen it before. The overexertion, the vulnerability… it was a dangerous combination. $!{pospronoun} eyes darted around, as if searching for something, $!{pospronoun} brow furrowed with worry. $!{pronoun} knew the signs. $!{pronoun} knew what was at stake.  $!{pronoun} could feel the shift in the air, the subtle but unmistakable presence of *something* else, something ancient and dormant, reaching out…
+
+[i][Sage] Final Attempt: Deploying neural firewall... Failure. User consciousness compromised. Preparing for system reboot upon awakening.[/i]
+
+Darkness closed in, swallowing everything—the firelight, $!{grandparent}’s frantic voice, even Sage’s calm assurances. The last thing I heard was her parting words:
+
+[i][“I’m sorry, ${user_name}. I’ll be here when you wake up. Until then… hold on.”] [/i]
+
+And then, nothing.
+*finish

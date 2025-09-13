@@ -1,0 +1,211 @@
+*label explore_forest_alone
+
+The forest calls to me today, its whispers louder than usual.  It's a different kind of call than the one Gramps described – less about the raw power of the elements and more… personal.  Almost like a secret being shared. While Gramps is busy tinkering with his tools (probably trying to figure out how to make my water-fish talk) and Elara is helping the nuns bake bread (I can practically smell the berry tarts from here), I slip away unnoticed. The air grows cooler as I step beneath the canopy, sunlight filtering through the dense foliage in golden beams. Strange flowers glow faintly along the path, and the ground feels soft underfoot, almost alive.  It's as if the forest itself is holding its breath, waiting.
+
+I pause, listening. The wind carries faint voices—or maybe they're just my imagination.  Or maybe it's the forest itself, whispering secrets only I can hear. Either way, I can't resist moving forward. The whispers seem to beckon me deeper into the woods, a subtle pull that tugs at my curiosity. It's not a sound I can clearly define—not words, exactly, but a feeling, a resonance that vibrates within me. The forest itself feels different today, charged with a strange energy. The air is thick with the scent of damp earth and something else, something sweet and almost intoxicating, like honeysuckle and rain. The glowing flowers pulse with a soft light, like tiny beacons guiding my way. Even the ground beneath my feet feels yielding, as if the very earth is breathing.
+
+I take another step, and the whispers grow slightly clearer. They seem to be coming from deeper within the woods, from a place I can't quite see. A sense of anticipation builds within me. What secrets does the forest hold? What is it trying to tell me?  I know I should probably turn back. Gramps would be worried if he knew I was wandering alone, especially after his warning about keeping an eye out near the river. But the pull is too strong to resist. I have to know what's out there. I have to follow the whispers.  Besides, I reason, I'm just going to the riverbank like he asked.  What could possibly go wrong?
+*fake_choice
+
+    #Follow the whispers deeper into the forest.
+
+        You crouch down to examine the flowers more closely. Their petals shimmer with an otherworldly light, pulsing gently as if breathing. As you follow them, the trees grow taller and darker, their branches twisting together like skeletal fingers.
+        
+        Suddenly, you hear a low growl behind you. Turning slowly, you spot a pair of glowing eyes watching from the shadows. Whatever it is, it doesn’t seem friendly.
+        
+        *fake_choice
+
+            #Stand your ground and try to scare it off.
+
+                You puff out your chest (as much as a 7-year-old can) and shout, “Go away!” To your surprise, the creature hesitates, then slinks back into the darkness. Maybe there’s some latent magic protecting you after all.
+                
+                *comment set bravery +5
+                
+                *goto approach_ruin
+
+            #Back away slowly and hope it loses interest.
+
+                You take a cautious step backward, keeping your eyes locked on the glowing eyes. After a tense moment, the creature vanishes into the underbrush. You breathe a sigh of relief—but now you’re even more alert.
+                
+                *comment set caution +5
+                *goto approach_ruin
+
+    #Climb a tree to get a better view.
+
+        You scramble up the nearest sturdy tree, using roots and knots as handholds. From this height, the forest stretches endlessly in every direction. In the distance, you notice a faint purple glow emanating from a clearing. Could that be magic? Or something else entirely?
+        
+        *comment set observation +3
+        *goto approach_ruin
+
+    #Call out to see if anyone responds.
+
+        “Hello?” Your voice echoes softly through the trees. For a moment, there’s only silence. Then, a melodic hum fills the air—not quite words, but close enough to make your skin prickle. It’s as if the forest itself is answering.
+        
+        *comment set curiosity +5
+
+        *goto approach_ruin
+
+*label approach_ruin
+
+*page_break Is that...
+
+Eventually, you stumble upon something strange: a cluster of runes carved into a moss-covered stone. They pulse faintly with the same purple light you noticed earlier. Kneeling beside it, you feel a strange warmth in your chest, as though the runes recognize you.
+
+“What are you?” you whisper, tracing one of the symbols with your finger. A surge of energy courses through you, leaving behind a lingering sense of purpose.
+
+As you stand, you realize the runes lead toward a crumbling structure partially hidden by overgrown vines and fallen leaves. It looks ancient—perhaps centuries old. Curiosity tugs at you, urging you closer.
+
+But getting there won’t be easy. Between you and the structure lies an obstacle. What will you do?
+
+*fake_choice
+    #Cross the rushing stream.
+        The stream gurgles and churns, its water icy cold.  Carefully, you step onto a moss-covered rock, then another.  Halfway across, the rock wobbles!
+        *fake_choice
+            #Leap to the other side!
+                You spring forward, landing safely on the opposite bank.  A rush of adrenaline courses through you.
+                *goto sage_warning
+            #Grab a low-hanging branch!
+                You clutch at a branch, swinging across the remaining distance.  Your heart pounds in your chest.
+                *goto sage_warning
+    #Climb the small, rocky hill.
+        The hill rises steeply, its surface loose and uneven.  You scramble upwards, using roots and rocks for handholds.  Near the top, you encounter a patch of thorny bushes!
+        *fake_choice
+            #Carefully navigate through the thorns.
+                You pick your way carefully, avoiding the sharp thorns. It takes time, but you reach the summit unscathed.
+                *goto sage_warning
+            #Push through the thorns!
+                Ignoring the prickles, you force your way through the bushes.  You reach the top, but not without a few scratches.
+                *goto sage_warning
+    #Crawl through the narrow cave tunnel.
+        The tunnel is dark and damp, the air thick with the smell of earth.  You crawl on your hands and knees, the silence broken only by the drip of water.  Suddenly, you hear a rustling sound!
+        *fake_choice
+            #Freeze and listen!
+                You hold your breath, straining to hear.  The rustling fades away.  Probably just a small animal.
+                *goto sage_warning
+            #Shout into the darkness!
+                "Hello?" you call out.  Your voice echoes eerily.  There's no response.
+                *goto sage_warning
+
+*label sage_warning
+Just as you’re about to step inside the ruin, a familiar voice stops you in your tracks.
+
+[i][Sage] Wait, child.[/i]
+
+[i][Sage] This place… it holds great danger. Do not enter.[/i]
+
+Her tone brooks no argument. Though disappointed, you heed her warning. Reluctantly, you turn away from the ruin and begin heading back toward the village.  The ancient stones seem to sigh in relief as you leave, probably because they were tired of you poking around.  (Or maybe that was just the wind.)  Disappointment pricks at you, a tiny voice whispering, "But what if there's treasure?"  You shove the thought away.  Sage's warning was clear, and treasure or no treasure, you weren't about to argue with a disembodied voice in your head.  Besides, if there was treasure, it was probably guarded by something nasty.  And you were not in the mood to wrestle a grumpy, ancient guardian today. (Maybe tomorrow.)
+
+As you walk back, you try to shake off your disappointment by imagining all the amazing things you'll tell Gramps about your "almost" discovery.  You'll embellish the story, of course. Maybe the ruins were actually a dragon's lair.  Or a portal to another dimension.  Or… a giant mushroom farm!  Okay, maybe not that last one.  But something cool.  Definitely cool.  You just needed to work out the details.
+
+*fake_choice
+    #Ask Sage what kind of danger she senses.
+        “What kind of danger?” you think, glancing back at the ruin. "Was it, like, a *really* big spider? Or maybe a troll? Please tell me it wasn't a goblin. I *hate* goblins."
+
+        [i][Sage] Something ancient. Something best left undisturbed.[/i]
+
+        Her cryptic answer does little to satisfy your curiosity, but you know better than to press further. "Ancient *and* undisturbed," you mutter to yourself. "So, probably *not* a giant mushroom farm then." A shiver runs down your spine despite the warm air. There's a weight in her voice, a sense of genuine concern that makes you hesitate to disobey. You glance back at the ruins one last time, trying to discern what could be so dangerous, but the stone structure remains silent, its secrets hidden behind crumbling walls and overgrown vines. "Fine," you concede mentally. "But if I find a map later, I'm *totally* coming back."
+
+        *goto discover_ring
+
+    #Nod silently and start walking home.
+        You nod, accepting her wisdom without question. Whatever lies within the ruin, it’s clearly not meant for you—at least, not *right now*. You trust Sage's judgment. She's never steered you wrong before, even if she *is* a bit of a killjoy sometimes. As you walk, you can't help but wonder what kind of ancient power could be lurking within those stones. Is it something evil? Something powerful? Or just a really, really old dust bunny? The mystery gnaws at you, a seed of curiosity planted in your mind. "Maybe I'll bring Gramps back later," you think. "He's always wanted to wrestle a dust bunny."
+
+        *goto discover_ring
+
+    #Feigning obedience, you plan your return.
+        You nod, outwardly agreeing with Sage's warning.  "Of course, Sage," you think, all innocence and compliance.  "Wouldn't dream of doing anything foolish."  But inwardly, a different plan takes shape. You'll wait until dusk, when the shadows lengthen and Sage's watchful presence seems to fade.  Then, you'll return.  The ruins are calling to you, their mysteries too tempting to ignore.  "Just a quick peek," you promise yourself. "What could possibly go wrong?"  (Famous last words, you think with a wry grin.)
+
+        *goto discover_ring
+
+*label discover_ring
+
+On your way back, you notice something glinting in the dirt near the base of a gnarled, ancient tree. It catches the last rays of the setting sun, flashing like a tiny beacon.  Intrigued, you approach cautiously.  The object is half-buried, nestled amongst the roots.  It looks… significant.
+
+As you get closer, you realize it's a ring. Not just any ring, though. This is no ordinary trinket. It's crafted from a silvery metal that seems to shimmer in the fading light, and its design is intricate, almost otherworldly.  You feel a strange pull towards it, a sense that this ring is more than just a lost bauble.
+
+But something also feels… off.  The air around the ring seems to hum with a faint energy, and you can't shake the feeling that you're being watched.  Is it a trap?  A test? Or just a really shiny piece of junk someone carelessly tossed aside?
+
+You decide to be cautious.
+
+*fake_choice
+    #Carefully poke the ring with a stick.
+        You find a sturdy twig and gingerly poke at the ring.  It doesn't react.  It just sits there, gleaming innocently.  "Well," you think, "that's anticlimactic."  But as you're about to pick it up, a tiny, high-pitched voice whispers in your ear, "Don't touch it!"  You jump back, startled.  It was probably just your imagination.  Probably.
+
+        *goto ring_approach
+
+    #Use a nearby leaf as a makeshift glove.
+        You pluck a large, broad leaf and use it to carefully pick up the ring.  The leaf doesn't disintegrate or anything.  The ring feels strangely light, almost weightless in your leafy "glove."
+
+        *goto ring_approach
+
+    #Just grab it. What's the worst that could happen?
+        You shrug.  What's the worst that could happen?  (Famous last words, you think wryly.) You reach down and snatch the ring.  As your fingers close around it, a jolt of energy surges through you, making your hair stand on end.  "Okay," you think, "maybe that *wasn't* the best idea."
+
+        *goto ring_approach
+
+*label ring_approach
+
+*page_break Approach it
+
+You examine the ring more closely. It’s cold to the touch, but as soon as you slide it onto your finger, it warms instantly, almost as if it were waiting for you. Faint etchings spiral around the band, glowing faintly with the same purple hue as the runes you saw at the ruins.
+
+“This must be important,” you murmur, tucking your hand into your pocket. You make a mental note to ask Gramps about it later—he might know what it means.  Or he might just tell you it's a cursed artifact and you're doomed.  Either way, you're curious.  And maybe, just maybe, a little bit excited.
+
+*comment set has_ring true
+
+As you continue toward the village, you can’t shake the feeling that something is following you. It's a prickling sensation on the back of your neck, like unseen eyes boring into you.  The rustling leaves sound less like the gentle whispers of the forest and more like hushed footsteps.  You glance over your shoulder, but see nothing but swaying grass and the long, skeletal shadows of the trees stretching out in the twilight. Still, the sensation lingers, a persistent unease that makes your steps quicken.
+
+*fake_choice
+    #Ask Sage if she senses anything malicious.
+        “Do you feel something following us?” you ask quietly, your voice barely a whisper.  "It's giving me the creeps.  Is it a goblin?  Please tell me it's not a goblin. Or worse... a giant spider.  Those things are huge."
+
+        [i][Sage] No, I sense no malice nearby. Perhaps it is merely your imagination playing tricks on you.  Though, I must admit, your imagination seems to have a penchant for the dramatically unpleasant.[/i]
+
+        Her calm reassurance, laced with a hint of dry amusement, helps ease your nerves, but you still can’t entirely shake the unease. "Easy for you to say," you mutter under your breath. "You're not the one who might get eaten by a giant spider."
+
+        *goto silhouette
+
+    #Ignore the feeling and keep moving.
+        You decide to ignore the sensation, focusing instead on reaching the village before nightfall.  "If I don't see it, it's not there," you tell yourself, a classic example of flawless logic.  Still, your steps quicken slightly, driven by instinct.  You try to distract yourself by thinking about what you'll have for dinner.  Hopefully, Elara made some of her famous berry tarts.
+
+        *goto silhouette
+
+    #Stop and investigate the source of the feeling.
+        You pause, scanning the area carefully.  You peer into the shadows, trying to discern any movement, any telltale sign of a lurking presence.  Nothing seems out of place.  The trees stand silent, their branches reaching out like gnarled fingers.  "Probably just a squirrel," you decide.  "Or a particularly enthusiastic dust bunny."  You try to convince yourself it’s nothing, but the hairs on the back of your neck remain raised.  Eventually, you convince yourself it *probably* is nothing and resume walking, but your senses remain on high alert.
+
+        *goto silhouette
+*label silhouette
+
+Despite Sage’s reassurances (and your own attempts at rationalization), you can’t help but look back one last time. Through the thick foliage, you catch a glimpse of movement—a dark silhouette darting between the trees. It’s too quick to identify, but its shape is unmistakably reptilian.  It's long and sinuous, with a suggestion of scales glinting in the dim light.
+
+*fake_choice
+    #Stare intently, trying to get a better look.
+        You squint, straining to see more clearly. The silhouette vanishes as suddenly as it appeared, leaving you wondering if you imagined it.  "Maybe it was a giant spider," you think nervously.
+
+        “Did you see that?” you ask Sage, your voice a little shaky.
+
+        [i][Sage] See what, child?  Your overactive imagination conjuring up more woodland horrors?[/i]
+
+        You hesitate, unsure how to explain.  "Just... a shadow," you mumble. "A really big, scaly shadow."
+
+        *goto return_home
+
+    #Quickly avert your gaze, pretending not to notice.
+        You glance away quickly, hoping whatever it is hasn’t spotted you.  "If I don't look at it, it can't see me," you think, channeling the wisdom of a three-year-old.  Your heart pounds as you hurry after Sage (or rather, the direction you *think* Sage is in), eager to put distance between yourself and the forest.  "Maybe it was just a stick," you whisper to yourself. "A really, really big, scaly, moving stick with glowing red eyes."
+
+        *goto return_home
+
+    #Wave cautiously, unsure if it’s friend or foe.
+        You raise your hand hesitantly, half-expecting the figure to respond.  "Hi?" you call out tentatively.  "Are you… friendly?"  The silhouette remains motionless, watching silently from the shadows.  A chill runs down your spine, and you lower your hand, deciding it’s best not to provoke it.  "Maybe it's just shy," you mutter.  "Or maybe it's a dragon.  A shy dragon.  Yeah, that makes sense."
+
+        *goto return_home
+
+*label return_home
+
+*page_break Return Home
+
+By the time you reach the village, the sun is setting, painting the sky in vibrant hues of orange and purple. Long shadows stretch across the familiar dirt paths, turning the comforting village into a place of subtle mystery. The warmth of home—the smell of woodsmoke and baking bread—is welcome, but it can't entirely erase the lingering unease. The image of the silhouette, that fleeting glimpse of something reptilian and unknown, remains etched in your mind. "What was that?" you murmur, clutching the ring in your pocket. The question hangs in the air, unanswered. Was it a guardian of the ruins? Something drawn by the ring? Or something else entirely? Answers remain elusive, but you know the forest holds secrets far greater than you imagined.
+
+*page_break Evening Scene
+
+*return

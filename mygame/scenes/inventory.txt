@@ -1,0 +1,253 @@
+*finish
+
+  * Simple Inventory Manager *
+* by Rui Coelho a.k.a. Nocturno *
+      * v0.2 12/Feb/2022 *
+
+Examples (remove the first *):
+
+Add 1 torch to the backpack:
+**gosub_scene inventory add "backpack" "torch" 1
+
+Add 2 apples to the backpack:
+**gosub_scene inventory add "backpack" "apple" 2
+
+Put 50 gold to the pocket:
+**gosub_scene inventory add "pocket" "gold" 50
+
+Remove 15 gold from the pocket:
+**gosub_scene inventory remove "pocket" "gold" 15
+
+Count the gold in the pocket:
+**gosub_scene inventory count "pocket" "gold" "howmany"
+
+Display the backpack contents:
+**gosub_scene inventory display "backpack"
+
+Important note: for this examples, three variables must be created in startup.txt:
+**create backpack ""
+**create pocket ""
+**create howmany 0 (count example)
+
+
+*comment /********************/
+*comment /* Public functions */
+*comment /********************/
+
+*label add
+*comment Given an inventory list, an item description and a quantity, adds the item quantity to the list
+*comment If the item already exists, sums the quantity given with the quantity in the list
+*params
+*comment Input:
+*comment    param_1: List name
+*comment    param_2: Item description
+*comment    param_3: Quantity to add
+*comment Output:
+*comment    Updated param_1 (inventory list)
+*gosub update param_1 param_2 param_3 1 ""
+*return
+
+*label remove
+*comment Given an inventory list, an item description and a quantity, removes the item quantity to the list
+*comment If the existent item quantity is equal or less than the quantity indicated to subtract,
+*comment the item will be removed from the inventory
+*params
+*comment Input:
+*comment    param_1: List name
+*comment    param_2: Item description
+*comment    param_3: Quantity to remove
+*comment Output:
+*comment    Updated param_1 (inventory list)
+*gosub update param_1 param_2 param_3 (0-1) ""
+*return
+
+*label count
+*comment Given an inventory list, an item description and a numeric variable name, returns the existent item quantity
+*comment Raises an error if the numeric variable name doesn't exist
+*params
+*comment Input:
+*comment    param_1: List name
+*comment    param_2: Item description
+*comment    param_3: Numeric variable name to return existing quantity
+*comment Output:
+*comment    Updated param_3 (item existing quantity)
+*set {param_3} 0
+*gosub update param_1 param_2 0 0 param_3
+*return
+
+*label display
+*comment Displays an inventory list with items separated by "," and respective amounts when more than 1 exists
+*params
+*comment Input:
+*comment    param_1: List name
+*gosub print param_1
+*return
+
+
+*comment /***********************/
+*comment /* Auxiliary functions */
+*comment /***********************/
+
+*label update
+*params
+*temp upd_param_1 param_1
+*temp upd_param_2 param_2
+*temp upd_param_3 param_3
+*temp upd_param_4 param_4
+*temp upd_param_5 param_5
+*comment Input:
+*comment    upd_param_1: List name
+*comment    upd_param_2: Item description
+*comment    upd_param_3: Quantity to add/remove
+*comment    upd_param_4: 1=Add, -1=Subtract or 0=Inquiry
+*comment    upd_param_5: (Optional) Resulting amount
+*temp ret_str ""
+*temp ret_int 0
+*temp i 0
+*comment Output:
+*comment    Updated param_1 (inventory list)
+*set upd_param_3 *upd_param_4
+*temp add_found false
+*temp add_auxlist ""
+*label addwhile
+*gosub get_next upd_param_1 "i" "ret_str" "ret_int"
+*if (ret_str = "")
+    *if (add_found = false)
+        *gosub addaux
+    *set {upd_param_1} add_auxlist
+    *return
+*if (ret_str != upd_param_2)
+    *set add_auxlist &ret_str
+    *set add_auxlist &"#"
+    *set add_auxlist &ret_int
+    *set add_auxlist &"|"
+    *goto addwhile
+*if (ret_str = upd_param_2)
+    *set add_found true
+    *set upd_param_3 +ret_int
+    *if (upd_param_5 != "")
+        *set {upd_param_5} upd_param_3
+    *if (upd_param_3 > 0)
+        *gosub addaux
+    *if (upd_param_4 = 0)
+        *return
+    *goto addwhile
+*return
+*label addaux
+*set add_auxlist &upd_param_2
+*set add_auxlist &"#"
+*set add_auxlist &upd_param_3
+*set add_auxlist &"|"
+*return
+
+*label get
+*comment Retrieves an inventory item and its quantity from a list given its position
+*params
+*temp getlist param_1
+*temp wanted param_2
+*comment Input:
+*comment    getlist: List name
+*comment    wanted: Position
+*temp ret_item param_3
+*temp ret_qty param_4
+*comment Output:
+*comment    ret_item: Item description
+*comment    ret_qty: Item quantity
+*set {ret_item} ""
+*set {ret_qty} 0
+*temp len length({getlist})
+*temp x 0
+*temp pos 1
+*temp c ""
+*temp found false
+*temp isqty false
+*if (wanted = 1)
+    *set found true
+    *set isqty false
+*looplimit 1000000000
+*label getwhile
+*set x +1
+*if (x>len)
+    *return
+*set c ({getlist})#x
+*if ((c != "|") and (found = false))
+    *goto getwhile
+*if ((c != "|") and (found = true))
+    *if (c = "#")
+        *set isqty true
+        *goto getwhile
+    *if (isqty)
+        *set {ret_qty} (({ret_qty} * 10) + c)
+        *goto getwhile
+    *set {ret_item} &c
+    *goto getwhile
+*if (c = "|")
+    *if (found = true)
+        *return
+    *set pos +1
+    *if (pos = wanted)
+        *set found true
+        *goto getwhile
+*goto getwhile
+
+*label get_next
+*comment Retrieves the next inventory item starting at the given character
+*params
+*temp getnlist param_1
+*temp pointer param_2
+*comment Input:
+*comment    getlist: List name
+*comment    wanted: Position
+*temp retn_item param_3
+*temp retn_qty param_4
+*comment Output:
+*comment    ret_item: Item description
+*comment    ret_qty: Item quantity
+*set {retn_item} ""
+*set {retn_qty} 0
+*temp ch ""
+*temp isqt false
+*looplimit 1000000000
+*label getnwhile
+*set {pointer} +1
+*if ({pointer}>length({getnlist}))
+    *return
+*set ch ({getnlist})#{pointer}
+*if (ch != "|") 
+    *if (ch = "#")
+        *set isqt true
+        *goto getnwhile
+    *if (isqt)
+        *set {retn_qty} (({retn_qty} * 10) + ch)
+        *goto getnwhile
+    *set {retn_item} &ch
+    *goto getnwhile
+*if (ch = "|")
+    *return
+*bug
+
+*label print
+*comment Displays an inventory list with items separated by "," and respective amounts if more than 1 exists
+*params
+*temp prn_param_1 param_1
+*comment Input:
+*comment    prn_param_1: List name
+*temp prn_str ""
+*temp prn_int 0
+*temp prn_dis ""
+*temp j 0
+*label prnwhile
+*set j +1
+*gosub get prn_param_1 j "prn_str" "prn_int"
+*if (prn_str = "")
+    $!{prn_dis}
+    *return
+*if (j>1)
+    *set prn_dis prn_dis&", "
+*set prn_dis prn_dis&"$!{prn_str}"
+*if (prn_int > 1)
+    *set prn_dis &" ("
+    *set prn_dis &prn_int
+    *set prn_dis &")"
+*goto prnwhile
+*return

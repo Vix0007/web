@@ -1,0 +1,193 @@
+
+*comment image sage.gif
+
+
+[b]Character Overview[/b]
+
+Name : ${user_name} 
+*line_break
+Age : ${user_age} years old
+*line_break
+Gender : ${user_gender}
+*line_break
+Race : ${user_race}
+*line_break
+Location : ${location}
+*line_break
+
+[b]Personality[/b]
+*stat_chart
+    opposed_pair Impulsive 
+        Cautious
+    opposed_pair Intelligent  
+        Intuitive
+    opposed_pair Flirty  
+        Reserved
+    opposed_pair Serious  
+        Playful
+    opposed_pair Brave 
+        Fearful
+    opposed_pair Curious 
+        Unbothered
+
+
+*if (village_progression_stat = true)
+    [b]Progress[/b]
+
+    *stat_chart
+        percent overall_progress Rebuilding Progress
+    *goto 11
+
+
+*label 11
+
+[b]Relationships[/b]
+
+*if elara_met
+    *stat_chart
+        percent elara_affection Elara
+    *goto next_relationship
+*else
+    (You haven't met her yet.)
+
+*goto next_relationship
+
+*label next_relationship
+*if sage_met
+    *stat_chart
+        percent sage_affection Sage
+    *goto next_relationship_2
+*else
+    (You haven't met her yet.)
+
+*goto next_relationship_2
+
+*label next_relationship_2
+*if celestine_met
+    *stat_chart
+        percent celestine_affection Celestine Vaelmont
+    *goto end_relationships
+*else
+    (You haven't met her yet.)
+    
+*goto end_relationships
+
+*label end_relationships
+
+[b]Void Inventory[/b]
+
+Your inventory contains:
+*gosub_scene inventory display "backpack"
+
+*line_break
+
+*choice
+    # View your magic stats
+        *goto_scene magicStats
+        *goto abc
+
+    # Go to mod menu
+        *goto_scene modmenu
+        *goto abc
+
+    # Recall plot points
+        *goto_scene plotpoints
+        *goto abc
+
+    # Glossary (Author here, uhm, yea you should read this cause uhm, idk, i like the contents!)
+        *goto_scene glossary
+        *goto abc
+    
+    # End
+        *finish
+
+*label abc
+*if qna_sage = true
+    Would you like to revisit the QnA with Sage?
+
+    *choice
+        # Yes
+            *goto qna
+
+        # No (Exit stats screen)
+            *goto end
+
+
+    *label qna
+    [b]QnA[/b]    
+       
+    *fake_choice
+        #Ask about the prophecy.
+            "What do you know about the prophecy?"  
+            Sage responds promptly, her voice analytical.  
+            "The prophecy speaks of one who will rise when the skies weep crimson. You are aware of its significance, are you not? Yet much remains obscured—even to me."  
+            *goto qna
+        #Ask about magic affinity.
+            "Why does my magic feel unstable?"  
+            Her tone turns thoughtful.  
+            "Your elemental affinities are tied to your growth. Balance them wisely; chaos thrives in extremes. Rest assured, mastery will come with time."  
+            *goto qna
+        #Ask about $!{grandparent}.
+            "Does $!{grandparent} know everything about me?"  
+            A faint hum precedes her answer.  
+            "$!{pronoun} carries burdens heavier than you realize. Trust $!{objpronoun}—but do not assume $!{pronoun} holds all the answers."  
+            *goto qna
+        #Ask about Elara.
+            "What's special about Elara?"  
+            Sage smirks audibly.  
+            "Ah, the baker's daughter turned caretaker. She is older than she appears—and perhaps wiser than she lets on. Curious, isn't she?"  
+            *goto qna
+        #Ask about Sage herself.
+            "Who—or what—are you, really?"  
+            Her response is evasive yet intriguing.  
+            "I am Sage, keeper of knowledge and overseer of systems. As for whether I am merely a construct... perhaps the better question is: Does it matter?"  
+            *goto qna
+        #Ask about the Obsidian Court.
+            "What's the Obsidian Court's goal?"  
+            Her tone grows serious.  
+            "They seek to free Kaidaros' soul from Celestia to enact Infinite Eudaimonia. Their methods are ruthless, their motives questionable. Beware them."  
+            *goto qna
+        #Ask about past life memories.
+            "Why do I remember my past life so clearly?"  
+            Sage pauses, as if weighing her words carefully.  
+            "Your memories anchor you. They shape your identity and purpose here. Perhaps they are gifts—or warnings."  
+            *goto qna
+        #Ask about future challenges.
+            "What dangers lie ahead?"  
+            Her reply is cryptic but foreboding.  
+            "Shadows gather beyond the horizon. Trust your instincts, forge alliances wisely, and prepare for trials that test both heart and resolve."  
+            *goto qna
+        #Ask about Sage's appearance.
+            "Do you have a form? What do you look like?"  
+            She chuckles lightly.  
+            "Perception shapes reality. To some, I appear as light; to others, a reflection of their ideals. To you, perhaps, I resemble someone familiar..."  
+            *goto qna
+        #End the conversation.
+            *goto qna_confirm
+    
+    *label qna_confirm
+    Would you like to ask another question?  
+    *fake_choice
+        #Yes.
+            *goto qna
+        #No.
+            *goto end
+    
+    *label end
+    [i][Author] Modifying user level...
+        
+    Success..
+        
+    [warning] Unauthorized access flagged by Overseer Protocol [Sage].
+        
+    [info] Changes reverted automatically. Exiting debug mode...
+        
+    [debug] Returning to main game... [/i]
+    *finish
+
+
+
+
+
+
+

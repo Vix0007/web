@@ -1,0 +1,620 @@
+
+
+
+The setting sun painted the sky in hues of orange and violet, casting long, dancing shadows across the village square. The air, thick with the tantalizing aroma of roasting meats and simmering spices, buzzed with anticipation. It was feast night once again, a celebration of Silverwood’s resilience and prosperity. From the village hall, a warm, inviting glow spilled out, beckoning everyone towards the gathering. The hall, now grand and welcoming, was transformed into a bustling dining hall, its tables laden with culinary wonders.
+
+The cooks, their faces flushed with heat and exertion, moved with practiced efficiency around the massive barbecue pits. Skewers laden with satay sizzled over the coals, releasing a fragrant cloud that mingled with the rich, earthy scent of rendang. Beside them, steaming pots of homemade noodles bubbled merrily, ready to be ladled into bowls alongside mountains of fluffy white rice. The noodles, smooth and firm, were a testament to the village's ingenuity, crafted using a hand-cranked pasta grind machine, a marvel of medieval engineering you’d introduced. And then, there were the exotic dishes. Strange, bioluminescent fruits, their juices shimmering with an otherworldly glow, were arranged on platters. Crystalline cakes, said to be made from the nectar of sky-dwelling insects, were sliced and served with a flourish. Even the most seasoned villagers stared in fascinated bewilderment.
+
+"By the stars, what is that?" $!{grandparent} exclaimed, pointing at a plate of iridescent jelly. "Looks like it'll start singing if you poke it."
+
+Elara chuckled, handing $!{objpronoun} a small, decorated toothpick. "Just try it, $!{grandparent}. It's… surprisingly good." She winked, a playful glint in her eyes. "You might just find yourself humming along."
+
+*page_break
+
+Everyone had found their niche in the preparations. The guards, ever vigilant, patrolled the perimeter of the gathering, their eyes scanning the surrounding forest. They moved with a quiet efficiency, their presence a reassuring sight for the villagers. The nuns, their hands surprisingly deft, were arranging tables and chairs, ensuring everyone had a place to sit. They moved with a gentle grace, their smiles warm and welcoming. The scholars, their noses buried in ancient cookbooks, were attempting to decipher the recipes for the exotic dishes. They huddled together, their voices a low murmur of academic debate. The traders, naturally, were bartering for the best cuts of meat and the rarest spices. Their voices, loud and boisterous, filled the air with the sounds of commerce. Even Celestine, her usual stoicism softened by the festive atmosphere, was helping to serve drinks, her movements precise and graceful. She moved with a quiet elegance, her presence a calming influence amidst the bustling crowd.
+
+The laughter and chatter grew louder as the villagers began to gather, their faces alight with joy. Children darted between the tables, their hands sticky with sweet treats. Music filled the air, a lively melody played on homemade instruments. The smell of freshly baked bread, the clinking of tankards filled with ale, and the sizzling of meat created a symphony of sensory delight. The atmosphere was electric, a celebration of life and community.
+
+*fake_choice
+    # Share a laugh with $!{grandparent}.
+        You find $!{grandparent} near the barbecue, $!{pospronoun} face covered in soot, but $!{pospronoun} eyes twinkling with amusement. "Having fun, old timer?" you ask.
+        
+        *goto gramps_feast
+
+    # Help Elara serve drinks.
+        Elara is struggling to carry a tray laden with tankards. You offer her a hand. "Let me take some of those," you say.
+
+        *goto elara_feast
+
+    # Chat with Celestine.
+        You approach Celestine, who is carefully pouring a sparkling drink into a goblet. "Everything alright, Celestine?" you ask.
+
+        *goto celestine_feast
+
+    # Talk to the Nuns
+        You walk over to a table where Sister Lyra and other nuns are arranging plates. "Everything looks wonderful, sisters," you say.
+
+        *goto nuns_feast
+
+    # Observe the traders.
+        You watch as the traders haggle over a large cut of meat, their voices rising and falling in a rhythmic cadence.
+
+        *goto traders_feast
+
+    # Investigate the scholars.
+        You approach the scholars, their heads bent over a large, ancient cookbook. "What are you working on?" you ask.
+
+        *goto scholars_feast
+
+*label gramps_feast
+"Fun? Lad, I haven't had this much fun since… well, since you built that ridiculous statue of yourself!" $!{pronoun} grinned, then took a large bite of a satay. "This is good stuff, you know. I think you should build a few more of these pits, we can have feasts every night. Imagine, satay every day! We could call it 'Satay-wood'!"
+
+*goto continue_feast
+
+*label elara_feast
+"Thanks," she said, her smile warm. "This is quite a turnout, isn't it? Everyone's so happy." She paused, her gaze drifting towards the edge of the forest. "Though… I can't shake the feeling something's off. Like a cold breeze on a warm night."
+
+*goto continue_feast
+
+*label celestine_feast
+"Perfectly," she replied, her voice calm and composed. "The festivities are… adequate." A flicker of a smile played on her lips. "Though, I must admit, the noodles are quite impressive. Did you truly teach them to make them with that… contraption?"
+
+*goto continue_feast
+
+*label nuns_feast
+"Indeed, everything is proceeding splendidly," Sister Lyra said, her eyes twinkling. "The Lord has blessed us with a bountiful feast, and with your help, this village thrives. We are all grateful."
+
+*goto continue_feast
+
+*label traders_feast
+"Ah, you've come to witness the art of negotiation!" a trader boomed, $!{pospronoun} voice thick with mirth. "This fine cut of meat, my friend, is worth its weight in gold! But for a friend of Silverwood, I might just make an… exception."
+
+*goto continue_feast
+
+*label scholars_feast
+"Ah, our esteemed builder!" a scholar exclaimed, $!{pospronoun} eyes wide with excitement. "We are attempting to decipher this ancient recipe for a… a 'sky-nectar cake'! It seems to require the… the 'singing insects' you mentioned. Quite fascinating!"
+
+*goto continue_feast
+
+*label continue_feast
+
+*page_break
+
+Amidst the revelry, however, some eyes remained watchful. Sister Lyra, her gaze sharp and observant, noticed a flicker of movement in the shadows beyond the village walls. A rustling of leaves, a flash of something metallic—subtle signs that something was amiss. The guards, too, felt a prickle of unease. They’d noticed an unusual stillness in the forest, a silence that felt heavy and ominous. A few of the more… specialized… individuals, those within the intel-corps, felt a faint tremor in the air, a subtle shift in the magical currents that spoke of something approaching. They exchanged worried glances, their thoughts unspoken but clear: something was coming.
+
+The feast, however, continued unabated. The villagers ate, drank, danced, and sang, their joy a vibrant counterpoint to the growing unease. They praised you, their hero, their savior, the one who had brought them back from the brink of despair. They raised their tankards in your honor, their voices ringing out in a chorus of gratitude. The night was filled with laughter, music, and the comforting warmth of community. But beneath the surface, a shadow lurked, a subtle hint of the storm that was about to break. And you, blissfully unaware, enjoyed the moment, the hero of the hour, the architect of their happiness.
+
+*page_break
+
+The satay skewers were passed around, their smoky aroma filling the air. The rendang, rich and flavorful, was devoured with gusto. The homemade noodles, slick with savory broth, were a hit with young and old alike. The exotic dishes, though initially met with skepticism, were soon emptied, their strange flavors proving surprisingly addictive. The crystalline cakes, light and airy, melted in the mouth, leaving a sweet, lingering aftertaste. The bioluminescent fruits, their juices sparking with a gentle glow, were a feast for the eyes as well as the palate.
+
+The music grew louder, the rhythm more infectious. Villagers began to dance, their movements fluid and graceful. They twirled and swayed, their laughter echoing through the night. The guards, despite their unease, couldn’t help but tap their feet to the beat. The nuns, their faces flushed with merriment, joined in the dancing, their movements surprisingly lively. The scholars, their books forgotten, clapped along to the music. The traders, their voices hoarse from bartering, sang along to the melodies. Even Celestine, her composure momentarily forgotten, swayed to the rhythm, a faint smile gracing her lips.
+
+The night wore on, the feast continuing unabated. The villagers, their hearts full of joy, celebrated their resilience and their newfound prosperity. They praised you, their hero, their savior, the one who had brought them back from the brink of despair. They raised their tankards in your honor, their voices ringing out in a chorus of gratitude. The night was filled with laughter, music, and the comforting warmth of community. But beneath the surface, a shadow lurked, a subtle hint of the storm that was about to break. And you, blissfully unaware, enjoyed the moment, the hero of the hour, the architect of their joy, their security, their very future.
+
+*page_break
+
+As the last embers of the feast's bonfire flickered and died, a comfortable weariness settled over Silverwood. The music had faded, replaced by the gentle chirping of nocturnal insects. The villagers, their bellies full and their hearts content, began to disperse, drifting back to their homes under the watchful gaze of the moon.
+
+You lingered for a moment, savoring the quiet aftermath. The village square, once a whirlwind of activity, was now bathed in a soft, silvery glow. Empty platters and scattered utensils lay testament to the evening's revelry. The lingering aroma of roasted meats and spices still hung in the air, a comforting reminder of the shared joy.
+
+$!{grandparent}, $!{pospronoun} face etched with contentment, approached you, a half-eaten satay skewer still clutched in $!{pospronoun} hand. "A fine night, lad," $!{pronoun} murmured, $!{pospronoun} voice thick with sleepiness. "A fine night indeed." $!{pronoun} patted your shoulder, a gesture of quiet pride. "You've done well."
+
+Elara, her smile warm and genuine, joined you. "It was wonderful," she said, her gaze sweeping across the peaceful village. "Thank you." But her smile faltered slightly. "Still… that feeling… it won't leave me."
+
+Celestine, ever composed, offered a curt nod. "The feast was… satisfactory," she conceded. "Though, I believe we should increase the production of those noodle machines. They were quite efficient."
+
+The nuns, their faces serene, began to clear the remaining dishes, their movements silent and efficient. Sister Lyra paused, her eyes meeting yours. "May the Lord bless this peaceful night," she whispered. "And may $!{pronoun} watch over us all."
+
+The guards, their vigilance unwavering, continued their patrols, their silhouettes moving silently against the backdrop of the darkened forest. The intel-corps members, however, remained huddled together, their voices hushed and urgent. They exchanged worried glances, their expressions grim.
+
+*page_break
+
+As you made your way towards your own dwelling, a sense of unease settled over you. Elara's lingering worry, the guards' quiet tension, and the intel-corps members' hushed conversation—they all hinted at something unseen, something lurking in the shadows.
+
+You entered your home, the familiar scent of wood and stone a comforting presence. You lit a candle, casting a warm glow across the room. As you prepared for bed, your thoughts drifted to the feast, the laughter, the music, the joy. But the unease lingered, a subtle undercurrent of apprehension.
+
+You extinguished the candle, plunging the room into darkness. The silence of the night was broken only by the gentle rustling of leaves and the distant hooting of an owl. As you drifted off to sleep, a single thought echoed in your mind: something is coming.
+
+The night deepened, the moon casting long, eerie shadows across the sleeping village. The wind whispered through the trees, carrying with it a faint, almost imperceptible sound—a sound that was not of the forest, but of something else, something… alien.
+
+A pair of glowing eyes flickered in the darkness, watching, waiting. The shadows moved, shifting and coalescing into forms that were both familiar and unsettlingly strange. A low, guttural growl echoed through the trees, a sound that spoke of hunger and malice.
+
+The peace of Silverwood was about to be shattered.
+
+*page_break
+
+The comforting warmth of sleep was shattered by a jarring tremor, as if the very foundations of your dwelling were being ripped apart. Your eyes snapped open, and you bolted upright in bed, the remnants of a peaceful slumber instantly banished. The room was bathed in an unsettling, flickering light, a hellish glow that pulsed from beyond the window.
+
+You scrambled to your feet, your heart pounding against your ribs like a trapped bird. The air crackled with an unnatural energy, a tangible sense of impending doom. As you reached the window, a scene of absolute pandemonium unfolded before you. Fireballs, like molten tears from a vengeful sky, rained down upon Silverwood, each impact sending shockwaves through the village. The once-sturdy walls, painstakingly rebuilt, were crumbling under the relentless bombardment, their stones glowing an angry red before disintegrating into dust.
+
+Roofs ignited like tinder, sending plumes of black smoke spiraling into the night sky. The screams of villagers, a chorus of terror, pierced the air, mingling with the deafening roar of a ferocious wind that whipped the flames into a frenzy. A swirling vortex of raw power, a miniature tornado, tore through the village square, scattering debris and igniting anything in its path.
+
+You stumbled out of your home, your senses overwhelmed by the chaos. The once-familiar streets were now a scene of utter devastation. The air was thick with smoke, the stench of burning wood and flesh stinging your nostrils. The ground trembled beneath your feet, and the sky was a swirling canvas of fire and darkness.
+
+*fake_choice
+    # "Search for survivors amidst the chaos."
+        You scan the burning streets, desperately searching for any sign of life.
+
+        *goto dream_observe
+
+    # "Focus on finding the source of the attack."
+        You strain your eyes, trying to locate the origin of the relentless fireballs.
+
+        *goto dream_observe
+
+*label dream_observe
+
+The chaos was overwhelming. You saw glimpses of villagers, their faces contorted in terror, running for their lives. A section of the wall collapsed, revealing a terrifying vista of burning fields beyond. You thought you saw Sage, a figure that looked like $!{objpronoun}, struggling to help someone who was trapped under rubble, but the smoke made it hard to be sure. The fireballs continued to rain down, their impacts shaking the ground and sending plumes of fire erupting into the night.
+
+Amidst the inferno, a figure emerged from the shadows, $!{pospronoun} presence an unsettling island of calm amidst the raging storm. $!{pronoun} was an old man, $!{pospronoun} frame lean and wiry, $!{pospronoun} movements fluid and precise, like those of a seasoned predator. A tattered robe, the color of ash and soot, clung to $!{pospronoun} form, its edges frayed and blackened. A cloth patch, stained and worn, covered $!{pospronoun} right eye, adding to $!{pospronoun} air of mystery. Despite the fiery chaos around $!{objpronoun}, $!{pospronoun} face remained shadowed, an enigma etched in deep lines and wrinkles.
+
+$!{pronoun} approached you with an unnerving stillness, $!{pospronoun} gaze piercing, as if $!{pronoun} could see into the depths of your soul. In $!{pospronoun} left hand, $!{pronoun} conjured a fireball, but it was unlike the others. It burned with a cold, blue flame, an unnatural hue that seemed to drain the warmth from the surrounding air. The man's lips curled into a thin, cruel smile, a predatory grin that promised pain and destruction.
+
+"Welcome to your nightmare," $!{pronoun} rasped, $!{pospronoun} voice a low, guttural growl that resonated with an ancient power. "We are the Obsidian Covenant. We see, we corrupt, we consume."
+
+*fake_choice
+    # "Focus on the blue flame, searching for a weakness."
+        You fixate on the blue flame, trying to discern its properties and any potential vulnerabilities.
+
+        *goto dream_fireball
+
+    # "Brace for the inevitable attack."
+        You steel yourself for the impact, preparing for the pain that is to come.
+
+        *goto dream_fireball
+
+*label dream_fireball
+
+The blue fireball pulsed in $!{pospronoun} hand, its cold light casting eerie shadows across $!{pospronoun} face. "You believe this is real? A mere reflection of your fears, molded by our will. A plaything for our amusement."
+
+$!{pronoun} raised the blue fireball, its cold light reflecting in $!{pospronoun} single visible eye. "You have built this village, nurtured its fragile hope. Now, watch as we dismantle it, piece by piece, dream by dream."
+
+The fireball grew in intensity, its cold light pulsing with an unnatural energy. "We are the architects of oblivion," $!{pronoun} declared, $!{pospronoun} voice echoing through the burning village. "And your world, your dreams, your very existence, shall be consumed by our darkness."
+
+$!{pronoun} hurled the blue fireball towards you, its trajectory a searing line of icy destruction. The world seemed to slow down, the chaos around you fading into a muted hum. The fireball, a cold, blue star, hurtled towards you, its promise of annihilation palpable.
+
+*fake_choice
+    # Attempt to conjure a defensive barrier.
+        You desperately try to summon a magical shield, but the chaotic energy of the dream makes it difficult.
+
+        *goto dream_impact
+    
+    # Dive to the side, hoping to evade the attack.
+        You throw yourself to the ground, rolling away from the approaching fireball.
+
+        *goto dream_impact
+    
+    # Charge towards the man, hoping to disrupt $!{pospronoun} attack.
+        You rush towards the old man, intending to close the distance before the fireball strikes.
+
+        *goto dream_impact
+
+*label dream_impact
+
+The blue fireball struck you, not with the searing heat of a normal flame, but with an icy chill that spread through your veins, freezing your very soul. The world dissolved into a swirling vortex of darkness, the screams of the villagers fading into a distant echo.
+
+*page_break
+
+You gasped, your eyes snapping open. You were back in your bed, the familiar darkness of your room a welcome sight. But your body was drenched in sweat, your heart still racing. The dream, the nightmare, had felt so real, so vivid, that it was hard to shake the feeling that it had been more than just a dream.
+
+The image of the old man, $!{pospronoun} blue fireball, and $!{pospronoun} chilling smile, was seared into your memory. $!{pospronoun} words, "We are the Obsidian Covenant. We see, we corrupt, we consume," echoed in your mind, a chilling reminder of the unknown forces that might be lurking in the shadows.
+
+You sat up, your breath coming in ragged gasps, trying to calm the frantic beating of your heart. The room was silent, the only sound the gentle rustling of leaves outside your window. But the air felt heavy, charged with an unseen energy. The dream, the attack, the man—it all felt too real, too deliberate.
+
+You rose from your bed, your legs feeling weak and unsteady. You lit a candle, its warm glow casting dancing shadows across the room. You needed to think, to understand what had just happened. Was it a warning? A threat? Or something else entirely?
+
+The question lingered in the silence of your room, a chilling reminder of the Obsidian Covenant, and the chilling phrase "We see, we corrupt, we consume."
+
+*page_break
+
+The icy tendrils of the dream, a chilling echo of the Obsidian Covenant's presence, refused to release their grip. You attempted to drift back into slumber, seeking a refuge from the vivid terror, but sleep remained elusive. The burning village, the old man's cruel smile, and the cold blue flame were etched into your mind, a haunting tableau that played on repeat.
+
+Hours crawled by, each tick of the unseen clock a reminder of the nightmare's lingering intensity. You felt trapped in a liminal space, suspended between the waking world and the terrifying realm of dreams. The Obsidian Covenant's chilling pronouncements echoed through your thoughts, a constant, unsettling whisper.
+
+Without realizing it, the first rays of dawn began to paint the sky, a soft, ethereal glow that gradually chased away the shadows of the night. The gentle chirping of birds, a stark contrast to the screams of the dream, filled the air, a subtle reminder of the world beyond the nightmare.
+
+The first rays of dawn painted the sky in hues of soft rose and gold, washing over Silverwood in a wave of gentle light. The dream's chaotic inferno was replaced by the serene beauty of a new day. But the unease remained, a cold knot in your stomach, a reminder of the threat that lurked beneath the surface.
+
+You rose from your bed, your body heavy, your mind still clouded by the dream's lingering dread. The nightmare had been a stark warning, a chilling glimpse into the abyss that threatened to consume Silverwood. You knew that you couldn't dismiss it, couldn't ignore the Obsidian Covenant's ominous presence.
+
+As you dressed, you felt a sense of urgency, a need to seek the reassurance of the village, to find some grounding in the familiar routines of daily life. You stepped outside, the cool morning air a welcome balm against your fevered brow.
+
+The village, bathed in the golden light of dawn, seemed peaceful, almost idyllic. But you knew that the tranquility was fragile, a thin veneer masking the lurking threat. The dream had been a harbinger, a sign that the Obsidian Covenant was watching, waiting.
+
+You began to walk towards the village square, your footsteps echoing on the cobblestone path. The familiar sights and sounds of Silverwood – the clanging of the blacksmith's hammer, the chatter of villagers preparing for the day – offered a temporary respite from the dream's terror.
+
+*page_break
+
+As you approached the sanctuary, you saw $!{grandparent} hurrying towards you, $!{pospronoun} face etched with a mixture of determination and… well, something that looked suspiciously like mischievous glee.
+
+"Lad!" $!{grandparent} called out, $!{pospronoun} voice surprisingly energetic for the early hour. "We need to talk. We've got a situation that needs… your particular talents."
+
+"Situation?" you asked, a sense of unease creeping in. "What kind of situation?"
+
+"Well," $!{grandparent} began, $!{pospronoun} eyes twinkling with a hint of mischief, "the village chief and the elders came to me a few days back. Seems our scouts have located a goblin camp. Upstream, near the river, deep in the jungle."
+
+$!{pronoun} paused, letting the information sink in. "They've decided that you're the best person to handle it."
+
+"Me?" you asked, raising an eyebrow. "Why not the guards?"
+
+"They're needed here, lad," $!{grandparent} said, patting you on the shoulder. "Besides, you need to get out there, see more of the world. You've been spending too much time here, helping rebuild. You've done a fine job, mind you, but you're stagnating. I won't let your talent go to waste."
+
+$!{pronoun} leaned in, $!{pospronoun} voice dropping to a conspiratorial whisper. "Think of it as… a field test. A chance to stretch your legs, see what you're capable of."
+
+"A field test?" you repeated, a hint of disbelief creeping into your voice. "And this field test involves clearing out a goblin camp?"
+
+"That's right," $!{grandparent} said, $!{pospronoun} smile widening. "Nasty little buggers, goblins. But I've got faith in you, lad. You'll handle them."
+
+*page_break what??
+
+"So, let me get this straight," you said, crossing your arms. "The village elders and the chief decided that I, and not the guards, should go clear out a goblin camp deep in the jungle, and you agreed?"
+
+"Aye," $!{grandparent} said, nodding firmly. "It's a good opportunity for you."
+
+"An opportunity to get eaten by goblins?" you muttered under your breath.
+
+"Don't be like that," $!{grandparent} said, chuckling. "You'll be fine. Just remember what I told you about those blue berries."
+
+"Blue berries?" you asked, confused. "What blue berries?"
+
+"Never mind," $!{grandparent} said, waving $!{pospronoun} hand dismissively. "Just focus on the goblins. And don't come back until you've cleared them out. Otherwise," $!{pronoun} paused, $!{pospronoun} smile turning slightly menacing, "I'll clear you out."
+
+"Wait, what?" you asked, but $!{grandparent} was already turning away.
+
+"You have twelve hours," $!{pronoun} called over $!{pospronoun} shoulder. "If you're not back by then, I'll come looking for you. I've established a… magical link with you, you see. I can track you."
+
+"A magical link?" you asked, but $!{grandparent} was already gone. You sighed. Well, that’s just great. A goblin camp. And a tracking spell. Just what I needed.
+
+*page_break
+
+You stood there for a moment, trying to process $!{grandparent}'s sudden mission. A goblin camp? Deep in the woods? And a magical tracking link? It was all a bit much to take in so early in the morning.
+
+*fake_choice
+    # Seek Sage's guidance on the best course of action.
+        You decide to consult Sage, hoping she can offer some practical advice for this unexpected quest.
+
+        *goto sage_guidance
+
+    # Head directly to the armory to prepare for the journey.
+        You decide to focus on getting equipped for the goblin hunt, heading straight to the armory.
+
+        *goto armory_prep
+
+    # Gather information from the villagers about the goblin camp.
+        You decide to ask around the village, hoping to gather more intel about the goblin camp's location and defenses.
+
+        *goto gather_intel
+
+*label sage_guidance
+
+"Sage," you think, reaching out to her in your mind, "$!{grandparent} just sent me on a mission to clear out a goblin camp. Do you have any advice?"
+
+[i] Sage : A goblin camp, you say? How… quaint. It appears $!{grandparent} has decided to test your mettle. Very well. First, you will need suitable equipment. The armory is well stocked, and the bakery's provisions are surprisingly durable. For water, a good waterskin is essential. You can find these at the provisioner or, if you fancy something a bit more… rustic, the leatherworker.[/i]
+
+*choice
+    *disable_reuse # Ask Sage for directions to the armory.
+        You ask Sage to guide you to the armory.
+        *goto armory_prep
+
+    *disable_reuse # Ask Sage for directions to the bakery.
+        You ask Sage to guide you to the bakery.
+        *goto bakery_prep
+
+    *disable_reuse # Ask Sage for directions to the provisioner.
+        You ask Sage to guide you to the provisioner.
+        *goto provisioner_prep
+
+*label armory_prep
+With Sage's guidance, you head towards the armory, a sturdy stone building located near the village walls. Inside, you find a variety of weapons and armor, ready for use.
+
+*choice
+    # Select a sword and shield.
+        You choose a reliable sword and a sturdy shield for close-quarters combat.
+        *set sword_shield true
+        *goto weapon_choice
+
+    # Select a bow and arrows.
+        You choose a bow and a quiver of arrows for ranged attacks.
+        *set bow_arrow true
+        *goto weapon_choice
+
+    # Select a spear and a small buckler.
+        You choose a spear for reach and a small buckler for quick defense.
+        *set spear_buckler true
+        *goto weapon_choice
+
+*label weapon_choice
+You choose your weapons. Now you need to prepare for food and water.
+
+*choice
+    # Head to the bakery for food.
+        You make your way to the bakery to stock up on provisions.
+        *goto bakery_prep
+
+    # Head to the provisioner for waterskins.
+        You make your way to the provisioner to purchase waterskins.
+        *goto provisioner_prep
+
+*label bakery_prep
+With Sage's guidance you head towards the bakery, the aroma of freshly baked bread filling the air. Inside, you find rows of loaves and pastries.
+
+*choice
+    # Purchase several loaves of sturdy bread.
+        You purchase several loaves of bread, knowing they will keep you full for a long time.
+        *goto food_choice
+
+    # Purchase some dried fruit and jerky.
+        You purchase some dried fruit and jerky, knowing they are light and easy to carry.
+        *goto food_choice
+
+*label food_choice
+You've got your food. Now you need your water.
+
+*choice
+    # Head to the provisioner for waterskins.
+        You make your way to the provisioner to purchase waterskins.
+        *goto provisioner_prep
+
+*label provisioner_prep
+With Sage's guidance you enter the provisioner, a shop filled with various goods needed for travel. You find a selection of waterskins hanging on a rack.
+
+*choice
+    # Purchase a large, sturdy waterskin.
+        You purchase a large, sturdy waterskin, ensuring you have enough water for the journey.
+
+        *goto water_choice
+
+    # Purchase two smaller waterskins.
+        You purchase two smaller waterskins, distributing the weight evenly.
+
+        *goto water_choice
+
+*label water_choice
+You have everything you need. You are now ready to go.
+
+*goto journey_start
+
+*label gather_intel
+
+You decide to ask around the village, hoping to gather more information about the goblin camp. You find a few villagers who have heard rumors of the goblins.
+
+"They're said to be quite numerous," one villager tells you. "And they've been raiding nearby farms."
+
+"They're hiding in an old cave near the river," another villager adds. "Be careful, it's said to be quite deep."
+
+Now you need to gather your gear.
+
+*choice
+    *disable_reuse # Head to the armory for weapons and armor.
+        You decide to head to the armory to equip yourself for the journey.
+
+        *goto armory_prep
+
+    *disable_reuse # Head to the bakery for food.
+        You make your way to the bakery to stock up on provisions.
+
+        *goto bakery_prep
+
+    *disable_reuse # Head to the provisioner for waterskins.
+        You make your way to the provisioner to purchase waterskins.
+
+        *goto provisioner_prep
+
+*label journey_start
+
+You step toward the edge of the village, ready to head into the woods, when you hear hurried footsteps behind you. Turning around, you find Celestine standing there, arms crossed and cheeks faintly pink.
+
+"What?" she snaps before you can even ask. "I just... happened to be going this way too. It's not like I care about what you're doing or anything!"
+
+You raise an eyebrow, smirking. "Oh, is that so? Then I guess it's pure coincidence that we're heading in the exact same direction?"
+
+"Hmph!" She looks away, clearly flustered. "Don't get ahead of yourself. If anything, you're following me . Besides," she mutters under her breath, "someone has to make sure you don't trip over your own feet out here."
+
+"Ah, so now you're my babysitter?" you tease, enjoying how easily she gets riled up. "How noble of you. Should I bow or something?"
+
+Her face reddens further, and she scowls at you. "W-What?! No! I didn't say that! Don't put words in my mouth!"
+
+But despite her protests, you notice her fidgeting slightly, her tough exterior starting to crack. You soften your tone, grinning playfully. "Relax, Celestine. I'm just messing with you. Honestly, though—it's kind of nice having you around."
+
+For a moment, she freezes, caught off guard by your sincerity. Then, reluctantly, she lets out a small huff and looks away again—but this time, there's no mistaking the tiny smile tugging at the corner of her lips.
+
+"...Whatever," she mumbles, her voice quieter now. "Just... try not to slow me down, alright?"
+
+"Wouldn't dream of it," you reply, chuckling softly.
+
+As the two of you walk side by side into the shadowy forest, you can't help but feel glad for her company—even if she'd never admit it herself.
+
+(Celestine affection +5)
+
+*set celestine_affection +5
+
+*page_break Okay then..
+
+*return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

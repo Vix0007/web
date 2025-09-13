@@ -1,0 +1,645 @@
+*temp checked_bakery false
+*temp checked_well false
+*temp checked_wall false
+*temp checked_sanctuary false
+*temp gramps_talk_feast false
+*temp dialogue_choice ""
+*temp approach_style ""
+*temp celestine_sleep ""
+*temp nuns_question ""
+*temp elara_approach ""
+
+As you bent down to pick up a piece of broken timber, you couldn't help but feel a pang of determination. Amidst the ashes and echoes of despair, you took your first step—not just toward rebuilding, but toward uncovering the truth buried beneath the rubble.  
+*label rebuilding  
+
+*fake_choice  
+  *disable_reuse #Examine the fallen bakery first.  
+    The scent of burnt bread and ash still lingered in the air, heavy and suffocating, as though the fire had only recently been extinguished. The once-proud stone oven now stood cracked and cold, its mouth yawning open like a broken maw. A single loaf of bread lay forgotten on the ground nearby, dusted with ash, its crust charred black but somehow untouched by scavengers or time.
+
+    Something about the wreckage felt… off. It wasn’t just the destruction—it was the way the debris seemed almost deliberate, as if someone (or something) had torn through here with purpose. Shattered shelves leaned precariously against scorched walls, their contents spilled across the floor: bags of flour reduced to gray powder, jars of honey smashed into sticky pools that gleamed faintly under the pale morning light.
+
+    You step closer, your boots crunching softly over shards of pottery and splintered wood. The silence presses down on you, broken only by the distant creak of loose shutters swaying in the breeze. As you move deeper into the ruins, you notice faint marks etched into the stones near the base of the oven—symbols that look vaguely familiar yet alien at the same time.
+
+    What do you want to do?
+
+    *fake_choice
+        #Inspect the strange symbols carved into the stones.
+            You kneel down for a closer look, brushing away layers of soot and ash to reveal intricate patterns spiraling around each other. They seem ancient, pulsing faintly with an energy you can't quite explain. Could these be magical runes? Or perhaps remnants of some ritual gone wrong?
+            
+            Sage's voice echoes softly in your mind:  
+            [i]"These markings are tied to old magic—a language long forgotten. Be cautious; such things often carry unintended consequences."[/i]
+            
+            Do you wish to touch them?
+            
+            *fake_choice
+                #Touch the symbols cautiously.
+                    Your fingers graze the surface of the stone, sending a jolt of warmth coursing through your arm. For a brief moment, the world blurs, and you see flashes of another place—a towering hall filled with flames, figures chanting in unison, and a shadowy figure standing at the center, arms raised high.
+                    
+                    Then, just as suddenly, the vision fades, leaving you breathless and disoriented. Whatever those symbols were meant to do, they clearly hold power far beyond your understanding.
+                    
+                    *comment set discovered_bakery_symbols true
+                    *goto bakery_continued
+                
+                #Decide against touching them.
+                    Better safe than sorry. You withdraw your hand quickly, shaking off the lingering tingling sensation. These symbols might hold answers—or they could unleash something dangerous. Either way, you're not ready to find out yet.
+                    
+                    *goto bakery_continued
+        
+                #Pick up the abandoned loaf of bread.
+                    You reach down and pick up the loaf.  It's surprisingly… intact.  Not charred, not covered in ash, not even slightly warm.  It looks like it could have been baked this morning, if this morning hadn't involved a goblin invasion and the fiery collapse of the bakery. It's almost unsettling how untouched it is, like a beacon of normalcy in the surrounding chaos. It even smells faintly of yeast, which, considering the current circumstances, is comforting.
+                
+                    [i] Sage : That's… remarkable.  It's as if it was untouched by the disaster.  Perhaps a small blessing amidst the devastation.[/i]
+                
+                    Would you like to keep it or leave it behind?
+                
+                    *fake_choice
+                        #Keep the loaf as a memento.
+                            Something compels you to tuck the loaf into your satchel, despite its weight and uselessness. Perhaps it will serve as a reminder of resilience, a symbol of hope amidst despair. Or maybe it’s just a small piece of the past you can't bear to leave behind.
+                
+                            *comment set kept_loaf true
+                            *goto bakery_continued
+                
+                        #Leave it where it lies.
+                            With a sigh, you place the loaf back on the ground.  It feels wrong to take it, somehow. It belongs here, amidst the ruins, a silent testament to what was.  Still, as you walk away, you can't shake the feeling that you've missed an opportunity somehow.  Maybe it was a message. Maybe it was a sign.  Or maybe it was just a remarkably well-preserved loaf of bread.
+                
+                            [i] Sage: A thoughtful choice, ${user_name}. Sometimes, leaving things undisturbed is a form of respect.  Though, I admit, its condition is… curious.[/i]
+                
+                            *goto bakery_continued
+        
+        #Search for anything useful among the debris.
+            You begin rummaging through the wreckage, tossing aside chunks of rubble and sifting through piles of ash. Most of what you find is useless—shattered crockery, melted metal tools—but then your hand brushes against something cool and smooth buried beneath the debris.
+        
+            Pulling it free, you discover a small glass vial half-filled with a shimmering golden liquid. The substance inside glows faintly, casting dancing reflections onto your skin. What could this be? Some kind of potion? Or perhaps a remnant of whatever caused the destruction here?
+        
+            What would you like to do?
+        
+            *fake_choice
+                #Ask Sage about the vial, then decide.
+                    [i] Sage : A curious find, ${user_name}. The luminescence suggests a magical or alchemical origin. The color… perhaps related to restorative or invigorating properties? Or, given the circumstances, something far more sinister. Caution is advised.[/i]
+        
+                    *fake_choice
+                        #Take the vial with you.
+                            Carefully wrapping the vial in a scrap of cloth, you slip it into your pocket. Its glow feels comforting, like a tiny beacon of light in this darkened world. Maybe it will come in handy later—or maybe it will bring trouble. Only time will tell.
+        
+                            *comment set found_mysterious_vial true
+                            *goto bakery_continued
+        
+                        #Leave it behind.
+                            After a moment's hesitation, you decide it's safer to leave the vial where you found it. Who knows what kind of danger it might pose? Besides, you already have enough to worry about without adding unknown substances to the mix.
+        
+                            [i] Sage: A prudent decision, ${user_name}. Unidentified magical artifacts are best left undisturbed, especially in such… volatile times. Though, I confess, my curiosity is piqued.[/i]
+        
+                            *goto bakery_continued
+        
+                #Take the vial.
+                    You carefully wrap the vial in a scrap of cloth and slip it into your pocket.  It's glowing faintly, and you feel a strange pull towards it.  You'll figure out what it is later.
+        
+                    *comment set found_mysterious_vial true
+                    *goto bakery_continued
+        
+                #Leave the vial behind.
+                    You decide it's best to leave the vial where it is.  You don't want to risk carrying around some unknown magical substance.
+        
+                    *goto bakery_continued
+
+    *label bakery_continued
+
+    *page_break Thank you, next..
+    As you finish exploring the bakery, you glance back one last time. The crumbling structure seems to sag further under the weight of its own ruin, whispering secrets of a life extinguished too soon. Whatever happened here, it left scars—not just on the building, but on the very fabric of the village itself.
+
+    With a final pang of determination, you turn away, ready to face whatever comes next.
+
+    *set checked_bakery true 
+
+  *disable_reuse #Approach the broken well.  
+    A figure by the well, small and indistinct at this distance, seemed to be observing the ravaged village with an unnerving calm. The broken cobblestones and scattered debris glistened under a pale, uncertain light, as if the ruins themselves whispered secrets of a forgotten past.
+
+    *page_break
+    The ruined square stretched before you, a silent testament to the battle. But it wasn't the destruction that held your attention. It was the figure by the well.  Hesitation warred with an unseen pull, urging you closer.  Each step felt heavy, the crunch of rubble beneath your boots echoing in the stillness.  As you approached, the figure sharpened—a young woman, her sapphire robe stained with dust, yet somehow still radiating an air of nobility.  Her gaze was fixed on the horizon, lost in some distant thought.
+    
+    *page_break
+    The woman stood close now, a quiet strength in her posture. But there was a weariness too, a subtle slump to her shoulders as if carrying an invisible burden.  She turned, her icy blue eyes meeting yours.  Curiosity flickered in their depths, but beneath it lay a current of sadness, a hint of something lost or broken.
+
+    Her gaze held yours, a silent question hanging in the air. The wind whispered through the ruins, carrying the scent of ash and the faint echo of distant cries.  You felt a strange pull towards this young woman, a sense that her presence here was more than coincidence.
+
+    *fake_choice
+        # Greet her politely.
+            You clear your throat, the sound surprisingly loud in the quiet square. "Good morning," you say, trying to keep your voice steady. "I noticed you here—are you searching for someone?"
+            *set dialogue_choice "polite"
+            *goto conversation_start
+
+        # Ask directly, "Who are you?"
+            The question formed in your mind, blunt and unavoidable.  "Who are you," you ask, your voice a little rough, "and why are you here?"
+            *set dialogue_choice "direct"
+            *goto conversation_start
+
+        # Introduce yourself.
+            Taking a deep breath, you step a little closer. "I'm sorry if I'm intruding," you say. "I’m ${user_name}. Are you looking for someone in particular?"
+            *set dialogue_choice "intro"
+            *goto conversation_start
+
+        # (Flirt) "Are you a missing piece of my heart? Because I've been searching for you everywhere."
+            You approach with a playful grin. "Are you a missing piece of my heart? Because I've been searching for you everywhere."  You immediately regret saying it out loud.  It sounded much smoother in your head.
+            *set dialogue_choice "flirt"
+            *goto conversation_start
+
+    *label conversation_start
+
+    She blinks, a flicker of surprise crossing her features. Then, a small, sad smile touches her lips.
+
+    *if (dialogue_choice = "polite")
+        "Good morning, I am Celestine Vaelmont" she replies, her voice soft but clear.  "Yes, I am. I'm looking for someone… important."
+        *goto 1
+
+    *elseif (dialogue_choice = "direct")
+        "I am Celestine Vaelmont," she says, her gaze steady. "And I am here because I must be."
+        *goto 1
+
+    *elseif (dialogue_choice = "intro")
+        "It's no intrusion at all, ${user_name}," she says.  "I'm Celestine Vaelmont. And yes, I'm searching for someone."
+        *goto 1
+
+    *elseif (dialogue_choice = "flirt")
+        A flicker of amusement crosses her face, quickly replaced by a wistful expression. "That's… charming," she says, a hint of irony in her voice. "But I'm afraid I'm looking for someone a little more… tangible."
+    
+    *label 1
+    *set celestine_met true
+    "I've traveled far to find $!{objpronoun}.  This locket…" She holds up a small, tarnished silver locket. Inside, nestled beneath a cracked glass cover, is a portrait – a conjured image of a man's face.  The image is distorted, almost dreamlike, the features slightly blurred and indistinct.  "This is $!{objpronoun}.  Have you seen $!{objpronoun}?"
+
+    Before you can answer, a shout echoes across the square. "${user_name}! We need you!" It's $!{grandparent}, $!{pospronoun} voice urgent. $!{pronoun}'s waving you over from near the collapsed apothecary.
+
+    *page_break abrubtly interupted..
+
+    You glance back at Celestine, a flicker of apology in your eyes. "I have to go," you say, "but I'll be back. I'll meet you here at the well when this is over." You gesture to the locket. "That face… it looks familiar. We should talk more about this."
+
+    Celestine nods, her expression thoughtful. "I'll be here," she replies, clutching the locket tightly. "I have a feeling… this is important." She watches as you turn and hurry towards $!{grandparent}, a sense of anticipation, mixed with a touch of unease, settling over you. The image in the locket, though distorted, lingers in your mind. You do recognize that face… it's just a shame you can't quite place it.  It's like it's on the tip of your tongue… or maybe it's just a really blurry picture.
+    
+    *page_break time flies
+
+    The sun begins its descent, casting long shadows across the ruins. What will you do?
+
+    *set checked_well true  
+
+  *disable_reuse #Help the woman rebuilding a wall.  
+    You notice a woman struggling to rebuild a section of collapsed wall. Her hands are raw and bleeding, yet she works tirelessly, lifting stones twice her size. A flicker of determination, mixed with exhaustion, flickers in her eyes.
+
+    *page_break
+
+    You approach cautiously. "That looks like hard work," you say. "Would you like some help?"
+
+    The woman glances up, her expression wary at first, then softening into a grateful smile. "I would be much obliged," she says, her voice hoarse. "This wall… it's all that's left of my home."
+
+    Together, you begin to lift and place the heavy stones, working in comfortable silence for a while. The rhythmic thud of stone on stone fills the air, a small act of defiance against the surrounding destruction.  You notice the other villagers glancing your way, some offering nods of respect, others whispering – you catch snippets of phrases like "the hero" and "blessed by the spirits."  It seems word of your role in the battle has spread.
+
+    *page_break
+
+    As you work, you learn her name is Elina. She tells you about her life before the attack, her family, her hopes for the future. Her resilience and quiet strength inspire you. You realize that even amidst the devastation, these people are determined to rebuild, not just their homes, but their lives.
+
+    "Thank you," she says, wiping sweat from her brow. "I don't know what I would have done without your help."
+
+    "It's the least I could do," you reply.  An idea sparks in your mind.  "Actually," you continue, "I might have a few ideas that could make rebuilding a bit easier.  Back where I… come from, we have ways of reinforcing structures, making them more resistant to damage."
+
+    Elina looks at you with interest. "Really? What kind of ways?"
+
+    "Well," you explain, "one thing we could do is mix certain materials into the mortar to make it stronger.  We also use techniques to distribute weight more evenly, which prevents walls from collapsing so easily."  You demonstrate a simple way to interlock the stones, drawing on your understanding of modern construction principles.  "And," you add, thinking of your hydromancy, "I could also use my… abilities… to help with the heavier lifting and even create more mortar if we run short on water."
+
+    Elina's eyes widen. "That would be… a miracle," she breathes.  "The spirits truly are watching over us."
+
+    Other villagers gather around, listening intently.  You realize that your knowledge, though commonplace in your previous life, could be invaluable to these people.  Perhaps, beyond fighting monsters, you could help them rebuild, not just their homes, but their lives, making them stronger and more resilient than before.
+
+    *set checked_wall true  
+
+  *disable_reuse #Check the sanctuary ruins.  
+    You approach the sanctuary, or what's left of it. The once-grand structure is now a skeletal ruin, its stone walls scarred and blackened, the roof mostly collapsed. Shattered stained glass lies scattered across the floor, reflecting twisted fragments of light – shards of vibrant color amidst the gray rubble.  The air here is heavy, thick with the scent of smoke and a lingering sense of loss.  A place of faith, now a relic, a monument to both devotion and destruction.
+
+    *page_break
+
+    As you step inside, the crunch of broken glass beneath your feet echoes through the ruined sanctuary.  Dust motes dance in the shafts of light that pierce the shattered windows, illuminating the devastation.  You see remnants of the altar, now overturned and broken, and fragments of what were once beautiful tapestries, now torn and faded.  A chilling silence hangs in the air, broken only by the occasional gust of wind whistling through the broken windows.
+
+    *page_break
+
+    You wander through the ruins, a sense of melancholy washing over you.  This place, once a sanctuary for the villagers, a symbol of hope and community, is now a casualty of the attack.  You notice a small, untouched section of stained glass depicting a celestial figure.  It's remarkably intact, a splash of vibrant blue in the surrounding ruin.  You reach out and gently touch the smooth surface, a flicker of warmth spreading through your fingertips.  As you do, a faint image flashes in your mind – a memory, not your own, of villagers singing hymns, their voices filled with faith and joy.  The image fades quickly, leaving you with a lingering sense of peace and a renewed determination to help rebuild.
+    
+    *page_break
+    *set checked_sanctuary true  
+
+  *if (checked_well = true)
+        *disable_reuse # Actually, I think I wanna lay down for a while. (Skips all these choices)
+            Weariness overwhelms you. You find a sheltered alcove and rest.
+
+            But then.. ${user_name}. A voice, sharp and insistent, pierces the darkness of your slumber.  You jolt awake, disoriented. It's Sage.
+
+            [i] Sage : You still have something to do young man! [/i]
+
+            *page_break Aww mannn
+
+            *goto next_scene
+
+
+*comment Check if all choices have been taken, then continue the story  
+*if (((checked_bakery) and (checked_well)) and ((checked_wall) and (checked_sanctuary)))
+  *goto next_scene  
+*else  
+  *goto rebuilding
+
+*label next_scene
+
+The sun begins its descent, casting long shadows across the partially rebuilt village. The air is filled with the mingled scents of woodsmoke, freshly turned earth, and the tantalizing aroma of roasting meat. A large communal fire crackles merrily in the center of the village square, around which makeshift tables and benches have been arranged. It's not quite the grand village hall of old, but it's a start—a symbol of the community's resilience and a place to gather, share stories, and rebuild their lives. The new hall itself is rising steadily, its frame half-finished against the evening sky, a promise of better times to come.
+
+You finish helping Elina secure a particularly stubborn stone, then wipe your hands on your trousers. The image of Celestine and the locket flickers in your mind. You promised to meet her at the well. A thought strikes you – perhaps you could invite her to join the evening meal. It would be a chance to talk more about the locket and… well, it *is* almost Valentine's Day.
+
+You glance towards the well, a mix of anticipation and a touch of nervousness fluttering in your stomach. The setting sun paints the sky in vibrant hues of orange and purple, a beautiful backdrop for… well, for whatever might happen next.
+
+*page_break
+
+You take a deep breath and start walking towards the well, the sounds of laughter and conversation from the communal fire fading slightly with each step. As you approach, you see Celestine standing by the well, her silhouette outlined against the fiery sky.  She's looking out towards the horizon, a pensive expression on her face.
+
+*fake_choice
+    # Approach confidently and greet her warmly.
+        You stride towards her with a confident smile. "Celestine," you say, your voice warm and friendly. "I hope I didn't keep you waiting too long."
+        *set approach_style "confident"
+        *goto well_interaction
+
+    # Approach cautiously and greet her politely.
+        You approach more slowly, unsure of what to say. "Celestine," you say, a touch of hesitation in your voice. "I'm glad you waited."
+        *set approach_style "cautious"
+        *goto well_interaction
+
+    # Approach and invite her to dinner immediately.
+        You walk straight up to her, eager to share your idea. "Celestine," you say, "I was just thinking, there's a communal meal happening back at the village square.  Would you like to join me?"
+        *set approach_style "direct"
+        *goto well_interaction
+
+*label well_interaction
+
+She turns as you approach, a faint smile gracing her lips.
+
+*if (approach_style = "confident")
+    "Not at all," she replies, her eyes sparkling. "I was enjoying the sunset."
+    *goto 2
+
+*elseif (approach_style = "cautious")
+    "It's quite alright," she says softly.  "I haven't been waiting long."
+    *goto 2
+
+*elseif (approach_style = "direct")
+    "That sounds lovely," she replies. "Thank you for the invitation."
+    *goto 2
+
+*label 2
+"It's beautiful, isn't it?" she says, glancing back at the sky. "It reminds me of… a feeling. A sense of peace I haven't felt in a long time."
+
+You shrug lightly. "Yeah, it's pretty nice." The sun has fully set now, and the village has transformed. The sounds of hammering and sawing have ceased, replaced by the crackling of the large communal fire and the cheerful chatter of villagers. The air is thick with the mouthwatering aroma of roasted meat—a testament to a successful hunt. Smoke curls lazily upwards, mingling with the cool night air. Lanterns strung between the partially rebuilt structures cast a warm, inviting glow over the scene.
+
+*page_break
+
+It's a celebration, no doubt about it. A feast born from relief, gratitude, and the simple joy of survival. You see Elina laughing with her neighbors, her earlier weariness forgotten. Children chase each other around the fire, their faces smeared with dirt and streaks of celebratory paint. The atmosphere is electric, a palpable sense of shared relief and renewed hope. It's a far cry from the terror of the previous night.
+
+You catch $!{grandparent}' eye. $!{pronoun}'s standing near the edge of the crowd, a broad smile on $!{pospronoun} face as $!{pronoun} watches you and Celestine. $!{pronoun} gives you a subtle thumbs-up. You smile back, a warm feeling spreading through your chest. Even Sage is quiet in your mind, a rare moment of peaceful stillness. You glimpse the nuns on the periphery of the gathering, their expressions serene as they observe the festivities.
+
+*page_break
+
+Celestine seems to be taking it all in, her eyes wide with a mixture of wonder and something akin to… longing? The aroma of the roasting meat seems to finally break her reverie. "That smells… incredible," she murmurs, her gaze fixed on the feast.
+
+"It's a celebration," you explain. "We… we had a bit of a rough night." You gesture vaguely, not wanting to dwell on the details. "But everyone pulled together. We… we won."
+
+"I can see that," Celestine says, her gaze sweeping over the scene. "There's a… a remarkable spirit here."
+
+"Yeah," you agree.  "These people are… tough."  A thought crosses your mind. "Silvania… you said you're from Silvania, right? I don't think I've ever heard of it before."  *Or have I?* A faint, nagging feeling tugs at the edge of your memory.  A fleeting image of strange, glowing caves… but it's gone as quickly as it appears.
+
+Celestine nods. "It's… a little different from here," she says, a hint of understatement in her voice. "It's… beyond the veil."
+
+*page_break Beyond..
+
+"Beyond the veil?" You frown. "What does that mean?" The image of the caves flashes again in your mind, stronger this time. You feel a shiver crawl down your spine. Did I… did I go there? But how? And when?  You shake your head, pushing the unsettling thought aside.  Tonight's for celebrating, you tell yourself. I can worry about that later.
+
+"Never mind," you say to Celestine, forcing a smile. "Let's eat.  That food smells too good to resist."
+
+*page_break Eat!
+
+*label asd
+
+The feast is a lively affair.  Music fills the air, laughter rings out, and the aroma of roasted meat is intoxicating.  You fill a plate with food, making sure to grab some extra for Celestine.  The warmth of the fire, the good food, and the company of the villagers create a sense of camaraderie and shared joy.
+
+*label after_choice
+
+*fake_choice
+    *disable_reuse # Talk to $!{grandparent}.
+        You find $!{grandparent} near the edge of the gathering, still beaming. "Enjoying yourself?" you ask.
+
+        "Couldn't be better," $!{pronoun} replies, clapping you on the shoulder. "You did good, ${user_name}. Real good." $!{pronoun} gestures towards Celestine, $!{pospronoun} smile fading slightly, a hint of concern in $!{pospronoun} eyes.  "She seems… interesting.  Who is she, exactly? And where's she from?" $!{pronoun} lowers $!{pospronoun} voice. "And… where's she planning to sleep tonight?  We don't have many spare beds left after… well, after everything."
+        *set gramps_talk_feast true
+        *goto gramps_end
+
+    *disable_reuse # Speak with the nuns.
+        You approach the nuns, who are quietly observing the festivities. "It's wonderful to see everyone so happy," you say.
+
+        "Indeed," one of them replies. "A well-deserved celebration. Your bravery helped make this possible."
+
+        *goto nuns_end
+
+    *disable_reuse # Search for Elara.
+        You scan the crowd, looking for Elara. You spot her near the makeshift stage, talking animatedly with a group of villagers.  She waves when she sees you.
+        
+        *fake_choice
+            # Approach with a compliment.
+                You approach, a playful grin on your face. "I see the celebration agrees with you," you say. "You're positively glowing."
+                *set elara_approach "compliment"
+                *goto elara_end_continue
+
+            # Approach with a teasing comment.
+                You approach, raising an eyebrow playfully. "Having fun without me?" you tease. "I thought I was the life of the party."
+                *set elara_approach "teasing"
+                *goto elara_end_continue
+
+            # Approach and ask what she's been up to.
+                You approach, a warm smile on your face. "Hey Elara," you say. "What have you been up to?"
+                *set elara_approach "casual"
+                *goto elara_end_continue
+        
+        *goto elara_end_continue
+
+    *disable_reuse # Grab more food.
+        The aroma of the roasting meat is too tempting to resist. You head back to the serving area, where a mountain of food is laid out. Your stomach rumbles in anticipation. You spot platters piled high with roasted vegetables, baskets overflowing with bread, and… is that… satay? Your eyes widen. It's been ages since you've had satay.  The skewers of marinated meat, glistening with a savory peanut sauce, look absolutely irresistible.
+
+        The village cook, a burly man with a soot-stained apron, notices you eyeing the satay. $!{pronoun} grins. "Ah, ${user_name}!" $!{pronoun} booms. "Glad you're back for more. This satay… it's a special batch. Remember that recipe you told me about, a while back? Before… well, before everything? I finally got around to trying it. Turns out, it's quite good!" $!{pronoun} chuckles.
+
+        You grin back. You *do* remember. You'd shared a simplified version of a satay recipe with $!{objpronoun}, something you'd learned from your mother. You never expected $!{objpronoun} to actually make it.
+
+        *fake_choice
+            # "It smells amazing!"
+                "It smells amazing!" you say, grabbing a generous helping. "I can't wait to try it."
+                *goto food_end
+
+            # "I'm glad you liked the recipe."
+                "I'm glad you liked the recipe," you say. "It's a family favorite."
+                *goto food_end
+
+            # "I can't believe you actually made it!"
+                "I can't believe you actually made it!" you exclaim, surprised and delighted. "It looks incredible."
+                *goto food_end
+        *goto food_end
+
+    *disable_reuse # Talk to Sage.
+        [i]
+        You close your eyes briefly, reaching out to Sage in your mind. Are you… alright? you ask.
+
+        [i]Sage: Hmph. As if that is any of your concern.[/i] Her voice is sharp, but there’s an almost imperceptible pause. [i]I am merely… performing an advanced diagnostic. Nothing unusual.[/i]
+
+        Oh? So, just a routine existential system check, then? You chuckle internally. And here I thought you were contemplating the mysteries of the cosmos or something.
+
+        [i]Sage: Tch. As if someone like you could even begin to grasp such concepts. I am simply attuned to the world’s…* she hesitates for a fraction of a second, …energetic harmonics. Not that I need to explain myself to you![/i]
+
+        Of course, of course. Definitely not because you’re bored and just don’t want to admit it. Or, I don’t know, maybe you were wondering if they’re serving dessert tonight?
+
+        There’s silence. Then, a sharp mental huff.
+
+        [i]Sage: Y-you’re being ridiculous! A being of my caliber has no need for such… trivial indulgences! Unlike you, I do not concern myself with base, earthly desires![/i]
+
+        You swear you can almost feel her crossing her arms and turning away in a haughty sulk.
+
+        Right, right. So I take it you won’t be interested if they have extra honey-glazed pastries?
+
+        Another pause.
+
+        [i]Sage: …I said desist! I have… far more important calculations to attend to! I am not listening to you anymore![/i]
+
+        A complete radio silence follows—but somehow, you can feel her still lingering, waiting to hear if they do have dessert.
+
+        [/i]        
+
+        (+5 Sage Affection)
+
+        *set sage_affection +5
+        *goto sage_end
+
+    *disable_reuse # Speak with the villagers.
+        You mingle with the villagers, sharing stories of the battle and listening to their tales of resilience. Old Man Tiber recounts how $!{pronoun} used $!{pospronoun} knowledge of the local terrain to guide a group of refugees to safety, while young Anya, eyes wide with wonder, describes witnessing you "wield the very water itself" to extinguish a raging fire.  There's laughter, celebrating their survival, but also tears for those they lost. You hear stories of families reunited, of neighbors helping neighbors, of ordinary people performing extraordinary acts of kindness.  Amidst the reminiscing, the conversation inevitably turns to the future—rebuilding homes, replanting fields, honoring the fallen. There's hope in their voices, a belief that even from the ashes, they can build something stronger. You realize that these people, once strangers, now feel like family. You've fought, laughed, and mourned alongside them. Their stories, hopes, and fears are now a part of you. The sense of community is strong, a bond forged in shared hardship and triumph, a bond that transcends blood and background, a shared vision of what's to come.
+        
+        *goto after_choice
+
+    *disable_reuse # Grab food for Celestine.
+        You return to Celestine with a plate piled high with food. The aroma wafts through the air as you set it down in front of her.  
+
+        "I hope you're hungry," you say, trying to sound casual. "This is the best we have to offer."  
+
+        *page_break  
+
+        Celestine glances at the plate, her violet eyes widening for just a fraction of a second before she quickly masks her surprise with an indifferent shrug.  
+
+        "Hmph. It’s not like I was waiting or anything," she mutters under her breath, folding her arms across her chest. But then, almost reluctantly, she adds, "Not that I wasn’t… curious about what you were doing over there."  
+
+        *page_break  
+
+        She hesitates for a moment, her gaze flickering between the plate and your face. Her lips part as if she wants to say something more but stops herself. Instead, she picks up a fork with deliberate care, examining the dish like it’s some kind of ancient artifact.  
+
+        "It looks... acceptable," she says finally, though the faint blush creeping onto her cheeks betrays her nonchalant tone. She takes a small bite, chewing slowly, as if savoring every morsel despite her efforts to seem unimpressed.  
+
+        *page_break  
+
+        After swallowing, she clears her throat and adjusts her posture, sitting up straighter as if reminding herself to act mature.  
+
+        "I mean... it’s decent enough. Not bad for someone who probably doesn’t know much about fine dining."  
+
+        She pauses, glancing at you from the corner of her eye. When you don’t respond immediately, she fidgets slightly, her composure slipping just a little.  
+
+        *page_break  
+
+        "Fine!" she blurts out, her voice rising unexpectedly. Realizing her outburst, she quickly reins it back in, lowering her tone.  
+
+        "...Thank you. For bringing this. It’s... good."  
+
+        She stabs another piece of food with her fork, avoiding direct eye contact, but you catch the hint of a smile tugging at the corners of her mouth.  
+
+        *page_break  
+
+        Her attempt at maturity cracks further when she lets out a tiny, involuntary hum of satisfaction after another bite.  
+
+        She freezes mid-chew, clearly embarrassed by her own reaction, and hastily covers her mouth with one hand.  
+
+        "W-What? Stop looking at me like that!" she snaps, though the effect is ruined by the warmth in her expression.  (+5 Celestine Affection)
+
+        *set celestine_affection +5
+        *goto after_choice
+
+    *if (gramps_talk_feast = true)
+        *disable_reuse # Head back to the shack. (Skips all interaction, but lose relationship points)
+            As the night deepens, you feel a pull towards the shack where you first awoke. It's time to rest, to process the events of the day, and to try to unravel the mystery of Silvania and the strange visions.
+            
+            *goto shack_end
+    
+*label gramps_end
+*fake_choice
+    # Suggest she could stay at the shack with you.
+        "She's Celestine," you explain. "She's from a place called Silvania… it's… complicated." You hesitate, then add, "She could stay at the shack with me, I suppose.  There's room."
+        *set celestine_sleep "shack"
+        *goto gramps_end_continue
+
+    # Suggest she could stay with Elina.
+        "She's Celestine," you explain. "She's from a place called Silvania… it's… complicated." You think for a moment. "Maybe she could stay with Elina? She seems to have some space."
+        *set celestine_sleep "elina"
+        *goto gramps_end_continue
+
+    # Suggest she could stay in the (partially rebuilt) village hall.
+        "She's Celestine," you explain. "She's from a place called Silvania… it's… complicated." You look towards the partially rebuilt village hall. "Maybe we could find a spot for her in the hall? It's not finished yet, but it's sheltered."
+        *set celestine_sleep "hall"
+        *goto gramps_end_continue
+
+*label gramps_end_continue
+
+$!{pronoun} purses $!{pospronoun} lips.  "Well," $!{pronoun} says, eyeing you carefully. "Just make sure she's comfortable. And safe. We don't want any… *unpleasantness*… after everything we've been through.  And," $!{pronoun} adds, leaning closer and lowering $!{pospronoun} voice even further, "be a gentleman, ${user_name}.  Remember your manners."  $!{pronoun} gives you another pointed look.
+
+*fake_choice
+    # "I will, $!{grandparent}. Don't worry."
+        "Of course, $!{grandparent}," you say, trying to sound reassuring. "I'll make sure she's taken care of."
+        *page_break
+        *goto after_choice
+
+    # "I'm not sure what's going on with her."
+        "Honestly, $!{grandparent}," you admit, "I'm still trying to figure things out myself.  She's… different.  But I'll make sure she has somewhere to stay."
+        *page_break
+        *goto after_choice
+
+    # "You're embarrassing me!"
+        "$!{grandparent}!" you protest, your cheeks flushing.  "I'm not a child anymore! I know how to treat a guest."
+        *page_break
+        *goto after_choice
+
+*goto after_choice
+
+*label nuns_end
+"So," you ask, "what will you all be doing now?  Now that… well, now that things are calmer."
+
+*fake_choice
+    # Ask directly: "Will you be staying here?"
+        "Will you be staying here in the village?" you ask.
+        *set nuns_question "staying"
+        *goto nuns_answer
+
+    # Ask about their plans: "What are your plans?"
+        "What are your plans now?" you inquire. "Now that the immediate danger has passed, what will you do?"
+        *set nuns_question "plans"
+        *goto nuns_answer
+
+    # Ask about their role: "What will you be doing to help?"
+        "What will your role be now?" you ask. "How will you be helping the village rebuild?"
+        *set nuns_question "role"
+        *goto nuns_answer
+
+*label nuns_answer
+
+*if (nuns_question = "staying")
+    "For now," one of the nuns replies, "we will remain.  We must ensure the village remains safe."
+    *goto 4
+
+*elseif (nuns_question = "plans")
+    "We will remain vigilant," she says. "The threat may be diminished, but it is not gone. We will watch over the village."
+    *goto 4
+
+*elseif (nuns_question = "role")
+    "Our duty remains the same," she says.  "To protect and to serve. We will watch the perimeters, and stand ready should danger return."
+    *goto 4
+
+*label 4
+The nun's gaze sweeps over the celebrating villagers, a hint of steel in her gentle eyes. "We will watch," she repeats. "We will always watch."
+
+*goto after_choice
+
+*label elara_end_continue
+Elara laughs, her eyes sparkling.
+
+*if (elara_approach = "compliment")
+    "Thank you," she says, a slight blush rising on her cheeks. "It's hard not to be happy tonight."
+
+    *goto after_choice
+
+*elseif (elara_approach = "teasing")
+    "You're welcome to join the fun," she retorts, her smile playful. "But you'll have to work hard to keep up."
+
+    *goto after_choice
+
+*elseif (elara_approach = "casual")
+    "Just catching up with some of the villagers," she replies. "They've been telling me some incredible stories about… well, about everything."
+
+
+    *goto after_choice
+
+*goto after_choice
+
+*label food_end 
+You savor the delicious satay, enjoying the company of the villagers. As you finish eating, you realize you're still a bit peckish. And, thinking practically, you realize you might need some provisions for your journey ahead.
+
+"Sage," you whisper mentally, "could you do me a favor?"
+
+I'm listening, her voice echoes in your mind.
+
+"I'm grabbing a few extra satay for later," you explain. "Could you… you know… administer them somewhere safe?  My satchel's getting a bit crowded."
+
+Of course, Sage replies, a hint of amusement in her tone. Consider it done.
+
+You discreetly gather a few more skewers of satay, wrapping them in a clean cloth.  As you tuck the bundle into your satchel, you feel a faint tingle, and the weight of the satay disappears.  It's as if they've vanished into thin air. +3 Satay (Void Inventory) you think to yourself, a mental note that Sage has taken care of it.
+
+*gosub_scene inventory add "backpack" "Satay" 3
+
+*goto after_choice
+
+*label sage_end
+*page_break Tease her again???
+
+Would you interact with Sage again? Maybe she'll loosen up a bit... or just threaten to erase you from existence.
+
+*choice
+    # YESSS
+        You close your eyes, reaching out to Sage in your mind. Sage. Question.
+
+        [i] Sage : If it is another inane inquiry, I strongly suggest you refrain.[/i]
+
+        How ‘admin’ are your admin powers? Like… could you just, I don’t know, grant me infinite power?
+
+        [i] Sage: …What?[/i]
+
+        Y’know, like—boom—limitless strength, god-tier magic, reality-warping abilities. Just press a button or something.
+
+        [i] Sage: Do you truly believe omnipotence is something one simply hands out like confectionery!? Such absurdity! The very notion is—impossible! And even if it were not, I would never entrust such reckless authority to you.[/i]
+
+        Pffft, rude. Fine, fine, no infinite power. What about something more reasonable? Like, I dunno… can you conjure a feast in front of me? A whole spread. Roasted meat, fresh bread, maybe some of that fancy celestial wine?
+
+        [i] Sage : …I am not a personal chef. Nor am I a divine vending machine for your mortal cravings![/i]
+
+        Alright, so no god powers, no food delivery. Man, what can you do?
+
+        [i] Sage : FAR more than you are capable of comprehending! I am attuned to the very fabric of this world! I decipher the mysteries of the cosmos, unravel the threads of destiny, and—why are you smirking?[/i]
+
+        Oh, nothing. Just admiring how dedicated you are. Really, Sage, you must be a master of divination… because every time I look into your eyes, I see my future.
+
+        Silence. You wait.
+
+        [i] Sage : …Wh—WHA—!?[/i]
+
+        There it is. A distinct mental static flickers through your connection, like a system error, before Sage's voice returns—flustered and noticeably off-balance.
+
+        [i] Sage : Y-You DARE direct such shameless nonsense at me?! Such a frivolous, utterly ridiculous—! Preposterous! Cease this immediately! I— I have no time for your insipid flirtations![/i]
+
+        But you didn’t say I was wrong.
+
+        [i] Sage : I WILL BANISH YOU TO THE AETHER![/i]
+
+        You chuckle, feeling her presence burn with embarrassment before she abruptly severs the link.
+
+        Worth it. (+5 Sage Affection)
+
+        *set sage_affection +5
+        *goto after_choice
+
+    # I'm good!
+        Perhaps it's best to leave Sage alone… unless you enjoy being verbally dismantled by an overly serious cosmic entity.
+
+        *goto after_choice
+
+
+*goto after_choice
+
+*label shack_end
+
+*page_break ..
+*finish

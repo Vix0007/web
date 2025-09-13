@@ -1,0 +1,101 @@
+*comment PUT CAVE IMAGE HERE
+
+*label awakening_in_silvania
+
+You feel the world swirl around you, as if you’re floating in a deep, endless void. The sensation is disorienting—like being caught between two realms, neither fully here nor there. And then, with a sudden jolt, gravity takes hold.
+
+For a moment, it feels like you're falling—wind rushing past your ears, your stomach lurching upward—but just as quickly as it begins, it ends. Your body slams into something soft yet firm, knocking the air from your lungs. You lie there for a second, dazed, before slowly opening your eyes.
+
+*page_break Where?
+
+As your initial shock begins to subside, reality sets in: you’re no longer where you were before. The world around you feels alien yet alive, brimming with an energy that hums through the air. This place—wherever it is—feels like something out of a dream or legend. And somehow, impossibly, you’ve landed here.
+
+But why? How? And most importantly—what happens next?
+
+Before you can dwell too long on these questions, a new sound reaches your ears: a low, rhythmic thumping, like the beating of a giant heart, echoes through the cavern. It seems to emanate from the depths of the cave, growing louder with each passing moment.  Someone—or something—is approaching.
+
+What do you do?
+
+*fake_choice
+    #Explore the glowing path.
+        To your left, a narrow path winds deeper into the cave, lined with glowing crystals that pulse with an inner light. The thumping grows louder as you move closer. The air here feels charged, almost humming. You're drawn to the path, a sense of curiosity overriding your caution.
+        *goto slime_companion
+    #Venture into the shadows.
+        To your right, the cave floor slopes downward, plunging into darkness.  You can't see what's down there, but the thumping is much more pronounced here, vibrating through the ground.  You hear the faint sound of dripping water and something… else. A low, rhythmic thrumming that seems to pulse in time with the heartbeat. A shiver runs down your spine, but a strange sense of fascination pulls you towards the unknown.
+        *goto slime_companion
+    #Call out.
+        “Hello?” Your voice echoes strangely in the vast cavern, swallowed by the ambient sounds of the cave and the persistent thumping.  For a moment, silence reigns. Then, a low whisper echoes back—not words, but emotions: curiosity, caution, and something darker you can’t quite place. Somewhere in the shadows, a pair of glowing eyes blink once, then vanish.
+        *goto slime_companion
+    #Focus on your senses.
+        You close your eyes, trying to get a better sense of your surroundings. The air feels cool and damp, carrying a faint earthy scent and a strange metallic tang. The soft glow of the crystals permeates your vision even through your closed eyelids. You can hear the gentle rustling of unseen things, the distant drip of water, and the insistent thumping that seems to be coming from everywhere and nowhere at once. You sense a vastness around you, an ancient power that hums beneath the surface, growing stronger with each beat of the unseen heart.
+        *goto slime_companion
+
+*label slime_companion
+*page_break
+As you continue exploring the forest, a faint squelching sound catches your attention. You turn to see a small, translucent slime wobbling toward you. Its gelatinous body glistens softly under the dim light filtering through the trees, and its round, black eyes blink innocently up at you. It looks... cute.
+
+The slime nudges your leg gently, leaving a cool, damp sensation behind. Despite everything else going on, you can't help but feel a strange fondness for the little creature. It seems harmless—and maybe even friendly.
+
+*fake_choice
+    #Name the slime "Bloop."
+        You smile down at the slime and decide on a name: “Bloop.” The moment you say it aloud, the slime wiggles excitedly, as if agreeing with your choice. From that point forward, Bloop becomes your constant companion, trailing happily after you wherever you go.
+        *goto explore_further
+    #Name the slime "Gooey."
+        “Gooey,” you announce confidently, pointing at the slime. It responds by bouncing slightly, clearly delighted with its new name. Gooey sticks close to you, occasionally nudging your hand or foot as if seeking reassurance—or affection.
+        *goto explore_further
+    #Let the slime choose its own name (somehow).
+        You crouch down and look into the slime’s big, curious eyes. “What should I call you?” you ask softly. To your surprise, the slime emits a soft *plop* sound, almost like it's answering. You interpret this as... “Plop.” Laughing lightly, you accept the name. Plop seems pleased, wobbling closer to stay by your side.
+        *goto explore_further
+
+*label explore_further
+*page_break Adorable..
+With your new companion—whether it’s Bloop, Gooey, or Plop—you venture deeper into the forest. The air grows cooler, and the vibrant greens of the foliage give way to darker, more muted tones. Strange glowing mushrooms line the path ahead, casting an eerie yet mesmerizing glow. Something about this part of the forest feels... off. Alien.
+
+Halfway through, a chilling sound stops you in your tracks. At first, it’s barely audible—a faint whisper carried by the wind. But as you listen closer, it grows louder, clearer. A woman’s voice, melodic yet haunting, echoes around you. It sounds distant, yet unnervingly close, as though it exists both within and beyond the forest itself.
+
+Your slime companion shivers slightly, pressing against your leg for comfort. You glance down at it, then back toward the direction of the voice. Do you follow it?
+
+*fake_choice
+    #Walk toward the voice.
+        The pull is irresistible. Though unease coils in your chest, you take a hesitant step forward, then another. Your slime companion trails closely behind, its movements slower now, almost reluctant. The forest grows quieter with each step, until all you can hear is the sound of your own breathing—and the ghostly voice growing steadily nearer.
+        *goto approach_cliff
+    #Ignore the voice and keep exploring.
+        You try to shake off the unsettling feeling and push onward, ignoring the voice. But no matter how far you walk, it lingers at the edge of your awareness, impossible to escape. Eventually, curiosity—or perhaps some unseen force—compels you to change course and head toward the source of the sound.
+        *goto approach_cliff
+    #Call out to the voice.
+        “Who’s there?” you call, your voice trembling despite your attempt to sound brave. The voice doesn’t respond directly, but its tone shifts, becoming softer, almost inviting. Against your better judgment, you find yourself drawn toward it, your slime companion quivering anxiously beside you.
+        *goto approach_cliff
+
+*label approach_cliff
+
+Finally, you reach the origin of the voice. Before you lies a vast clearing, bordered by jagged cliffs. Perched atop one of these cliffs is a figure—a tall, pale woman with long, flowing hair that seems to shimmer like moonlight. She sits perfectly still, her legs crossed and her hands resting delicately in her lap. Her lips curve into a serene yet menacing smile as she gazes down at you.
+
+For a brief moment, your slime companion lets out a panicked squeak—and then vanishes without a trace. Panic surges through you, but before you can react, an invisible force grips you, rooting you to the spot. Your body refuses to obey any commands; you’re completely petrified.
+
+The world around you falls silent. Even the rustling leaves and chirping insects cease their noise, leaving only the oppressive weight of the woman’s presence. She tilts her head slightly, studying you with piercing eyes that seem to pierce straight through your soul.
+*page_break ...
+Slowly, gracefully, she rises to her feet and leaps from the cliff, landing silently before you. Up close, her aura is overwhelming—an ancient, otherworldly power radiates from her very being. She circles you slowly, inspecting you like a predator sizing up its prey.
+
+“You do not belong here,” she says finally, her voice resonating unnaturally—as if spoken by countless voices layered atop one another. There’s no malice in her tone, only cold, unyielding certainty that chills you to your core.
+
+Before you can even begin to comprehend her words, the world around you shatters like glass. The ground beneath your feet dissolves into swirling mist, the cliffs crumbling into nothingness, the forest fading into shadow. Her piercing gaze lingers for a moment longer before she vanishes entirely, swallowed by the void.
+
+And then—nothing.
+*page_break nothing..
+Your eyes flutter open, the world slowly coming into focus. You draw in a sharp breath, your lungs burning as if you’ve been holding it for too long. The air is cool and damp, carrying the faint scent of earth and wood. Dust motes drift lazily in the beams of sunlight filtering through cracks in the rough-hewn walls. For a moment, you simply lie there, staring at the uneven planks above you, your heart pounding in your chest like a drum.  
+
+*page_break  
+
+The memories come rushing back—the forest, the cliffs, the woman perched high above, her voice layered and cold, the way she had looked at you as though peeling back layers of your soul. It felt so vivid, so real. Was it a dream? A vision? Or had you truly crossed into another realm?  
+
+You sit up slowly, your body stiff and uncooperative, each movement met with resistance from muscles that feel unused. The shack around you is crude but functional, clearly built out of necessity rather than comfort. Sunlight filters weakly through gaps in the wooden walls, casting long shadows across the dirt floor. Outside, faint sounds reach your ears—the distant murmur of voices, the rhythmic clatter of tools, the occasional groan of settling wood. You’re not deep in the forest anymore; this place feels closer to civilization, perhaps on the edge of the ravaged village you’ve heard whispers about.  
+
+*page_break  
+
+As you take in your surroundings, the weight of what just happened—or what you think happened—settles over you. That woman… her words echo in your mind, sharp and unyielding: “You do not belong here.” Her presence had been suffocating, otherworldly, and yet she had sent you back. Why? What did she mean? And where exactly are you now?  
+
+Questions swirl endlessly, each one more pressing than the last. Who was she? What did she want from you? And what happens next?  
+
+For now, all you know is this: whatever just occurred, it wasn’t an ordinary dream. This isn’t over. Not by a long shot.  
+
+

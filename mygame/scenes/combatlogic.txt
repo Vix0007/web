@@ -1,0 +1,945 @@
+
+
+
+
+
+
+
+
+
+*label mc_physical_offend
+
+*comment Determine base physical damage based on level
+*set base_damage 3 + (mc_lvl * 2)
+
+*comment Apply damage modifier based on weapon type
+*set weapon_modifier 0
+*if equipped_weapon = "sword"
+    *set weapon_modifier 5
+    *goto a1
+
+*elseif equipped_weapon = "axe"
+    *set weapon_modifier 8
+    *goto a1
+
+*elseif equipped_weapon = "dagger"
+    *set weapon_modifier 3
+    *goto a1
+    
+*elseif equipped_weapon = "staff"
+    *set weapon_modifier 2 
+    *goto a1
+
+*elseif equipped_weapon = "unarmed"
+    *set weapon_modifier 1
+    *goto a1
+
+*label a1
+*comment Calculate total physical damage
+*set damage_dealt base_damage + weapon_modifier
+
+*comment Apply damage to enemy health
+*set enemy_hp -damage_dealt
+
+*rand attack_desc_num 1 20
+
+*if attack_desc_num = 1
+    *set physical_attack_desc "You deliver a swift jab"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 2
+    *set physical_attack_desc "You land a powerful hook"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 3
+    *set physical_attack_desc "Your fist connects squarely"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 4
+    *set physical_attack_desc "You unleash a brutal kick"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 5
+    *set physical_attack_desc "Your foot slams into"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 6
+    *set physical_attack_desc "You sweep your leg, catching"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 7
+    *set physical_attack_desc "Your weapon flashes as you strike"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 8
+    *set physical_attack_desc "The hilt of your weapon slams into"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 9
+    *set physical_attack_desc "You thrust your weapon towards"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 10
+    *set physical_attack_desc "You headbutt"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 11
+    *set physical_attack_desc "You shoulder-barge"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 12
+    *set physical_attack_desc "You deliver a sharp elbow strike to"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 13
+    *set physical_attack_desc "You knee"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 14
+    *set physical_attack_desc "A quick punch lands on"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 15
+    *set physical_attack_desc "You fiercely claw at"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 16
+    *set physical_attack_desc "You tackle"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 17
+    *set physical_attack_desc "You stomp on"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 18
+    *set physical_attack_desc "You throw a wild haymaker at"
+    *goto generate_body_part_physical
+*elseif attack_desc_num = 19
+    *set physical_attack_desc "You use your environment to strike"
+    *goto generate_body_part_physical
+*else
+    *set physical_attack_desc "You make a desperate move against"
+    *goto generate_body_part_physical
+
+
+
+*label generate_body_part_physical
+*if enemy_type = "humanoid"
+    *rand body_part_num 1 5
+    *if body_part_num = 1
+        *set body_part "chest"
+        *goto display_physical_attack
+    *elseif body_part_num = 2
+        *set body_part "side"
+        *goto display_physical_attack
+    *elseif body_part_num = 3
+        *set body_part "leg"
+        *goto display_physical_attack
+    *elseif body_part_num = 4
+        *set body_part "arm"
+        *goto display_physical_attack
+    *else
+        *set body_part "face"
+        *goto display_physical_attack
+
+
+
+*elseif enemy_type = "dragon"
+    *rand body_part_num_dragon 1 5
+    *if body_part_num_dragon = 1
+        *set body_part "scaly leg"
+        *goto display_physical_attack
+    *elseif body_part_num_dragon = 2
+        *set body_part "powerful wing"
+        *goto display_physical_attack
+    *elseif body_part_num_dragon = 3
+        *set body_part "thick tail"
+        *goto display_physical_attack
+    *elseif body_part_num_dragon = 4
+        *set body_part "snapping jaws"
+        *goto display_physical_attack
+    *else
+        *set body_part "armored hide"
+        *goto display_physical_attack
+
+
+
+*elseif enemy_type = "undead"
+    *rand body_part_num_undead 1 5
+    *if body_part_num_undead = 1
+        *set body_part "rotting torso"
+        *goto display_physical_attack
+    *elseif body_part_num_undead = 2
+        *set body_part "bony arm"
+        *goto display_physical_attack
+    *elseif body_part_num_undead = 3
+        *set body_part "skull"
+        *goto display_physical_attack
+    *elseif body_part_num_undead = 4
+        *set body_part "ribcage"
+        *goto display_physical_attack
+    *else
+        *set body_part "leg bone"
+        *goto display_physical_attack
+
+
+
+*elseif enemy_type = "ghost"
+    *set body_part ""
+    *goto display_physical_attack
+*elseif enemy_type = "elemental"
+    *set body_part ""
+    *goto display_physical_attack
+*elseif enemy_type = "slime"
+    *set body_part ""
+    *goto display_physical_attack
+
+
+
+*elseif enemy_type = "animal"
+    *rand body_part_num_animal 1 5
+    *if body_part_num_animal = 1
+        *set body_part "flank"
+        *goto display_physical_attack
+    *elseif body_part_num_animal = 2
+        *set body_part "leg"
+        *goto display_physical_attack
+    *elseif body_part_num_animal = 3
+        *set body_part "head"
+        *goto display_physical_attack
+    *elseif body_part_num_animal = 4
+        *set body_part "paw"
+        *goto display_physical_attack
+    *else
+        *set body_part "snout"
+        *goto display_physical_attack
+*else
+    *set body_part ""
+    *goto display_physical_attack
+
+
+*label display_physical_attack
+*if body_part = ""
+    ${physical_attack_desc} ${enemy_name}. [${enemy_name}'s health -${damage_dealt}]
+    *goto mc_physical_offend_desc
+*else
+    *rand use_body_part 0 1
+    *if use_body_part = 1
+        ${physical_attack_desc} ${enemy_name}'s ${body_part}. [${enemy_name}'s health -${damage_dealt}]
+        *goto mc_physical_offend_desc
+    *else
+        ${physical_attack_desc} ${enemy_name}. [${enemy_name}'s health -${damage_dealt}]
+        *goto mc_physical_offend_desc
+
+*goto mc_physical_offend_desc
+
+*label mc_physical_offend_desc
+*return
+
+
+
+
+
+
+
+*label mc_magical_offend
+*if mc_mana >= 5
+    *set mc_mana -5
+    *rand element 1 3
+    *temp element_attack_desc ""
+
+    *if element = 1
+        *comment Water magic damage calculation
+        *set magic_base_damage 9
+        *set water_multiplier 1 + (water * 0.005)
+        *set damage_dealt round(magic_base_damage * water_multiplier)
+        *set enemy_hp -damage_dealt
+
+        *goto generate_water_attack_desc
+
+        *label display_magical_attack
+        *if body_part = ""
+            ${element_attack_desc} ${enemy_name}. [${enemy_name}'s health -${damage_dealt}] [Your Mana -5]
+            *goto mc_magical_offend_desc
+        *else
+            *rand use_body_part 0 1
+            *if use_body_part = 1
+                ${element_attack_desc} ${enemy_name}'s ${body_part}. [${enemy_name}'s health -${damage_dealt}] [Your Mana -5]
+                *goto mc_magical_offend_desc
+            *else
+                ${element_attack_desc} ${enemy_name}. [${enemy_name}'s health -${damage_dealt}] [Your Mana -5]
+                *goto mc_magical_offend_desc
+
+        *label generate_water_attack_desc
+        *if ((water >= 0) and (water <= 40))
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A weak trickle of water barely touches"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "A small, pathetic splash lands near"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "You manage to conjure a few droplets that hit"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "A thin stream of water weakly strikes"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "The air feels slightly damp around"
+                *goto generate_body_part_magical
+        *elseif ((water >= 50) and (water <= 80))
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A focused jet of water slams into"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "You unleash a forceful spray of water at"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "A swirling vortex of water briefly engulfs"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "Pressurized water cuts through the air towards"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "A wave of water crashes against"
+                *goto generate_body_part_magical
+        *else
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A torrent of water erupts from your hands, striking"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "You command a massive surge of water to crash into"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "The very moisture in the air bends to your will, forming a deadly lance that pierces"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "You summon a swirling maelstrom of water that slams into"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "An unstoppable hydro-blast obliterates a section of"
+                *goto generate_body_part_magical
+
+    *elseif element = 2
+        *comment Pyro magic damage calculation
+        *set magic_base_damage 9
+        *set pyro_multiplier 1 + (pyro * 0.005)
+        *set damage_dealt round(magic_base_damage * pyro_multiplier)
+        *set enemy_hp -damage_dealt
+
+        *goto generate_pyro_attack_desc
+
+        *label generate_pyro_attack_desc
+        *if ((pyro >= 0) and (pyro <= 40))
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A tiny spark flickers harmlessly near"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "A wisp of smoke briefly drifts past"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "You manage to ignite a small ember that fizzles out before reaching"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "The air warms slightly around"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "A faint smell of sulfur lingers after your attempt to ignite"
+                *goto generate_body_part_magical
+        *elseif ((pyro >= 50) and (pyro <= 80))
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A small flame erupts and strikes"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "You conjure a focused burst of heat that singes"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "A tendril of fire lashes out towards"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "Flames lick at the edges of"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "A small fireball hurtles towards"
+                *goto generate_body_part_magical
+        *else
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A roaring inferno engulfs"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "You summon a pillar of fire that incinerates"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "Molten flames sear"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "You unleash a cataclysmic wave of fire that crashes into"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "The air crackles with intense heat as flames engulf"
+                *goto generate_body_part_magical
+
+    *else
+        *comment Aero magic damage calculation
+        *set magic_base_damage 9
+        *set aero_multiplier 1 + (aero * 0.005)
+        *set damage_dealt round(magic_base_damage * aero_multiplier)
+        *set enemy_hp -damage_dealt
+
+        *goto generate_aero_attack_desc
+
+        *label generate_aero_attack_desc
+        *if ((aero >= 0) and (aero <= 40))
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A gentle breeze barely ruffles the hair of"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "A weak gust of wind whispers past"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "You create a small puff of air that tickles"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "The air feels slightly cooler around"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "A faint rustling sound is the only sign of your wind magic near"
+                *goto generate_body_part_magical
+        *elseif ((aero >= 50) and (aero <= 80))
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A focused gust of wind buffets"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "You summon a sharp burst of air that nicks"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "A swirling vortex of air briefly disorients"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "Pressurized air slams into"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "A strong wind whips around"
+                *goto generate_body_part_magical
+        *else
+            *rand desc 1 5
+            *if desc = 1
+                *set element_attack_desc "A powerful gale slams into"
+                *goto generate_body_part_magical
+            *elseif desc = 2
+                *set element_attack_desc "You command the air to form a razor-sharp vortex that tears at"
+                *goto generate_body_part_magical
+            *elseif desc = 3
+                *set element_attack_desc "The wind howls as it slams into"
+                *goto generate_body_part_magical
+            *elseif desc = 4
+                *set element_attack_desc "You unleash a sonic boom that rattles"
+                *goto generate_body_part_magical
+            *else
+                *set element_attack_desc "The air crackles with energy as a violent gust strikes"
+                *goto generate_body_part_magical
+*else
+    You don't have enough mana for that attack!
+*return
+
+*label mc_magical_offend_desc
+*return
+
+*label generate_body_part_magical
+*if enemy_type = "humanoid"
+    *rand body_part_num 1 5
+    *if body_part_num = 1
+        *set body_part "chest"
+        *goto display_magical_attack
+    *elseif body_part_num = 2
+        *set body_part "side"
+        *goto display_magical_attack
+    *elseif body_part_num = 3
+        *set body_part "leg"
+        *goto display_magical_attack
+    *elseif body_part_num = 4
+        *set body_part "arm"
+        *goto display_magical_attack
+    *else
+        *set body_part "face"
+        *goto display_magical_attack
+*elseif enemy_type = "dragon"
+    *rand body_part_num_dragon 1 5
+    *if body_part_num_dragon = 1
+        *set body_part "scaly leg"
+        *goto display_magical_attack
+    *elseif body_part_num_dragon = 2
+        *set body_part "powerful wing"
+        *goto display_magical_attack
+    *elseif body_part_num_dragon = 3
+        *set body_part "thick tail"
+        *goto display_magical_attack
+    *elseif body_part_num_dragon = 4
+        *set body_part "snapping jaws"
+        *goto display_magical_attack
+    *else
+        *set body_part "armored hide"
+        *goto display_magical_attack
+*elseif enemy_type = "undead"
+    *rand body_part_num_undead 1 5
+    *if body_part_num_undead = 1
+        *set body_part "rotting torso"
+        *goto display_magical_attack
+    *elseif body_part_num_undead = 2
+        *set body_part "bony arm"
+        *goto display_magical_attack
+    *elseif body_part_num_undead = 3
+        *set body_part "skull"
+        *goto display_magical_attack
+    *elseif body_part_num_undead = 4
+        *set body_part "ribcage"
+        *goto display_magical_attack
+    *else
+        *set body_part "leg bone"
+        *goto display_magical_attack
+*elseif enemy_type = "ghost"
+    *set body_part ""
+    *goto display_magical_attack
+*elseif enemy_type = "elemental"
+    *set body_part ""
+    *goto display_magical_attack
+*elseif enemy_type = "slime"
+    *set body_part ""
+    *goto display_magical_attack
+*elseif enemy_type = "animal"
+    *rand body_part_num_animal 1 5
+    *if body_part_num_animal = 1
+        *set body_part "flank"
+        *goto display_magical_attack
+    *elseif body_part_num_animal = 2
+        *set body_part "leg"
+        *goto display_magical_attack
+    *elseif body_part_num_animal = 3
+        *set body_part "head"
+        *goto display_magical_attack
+    *elseif body_part_num_animal = 4
+        *set body_part "paw"
+        *goto display_magical_attack
+    *else
+        *set body_part "snout"
+        *goto display_magical_attack
+*else
+    *set body_part ""
+    *goto display_magical_attack
+
+
+
+
+*label check_enemy_health
+*if enemy_hp <= 0
+    ${enemy_name} collapses!
+    *return
+*return
+
+
+
+*label enemy_offend
+
+*comment --- Enemy Damage Calculation Start ---
+
+*comment Determine base damage based on enemy type
+*set base_enemy_damage 0
+*if enemy_type = "humanoid"
+    *set base_enemy_damage 5
+    *goto get_weapon_modifier
+*elseif enemy_type = "dragon"
+    *set base_enemy_damage 8
+    *goto get_weapon_modifier
+*elseif enemy_type = "undead"
+    *set base_enemy_damage 4
+    *goto get_weapon_modifier
+*elseif enemy_type = "ghost"
+    *set base_enemy_damage 2
+    *goto get_weapon_modifier
+*elseif enemy_type = "animal"
+    *set base_enemy_damage 3
+    *goto get_weapon_modifier
+*else
+    *set base_enemy_damage 3
+    *goto get_weapon_modifier
+
+*label get_weapon_modifier
+*comment Get the weapon modifier
+*set weapon_modifier_enemy 0
+*if weapon_equiped_enemy = "unarmed"
+    *set weapon_modifier_enemy 1
+    *goto calculate_damage
+*elseif weapon_equiped_enemy = "sword"
+    *set weapon_modifier_enemy 4
+    *goto calculate_damage
+*elseif weapon_equiped_enemy = "polearm"
+    *set weapon_modifier_enemy 6
+    *goto calculate_damage
+*elseif weapon_equiped_enemy = "claymore"
+    *set weapon_modifier_enemy 7
+    *goto calculate_damage
+*elseif weapon_equiped_enemy = "catalyst"
+    *set weapon_modifier_enemy 3
+    *goto calculate_damage
+*elseif weapon_equiped_enemy = "bow"
+    *set weapon_modifier_enemy 5
+    *goto calculate_damage
+*else
+    *set weapon_modifier_enemy 1
+    *goto calculate_damage
+
+*label calculate_damage
+*comment Calculate total enemy damage
+*set enemy_damage_dealt (base_enemy_damage + weapon_modifier_enemy)
+
+*comment Apply rarity multipliers/additions
+*if enemy_rank = "common"
+    *set enemy_damage_dealt +0
+    *goto apply_damage
+*elseif enemy_rank = "uncommon"
+    *set enemy_damage_dealt +1
+    *goto apply_damage
+*elseif enemy_rank = "rare"
+    *set enemy_damage_dealt *1.2
+    *goto apply_damage
+*elseif enemy_rank = "elite"
+    *set enemy_damage_dealt *1.5
+    *goto apply_damage
+*elseif enemy_rank = "miniboss"
+    *set enemy_damage_dealt *1.8
+    *goto apply_damage
+*elseif enemy_rank = "boss"
+    *set enemy_damage_dealt *2
+    *goto apply_damage
+*elseif enemy_rank = "epic"
+    *set enemy_damage_dealt *2.5
+    *goto apply_damage
+*elseif enemy_rank = "legendary"
+    *set enemy_damage_dealt *3
+    *goto apply_damage
+*else
+    *comment Default case if rarity is not recognized
+    *set enemy_damage_dealt +0
+    *goto apply_damage
+
+*label apply_damage
+*comment Apply damage to MC's health
+*set mc_hp -enemy_damage_dealt
+
+*comment --- Enemy Damage Calculation End ---
+
+*rand desc 1 5
+*if weapon_equiped_enemy = "unarmed"
+    *if (desc = 1)
+        ${enemy_name} swipes at you with sharp claws. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        ${enemy_name} throws a quick punch. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        ${enemy_name} tries to bite you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        ${enemy_name} kicks out with a heavy foot. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        ${enemy_name} lunges at you with bare hands. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+*elseif weapon_equiped_enemy = "sword"
+    *if (desc = 1)
+        ${enemy_name} swings their sword at you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        ${enemy_name} thrusts their sword forward. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        ${enemy_name}'s sword flashes as they attack. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        ${enemy_name} brings their sword down in a heavy strike. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        ${enemy_name} makes a wide slash with their sword. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+*elseif weapon_equiped_enemy = "polearm"
+    *if (desc = 1)
+        ${enemy_name} jabs at you with their polearm. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        ${enemy_name} sweeps their polearm in a wide arc. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        ${enemy_name} uses the reach of their polearm to strike. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        ${enemy_name} slams the butt of their polearm into you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        ${enemy_name} twirls their polearm before attacking. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+*elseif weapon_equiped_enemy = "claymore"
+    *if (desc = 1)
+        ${enemy_name} hefts their claymore and swings. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        ${enemy_name} brings their heavy claymore down on you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        The weight of the claymore doesn't slow ${enemy_name}'s attack. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        ${enemy_name} uses the momentum of the claymore in their strike. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        ${enemy_name} struggles slightly but manages a powerful swing with their claymore. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+*elseif weapon_equiped_enemy = "catalyst"
+    *if (desc = 1)
+        ${enemy_name} focuses their catalyst and a magical bolt hits you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        Energy crackles around ${enemy_name}'s catalyst before striking you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        A surge of magic erupts from the catalyst towards you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        ${enemy_name} gestures with their catalyst, and you feel a magical impact. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        A faint glow emanates from the catalyst as magic strikes you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+*elseif weapon_equiped_enemy = "bow"
+    *if (desc = 1)
+        ${enemy_name} draws back their bow and fires an arrow at you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        An arrow whistles through the air towards you from ${enemy_name}'s bow. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        ${enemy_name} quickly nocks and releases an arrow. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        The twang of the bowstring sends an arrow flying your way. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        ${enemy_name} takes aim and shoots an arrow. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+*else
+    *if (desc = 1)
+        ${enemy_name} attacks you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 2)
+        ${enemy_name} lashes out. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 3)
+        ${enemy_name} moves to strike. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *elseif (desc = 4)
+        ${enemy_name} attempts to hit you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+    *else
+        ${enemy_name} makes a move against you. [Your Health -${enemy_damage_dealt}]
+        *goto enemy_offend_end
+
+*label enemy_offend_end
+*return
+
+
+*label mc_health_reduce
+*return
+
+*label check_mc_health
+*if mc_hp <= 0
+    You have been defeated!
+    *goto game_over 
+*return
+
+*label game_over
+You have died.
+*finish
+
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+*comment NEEDS TO CREATE RETURN FROM DEATH RE:ZERO STYLE
+
+*label check_mc_health_nocturna
+*if mc_hp <= 0
+    You have been defeated!
+    *goto return_by_death_nocturna
+*return
+
+*label return_by_death_nocturna
+A wave of chilling despair washes over you as darkness consumes your vision. This isn't the end... not yet. An unseen force tugs at your soul, pulling you back against the current of time. You feel the echoes of what just happened, the pain, the defeat... but a new chance is being granted.
+
+You awaken, the events of your demise still vivid in your mind, but the moment of death has passed. The air crackles with an unseen energy, a subtle reminder of the unnatural return you've just experienced. You are back at the beginning of this critical moment, the weight of your previous failure heavy on your shoulders, but armed with the knowledge of what awaits if you falter again.
+*line_break
+*line_break
+[i] xxxxx [/i]
+
+*gosub_scene utils replace "xxxxx" "<span style=\"color: green\">[Note : If you are defeated in this battle, you will return to the beginning of the fight. Remember that magic attacks are generally more powerful but will deplete your mana. Regeneration is crucial for sustaining yourself in this encounter.]</span>"
+
+*page_break
+*gosub_scene temple_arcC1 nocturna_encounter
+
+*label mc_regen
+*rand heal 8 12
+*set mc_hp +heal
+*if mc_hp > mc_max_hp
+    *set mc_hp mc_max_hp
+*return
+
+
+*comment Level | EXP Needed
+*comment -----|------------
+*comment 1   | 10
+*comment 2   | 20
+*comment 3   | 35
+*comment 4   | 55
+*comment 5   | 80
+*comment 6   | 110
+*comment 7   | 150
+*comment 8   | 200
+*comment 9   | 260
+
+*label check_mc_exp
+*if (mc_exp >= mc_max_exp)
+    *set mc_lvl +1
+    *if (mc_lvl = 2)
+        *set mc_exp -10
+        *goto check_within_level
+    *if (mc_lvl = 3)
+        *set mc_exp -20
+        *goto check_within_level
+    *if (mc_lvl = 4)
+        *set mc_exp -35
+        *goto check_within_level
+    *if (mc_lvl = 5)
+        *set mc_exp -55
+        *goto check_within_level
+    *if (mc_lvl = 6)
+        *set mc_exp -80
+        *goto check_within_level
+    *if (mc_lvl = 7)
+        *set mc_exp -110
+        *goto check_within_level
+    *if (mc_lvl = 8)
+        *set mc_exp -150
+        *goto check_within_level
+    *if (mc_lvl = 9)
+        *set mc_exp -200
+        *goto check_within_level
+    *if (mc_lvl = 10)
+        *set mc_exp -260
+        *goto check_within_level
+
+    *label check_within_level
+    *if mc_lvl = 2
+        *set mc_max_exp 20
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 3
+        *set mc_max_exp 35
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 4
+        *set mc_max_exp 55
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 5
+        *set mc_max_exp 80
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 6
+        *set mc_max_exp 110
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 7
+        *set mc_max_exp 150
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 8
+        *set mc_max_exp 200
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 9
+        *set mc_max_exp 260
+        *goto chech_within_max_exp
+    *elseif mc_lvl = 10
+        *comment Reached max level for this scaling
+        *goto chech_within_max_exp
+    *else
+        *set mc_max_exp + 60 
+    *comment You leveled up!
+    *goto level_up_screen
+
+*label chech_within_max_exp
+*return
+
+
+*label level_up_screen
+*comment You have leveled up!
+You have leveled up!
+
+You are now level ${mc_lvl}.
+*return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+*label replace
+*params pattern raw
+*comment
+*comment Replaces all instances of a pattern with a raw string.
+*comment
+*comment Example:
+*comment "Hello, :1234:!"
+*comment
+*comment *gosub_scene utils replace ":1234:" "<span style=\"color: tomato\">World</span>"
+*comment
+*comment Output:
+*comment Hello, <span style="color: tomato">World</span>!
+*comment
+*script setTimeout((pattern, raw) => { const p = new RegExp(pattern, "g"); const text = document.querySelector("#text"); text.innerHTML = text.innerHTML.replace(p, raw); [...document.querySelectorAll("#main > form label")].forEach(label => label.innerHTML = label.innerHTML.replace(p, raw)); let button = document.querySelector("button.next"); if (button) button.innerHTML = button.innerHTML.replace(p, raw);}, 100, stats.scene.temps.pattern, stats.scene.temps.raw);
+*comment
+*return

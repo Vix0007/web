@@ -1,0 +1,113 @@
+*label gramps_magic_practice
+
+The morning sun filtered through the gaps in the trees, casting dappled shadows across the clearing where Gramps had set up our makeshift training ground. He stood at the center, a small basin of water at his feet.  "Alright, little one," Gramps said, his voice steady. "Today, we’ll focus on hydromancy.  Specifically, control. You’ve got raw talent, no doubt about that, but water magic isn’t just about power—it’s about precision."
+
+I nodded, though inwardly I felt a mix of excitement and frustration. At seven years old, I already understood concepts that most adults struggled with. Yet here I was, practicing basic water manipulation while others my age were still learning how to tie their shoes. Still, I couldn’t deny the thrill of tapping into this world’s magic—it was intoxicating.
+
+Gramps gestured toward the basin of water. "Start simple.  Try to levitate a small amount of water from the basin.  Just a few drops. No hands, no tools—just focus."
+
+*fake_choice
+    #Concentrate deeply, channeling your energy.
+
+        Closing my eyes, I reached out with my mind, feeling the subtle hum of magic coursing through me. It wasn’t difficult to locate the source of my power; it felt like an extension of myself, as natural as breathing. When I opened my eyes, a few drops of water hovered uncertainly above the basin, trembling slightly before settling into a stable hover.
+        
+        “Good,” Gramps said, nodding approvingly. “Now, try to move them around.”
+
+        *goto next_step
+
+    #Try to levitate a large amount of water at once to impress Gramps.
+        
+        I smirked, deciding to show off a bit. Reaching out with my magic, I attempted to levitate a large portion of the water from the basin. For a moment, the water wobbled erratically in the air, threatening to spill. Then, with a burst of concentration, I stabilized it, forming a small, floating sphere of water.
+        
+        Gramps raised an eyebrow, clearly impressed despite himself.
+        
+        “Impressive, but reckless. Remember, control over quantity comes after mastering quality.”
+        *comment set discipline -3
+        *comment set creativity +5
+        *goto next_step
+
+    #Ask Gramps for tips before attempting.
+        
+        “How do I start?” I asked, tilting my head curiously.
+        
+        Gramps chuckled, leaning on his staff.
+        
+        “Hydromancy responds to intent. Imagine the water rising—not because you want it to, but because it must. Feel the connection between yourself and the water, as if it were an extension of your own being.”
+        
+        Taking his advice to heart, I focused intently, and soon a few drops of water floated obediently into the air.
+        
+        “Not bad,” he remarked. “Now let’s see what else you can do.”
+        *goto next_step
+
+*label next_step
+
+Once I’d demonstrated mastery over levitating and moving small amounts of water, Gramps introduced a new challenge.
+
+“Now, try shaping the water,” he instructed. “Imagine it becoming something else—a small fish, perhaps, or a swirling vortex.”
+
+This was harder than simply moving water. Shaping required not only control but also imagination. I hesitated for a moment, then envisioned the water transforming into a small fish. To my surprise, the water shimmered briefly, its surface smoothing and elongating until it vaguely resembled a minnow. It wasn’t perfect—the fins were uneven, and the tail looked more like a blob—but it was undeniably fish-like.
+
+Gramps stared at the crude creation, his expression unreadable. After a long pause, he finally spoke.
+
+“You’re doing things I haven’t seen in decades,” he muttered, almost to himself. “But don’t get cocky. Mastery takes time—and patience.”
+
+His words struck a chord within me. Despite my rapid progress, I knew there was so much I didn’t understand. The magic flowing through me felt vast, untamed, and occasionally overwhelming. Every lesson with Gramps added another layer of complexity, revealing just how intricate this system truly was.
+
+*fake_choice
+    #Ask Gramps about advanced techniques.
+        
+        “What comes next?” I asked eagerly. “Can I learn bigger spells? Stronger ones? Can I, like, summon a wave or something?”
+        
+        Gramps sighed, shaking his head.
+        
+        “Strength without foundation is dangerous. First, you need to hone your basics. Think of it like building a house—you wouldn’t put a roof on without walls, would you?”
+        
+        His analogy made sense, though it frustrated me. I wanted to leap ahead, to unlock the full potential of my powers. But deep down, I knew he was right.
+        *comment set wisdom +3
+        *goto theory_lesson
+    #Experiment further with shaping magic.
+        
+        Ignoring Gramps’ warning, I continued experimenting. This time, I tried combining different forms of water manipulation—levitation and shaping—to create a miniature water spout. The result was chaotic but mesmerizing, earning a sharp look from Gramps.
+       
+        “Careful,” he warned. “Mixing different aspects of hydromancy prematurely can lead to unpredictable outcomes. Stick to the fundamentals for now.”
+        
+        Though scolded, I couldn’t help but feel proud of my ingenuity.
+        *comment set innovation +5
+        *goto theory_lesson
+    #Admit that shaping magic feels challenging.
+      
+        “It’s harder than I thought,” I admitted reluctantly. “It's like… the water has a mind of its own.”
+      
+        Gramps smiled faintly, his gaze softening.
+      
+        “That’s normal. Even prodigies hit walls. The key is persistence. Keep pushing, and eventually, you’ll break through.  Feel the water, connect with it. It is a part of you, and you are a part of it.”
+     
+        His encouragement bolstered my resolve. Maybe I wasn’t ready for grand displays yet, but I could work toward them step by step.
+        *comment set perseverance +3
+        *goto theory_lesson
+
+*label theory_lesson
+
+After the practical exercises, Gramps shifted gears, pulling out a worn leather-bound book filled with arcane symbols and diagrams related to hydromancy.
+
+“This,” he explained, tapping the cover, “is your curriculum. Over the coming months, we’ll delve deeper into the theory behind water magic. Understanding the principles will make your practical skills exponentially stronger.”
+
+*page_break
+
+He flipped open the book, pointing to a page detailing the concept of ‘mana pools’—the internal reservoirs of magical energy everyone possessed. According to the text, mana pools expanded naturally with age and practice, but certain activities could accelerate growth.  Specifically, it mentioned a deep connection to a natural source of water could significantly enhance a hydromancer's power.
+
+“For example,” Gramps continued, “repeatedly performing low-level water spells strengthens your connection to the element, effectively increasing your capacity over time. Think of it as exercise for your spirit.  Also, spending time near a powerful body of water can… resonate with your own mana pool, accelerating its growth.”
+
+The idea intrigued me. If consistent effort and a connection to water could enhance my abilities, then deliberate practice and perhaps a visit to the nearby river might allow me to surpass even Gramps’ expectations.
+
+“But remember,” he added sternly, “growth isn’t linear. Progress may seem slow at times, but each step matters. Rushing risks instability—or worse, collapse.”
+
+His warning lingered in my mind as he assigned me a task: spend the rest of the day practicing a single water spell repeatedly, documenting any changes in ease or effectiveness.
+
+“To truly master hydromancy,” he concluded, “you must treat it like a craft. Repetition builds muscle memory—for both body and soul. And remember what I said about connecting with water.  Perhaps you should spend some time by the river while you practice."
+
+With that, he dismissed me, though not entirely.
+
+“One last thing,” he called after me. “While you’re out practicing by the river, keep an eye on the edge of the forest near the riverbank. There’s something I need retrieved—a small box hidden beneath a hollow log. Don’t stray too far, and return before sunset.”
+
+*return

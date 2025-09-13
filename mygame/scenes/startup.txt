@@ -1,0 +1,343 @@
+*comment Copyright 2010 by Dan Fabulich.
+*comment 
+*comment Dan Fabulich licenses this file to you under the
+*comment ChoiceScript License, Version 1.0 (the "License"); you may
+*comment not use this file except in compliance with the License. 
+*comment You may obtain a copy of the License at
+*comment 
+*comment  http://www.choiceofgames.com/LICENSE-1.0.txt
+*comment 
+*comment See the License for the specific language governing
+*comment permissions and limitations under the License.
+*comment 
+*comment Unless required by applicable law or agreed to in writing,
+*comment software distributed under the License is distributed on an
+*comment "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+*comment either express or implied.
+
+*title The Descender
+*author Vix.
+*scene_list
+  startup
+  mygame
+  templearcC1
+
+
+*create user_name "TEST"    
+*create user_age 19
+*create user_race ""
+*create backpack "" 
+*create howmany 0
+*create GoldCoins 0
+
+*create gramps_trust 50     
+*create location ""     
+
+*create Cautious 50
+*create Impulsive 50
+*create Intelligent 50
+*create Intuitive 50
+*create Flirty 50
+*create Reserved 50
+*create Serious 50
+*create Playful 50
+*create Brave 50
+*create Fearful 50
+*create Curious 50
+*create Unbothered 50
+
+
+*comment ///////////////
+*comment RELATIONSHIPS
+*comment ///////////////
+
+*create elara_met false
+*create elara_affection 0
+*create sage_met false
+*create sage_affection 10
+*create celestine_met false
+*create celestine_affection 0
+
+*create lyra_affection 0
+
+*comment ///////////////
+*comment PRONOUNSSSSSSSSSSSSSSSSSSS
+*comment ///////////////
+
+*create user_gender ""
+*create pronoun ""
+*create objpronoun ""
+*create pospronoun ""
+*create reflexive ""
+*create plural false
+*create gramps_name ""
+*create grandparent ""
+
+*comment ///////////////
+*comment IF STATEMENTS
+*comment ///////////////
+
+*create qna_sage false
+*create explored_forest false
+*create helped_elara false
+*create trained_with_gramps false
+*create village_progression_stat false
+*create village_progression 10
+*create sword_shield false
+*create bow_arrow false
+*create spear_buckler false
+*create survival_gear false
+*create style 0
+*create casual false
+*create sigil_found false
+*create curse_mark ""
+*create curse_visibility ""
+
+
+*create user_2nd_element ""
+*create user_3rd_element ""
+*create hydro_unlocked false
+*create pyro_unlocked false
+*create aero_unlocked false
+*create geo_unlocked false
+*create hydro_choice_night_arc false
+*create pyro_choice_night_arc false
+*create aero_choice_night_arc false
+
+*comment GRINDING SYSTEM////////////////////////////////////
+
+*create day 0
+*create actions_remaining 0
+*create wall_progress 0
+*create bakery_progress 0 
+*create sanctuary_progress 0
+*create village_hall_progress 0
+*create homes_progress 0
+*create tav_progress 0
+*create qol_progress 0
+*create overall_progress 0
+*create wood 0
+*create stone 0
+*create food 0
+*create pyro_book 0
+*create hydro_book 0
+*create aero_book 0
+*create geo_book 0
+*create life_death false
+
+*create water 10
+*create pyro 10
+*create aero 10
+*create geo 10
+*create genesis 0
+
+*comment ////////////////////////////////////
+*comment COMBAT SYSTEM
+*comment ////////////////////////////////////
+
+*comment Rarity           | Health    | Attack Damage | EXP Range
+*comment -----------------|-----------|---------------|----------
+*comment Common           | 5         | 1-5           | 1-3
+*comment Uncommon         | 15-25     | 5-10          | 5-8
+*comment Rare             | 40-60     | 10-20         | 10-15
+*comment Elite            | 80-120    | 20-35         | 20-30
+*comment Boss             | 150-300+  | 35-50+        | 40-60
+*comment Epic             | 500-1000+ | 50-75+        | 80-120
+*comment Legendary        | 1000+     | 75+           | 150+
+
+*comment For element rand description only
+*create element 0
+*create desc 0
+*create attack_desc_num 0
+*create body_part_num 0
+*create body_part_num_dragon 0
+*create body_part_num_undead 0
+*create body_part_num_animal 0
+*create use_body_part 0
+*create physical_attack_desc ""
+*create body_part ""
+
+*create animation_complete false
+
+*create rng_dmg 0
+*create rng 0
+*create heal 0
+*create damage 0
+*create enemy_type ""
+
+*create mc_max_hp 100
+*create mc_hp 0
+*create mc_max_mana 100
+*create mc_mana 0
+
+*create magic_base_damage 0
+
+*create water_multiplier 0
+*create pyro_multiplier 0
+*create aero_multiplier 0
+*create geo_multiplier 0
+*create genesis_multiplier 0
+
+*comment Weapon Type   | Damage Modifier | Notes
+*comment --------------|-----------------|--------------------------------------
+*comment unarmed       | 1               | Base damage for when no weapon is equipped
+*comment sword         | 5               | Balanced damage
+*comment axe           | 8               | Higher damage, potentially slower
+*comment dagger        | 3               | Lower damage, potentially faster or higher crit chance
+*comment staff         | 2               | Weak physical attack, primarily for magic users
+
+*comment --------------|-----------------|--------------------------------------
+*comment **Possible Weapons to Add Later:**
+*comment --------------|-----------------|--------------------------------------
+*comment greatsword    | 10              | Very high damage, possibly slower
+*comment mace          | 6               | Blunt damage, could be effective against armored enemies
+*comment spear         | 7               | Good reach, balanced damage
+*comment bow           | (Ranged)        | Requires separate ranged attack logic
+*comment crossbow      | (Ranged)        | Higher ranged damage, slower reload
+*comment throwingKnives| 4               | Quick ranged attacks, lower damage
+*comment gauntlets     | 4               | For a dedicated unarmed combat build
+*comment wand          | (Magic Focus)   | Primarily for magic, weak physical attack
+*comment orb/focus     | (Magic Focus)   | Similar to a wand
+*comment scythe        | 9               | High damage, potentially slower or with a wide sweep
+*comment katana        | 6               | Fast, precise strikes, maybe higher crit chance
+*comment whip          | 3               | Low damage, could have effects like disarm or trip
+
+*create equipped_weapon "unarmed"
+*create base_damage 0
+*create damage_dealt 0
+*create weapon_modifier 0
+
+
+*comment Level | EXP Needed
+*comment -----|------------
+*comment 1   | 10
+*comment 2   | 20
+*comment 3   | 35
+*comment 4   | 55
+*comment 5   | 80
+*comment 6   | 110
+*comment 7   | 150
+*comment 8   | 200
+*comment 9   | 260
+*comment If exp = max exp, then, level up.
+*create mc_max_exp 10
+*create mc_exp 0
+
+*comment if level up, then max exp +x
+*create mc_lvl 1
+
+
+
+
+*create enemy_name ""
+*create enemy_rank ""
+*create enemy_hp 0
+*create enemy_att 0
+*create base_enemy_damage 0
+*create weapon_modifier_enemy 0
+*create weapon_equiped_enemy ""
+*create enemy_damage_dealt 0
+
+
+
+
+
+*comment ////////////////////////////////////
+*comment text colour and delay
+*comment ////////////////////////////////////
+
+
+
+
+*comment This line contains the word test.
+*comment *gosub_scene utils replace "xxx" "<span style=\"color: green\">xxx</span>"
+*comment or or or or or or or or or or or or or or
+*comment *gosub_scene utils replace "\"xxx\"" "<span style=\"color: red\">\"xxx\"</span>"
+
+
+*comment gosub_scene utils2 animate_text "ZZZZZ" 1
+
+
+
+
+
+
+
+
+
+
+*comment ////////////////////////////////////
+*comment ACHIEVEMENTS
+*comment ////////////////////////////////////
+
+*achievement name hidden 1 Name Yourself!
+  hidden
+  You've successfully named yourself! Good job.
+
+*achievement pain_nullification hidden 1 Acquiring Skill: Pain Nullification
+  hidden
+  Description: Eliminates perception of physical pain. Warning: Does not prevent damage. (Rank: B)
+
+*achievement enhanced_regeneration hidden 1 Acquiring Skill: Enhanced Regeneration
+    hidden
+    Description: Accelerates cellular recovery. Heals minor wounds in seconds. Major injuries require time. Fatal wounds… unlikely. (Rank: A )    
+
+*achievement limit_break hidden 1 Acquiring Unique Skill: Limit Break
+    hidden
+    Description: Removes natural constraints when survival is at stake. createorary stat surge when nearing death. (Rank: S)
+
+*achievement hemocraft hidden 1 Acquiring Skill: Hemocraft
+    hidden
+    Description: Manipulate personal blood flow for survival and combat. Increased clotting efficiency. Enhanced stamina. (Rank: A )
+
+*achievement primordial_instinct hidden 1 Acquiring Unique Skill: Primordial Instinct
+    hidden
+    Description: A pre-human survival mechanism. Heightens reflexes, sensory perception, and adaptability beyond natural limits. (Rank: EX)
+
+*achievement third_element hidden 1 Unlocked 3rd element
+  hidden
+  Description: Congratulations on breaking the law of the universe for the 3rd time! You're the first to do it!
+
+*achievement nocturna_defeated hidden 1 Successfully defeated Nocturna
+  hidden
+  Description : Congratulations on defeating Nocturna, for now at least...
+
+*achievement first_element hidden 1 Unlock Your First Element!
+  hidden
+  Description : Congratulations on unlocking your first ever element! 
+
+*achievement second_element hidden 1 Wait... you.. did it?
+  hidden
+  Description : Congratulations on unlocking your second element! 
+*comment ////////////////////////////////////
+
+*comment gosub_scene inventory add "backpack" "torch" 1
+*comment gosub_scene inventory add "backpack" "apple" 2
+*comment gosub_scene inventory add "backpack" "gold" 50
+
+
+*comment ////////////////////////////////////
+
+*label start
+
+*set user_gender "male"
+*set pronoun "he"
+*set objpronoun "him"
+*set pospronoun "his"
+*set reflexive "himself"
+*set plural false
+*set gramps_name "lad"
+*set grandparent "Gramps"
+
+
+
+*comment set pyro_unlocked false
+*comment set hydro_unlocked true
+*comment set aero_unlocked true
+*comment goto_scene quests/NightArc
+
+
+
+*gosub_scene mygame 1
+
+

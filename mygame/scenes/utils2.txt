@@ -1,0 +1,15 @@
+*label animate_text
+*params text delay
+*comment
+*comment Animates text by displaying each character with a delay.
+*comment
+*comment Example:
+*comment *gosub_scene utils2 animate_text "Hello!" 100
+*comment
+*comment Output:
+*comment H e l l o ! (appearing with 100ms delay between each)
+*comment
+*script setTimeout((animatedText, animationDelay) => { let targetElement = document.querySelector("#text"); let currentIndex = 0; targetElement.innerHTML = ""; function typeWriter() { if (currentIndex < animatedText.length) { targetElement.innerHTML += animatedText.charAt(currentIndex); currentIndex++; setTimeout(typeWriter, animationDelay); } } typeWriter(); }, 100, stats.scene.temps.text, stats.scene.temps.delay);
+
+*comment
+*return

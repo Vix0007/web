@@ -1,0 +1,337 @@
+*label main_menu
+
+Welcome. What information do you seek?
+
+*choice
+    # Factions
+        *gosub fac_choice
+        *goto main_menu
+
+    # 7 Nations
+        *gosub nation_menu
+        *goto main_menu
+
+    # Magic systems
+        *gosub magic_system
+        *goto main_menu
+
+    # Deep History
+        *gosub history
+        *goto main_menu
+
+    # The Cosmic Hierarchy
+        *gosub cosmic
+        *goto main_menu
+
+    # Return to game
+        *finish
+
+*label abc
+
+*finish
+
+
+
+
+
+
+
+
+*label nation_menu
+
+Which nation would you like to learn about?
+
+*choice
+    # Aethelgard
+      Aethelgard (Human Kingdom)
+      *line_break
+      Capital: Valtara (corrupt trade hub)
+      *line_break
+      Traits: Racist nobility, black markets, Aries Dungeon, slavery of "impure" Half-Elves.
+      *line_break
+      In Light: While known for its darker underbelly, Valtara is also the foremost commercial hub connecting all nations, a vibrant place of multiculture and diverse races where countless events unfold – both politically significant and deeply personal, where heartbreaks happen amidst the bustling trade.
+  
+      Key Figures:
+      *line_break
+      redacted (Obsidian Covenant puppet, anti-elf extremist).
+      *line_break
+      redacted (rebel leader, Eclipse Vanguard spy).
+  
+      *goto nation_menu
+  
+    # Elvendar
+      Elvendar (Elven Sovereignty)
+      *line_break
+      Capital: Lythanis (jungle mythical city), a place hidden from the outside world.
+      *line_break
+      Traits: Magic elitists. High-ranking officers/nobility are deeply prejudiced against humans and other nations, believing them to have "unclean blood" compared to elven purity.
+      *line_break
+      The elven peasants, however, are known for their kindness and striking beauty. Marriage to an Elven peasant is possible but comes at a super high cost, reflecting the societal divide. (Note: Not explicitly mentioned but implied by lore, Elvendar is whispered to be home to the world's best brothels, leveraging their beauty for illicit trade).
+  
+      Key Figures:
+      *line_break
+      redacted (peacemaker, secret Eclipse Vanguard ally).
+      *line_break
+      redacted (Obsidian Covenant collaborator).
+  
+      *goto nation_menu
+  
+    # Drakkar
+      Drakkar (Dragonborn Clans)
+      *line_break
+      Capital: Drakkaron (volcanic fortress), carved into the flanks of super tall, imposing mountains.
+      *line_break
+      "Here be dragons" (Latin: "Hic sunt dracones") is a phrase whispered about this nation, for it is the home to one of the world's true dragons, redacted, a being of immense power known to be stronger than sub-Celestials.
+      *line_break
+      Traits: Honor-bound warriors, severed ties with Aethelgard. Their mountainous homeland is separated from Aethelgard by a vast ocean and treacherous, spiky-tall shores, a natural barrier reflecting the political one.
+      *line_break
+      While currently estranged, only the elders and ancient manuscripts from before the 2nd Great War speak of once-great ties and alliances between Drakkar, Aethelgard, and other nations, hinting at a lost era of cooperation the MC could potentially help reunite.
+      *line_break
+      Plot Hook: Obsidian Covenant framed humans for their king’s death, cementing the rift.
+      *line_break
+      Key Figure: redacted (An ancient, powerful True Dragon).
+  
+      *goto nation_menu
+  
+    # Azurine
+      Azurine (Underwater Cities)
+      *line_break
+      Capital: Scattered underwater cities nestled in the depths. (Using Azurine as the name for this nation).
+      *line_break
+      Traits: A mysterious aquatic nation. Their unique nature is tied to an ancient prophecy: their civilians are said to have been originally made of water, and touching primal waters will cause them to revert back to their liquid state, a powerful connection to the elemental source.
+      *line_break
+      The specific traits and culture of Azurine remain largely unknown to the surface world.
+  
+      *goto nation_menu
+  
+    # Vornheim
+      Vornheim (Orc Nation)
+      *line_break
+      Capital: Bloodspire (arena city), which serves as their central gathering point amidst their nomadic wanderings.
+      *line_break
+      Traits: Mercenary culture, Obsidian Covenant-bribed warlords.
+      *line_break
+      The Orcs of Vornheim are a proud, nomadic people, their society structured around powerful tribes led by warlords. They are renowned for their brutal effectiveness in combat and their mercenary culture, where strength and victory, particularly in the arena of Bloodspire, grant status and command. The Obsidian Covenant exploits this structure, bribing warlords to sow discord and use Orc warbands for their dark purposes, creating internal power struggles and betrayals within the tribes. Their nomadic routes often bring them into tense contact with the borders of other nations, leading to skirmishes or lucrative contracts.
+      *line_break
+      Key Figure: redacted (secret Eclipse Vanguard informant), representing a potential internal resistance to the Covenant's influence.
+  
+      *goto nation_menu
+  
+    # Silvania
+      Silvania (Spirit Kingdom)
+      *line_break
+      Capital: Everbloom (sentient forest).
+      *line_break
+      Traits: Nature spirits, Root of Sovereignty corruption.
+      *line_break
+      A deeply spiritual place, Silvania is said to be unreachable by mere mortals, accessible only to spirits as it serves as a realm for the deceased or those with profound spiritual connection. The spirits communicate with the "flesh" (mortals) primarily through mediums, astrologers, and other channels of spiritual communication.
+      *line_break
+      MC Connection: The spirits distrust the MC’s "outlander" energy, seeing $!{pospronoun} unusual origins or temporal displacement as unnatural or threatening to the spiritual balance.
+  
+      *goto nation_menu
+  
+    # Celestia
+      Celestia (Sky Kingdom)
+      *line_break
+      Capital: Astralis - a breathtaking floating archipelago of islands.
+      *line_break
+      Intended as the last major nation the MC will visit in the story, Celestia holds ancient secrets and is likely the key to a major redacted plot point or the ultimate resolution.
+      *line_break
+      The nation is involved in a quest to locate scattered Sky Fragments, ancient pieces of lore or artifacts needed to unlock Celestia's secrets or the "key" it holds. Its culture is deeply tied to the sky, air, and possibly cosmic knowledge.
+  
+      *goto nation_menu
+  
+    # Return to main menu
+      *goto main_menu
+
+*return
+
+
+
+
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+*label cosmic
+
+The Cosmic Hierarchy
+
+Above the world and its mortal conflicts exist forces of unimaginable power, rarely seen but deeply impactful.
+
+The Celestials are described as such forces, whose immense power is so vast that they seem to nullify each other, resulting in a state of static, almost non-interactive power at the highest levels. They are known to have set "natural/primal barriers" upon mortals, perhaps defining the limitations of elemental attunement or other fundamental laws of reality, which the members of Stellae Noctis managed to overcome.
+
+Above even the Celestials, at the very apex of existence, is the ultimate force known as "The Author" or "The One Who Sees All" – its uhmm, yea, albeit a lazy one, but $!{pronoun}'s powerful muahahahaha!~~ (I'll try my best to finish the mega project! If you've read this part, type COOKIE in the forum! I'll give you a free cookie~ (maybe))
+
+Below the Celestials, but still cosmic in scale, is the force known as The Opposer. As the ultimate lord of Chaos and meaninglessness, The Opposer embodies the inverse of fundamental positive concepts and stands in direct opposition to any form of established order or 'divine' truth. Azgorthos, the Lord of Decay, serves as the primary agent or manifestation of The Opposer's will in the physical or lower cosmic planes.
+
+These cosmic forces are not merely abstract concepts in this world; they are known and understood to a significant degree, even taught about in schools or educational institutions, albeit perhaps through simplified or mythological lenses. The Obsidian Covenant actively worships Azgorthos and, by extension, The Opposer, their chants of "Nihility to all!" reflecting their devotion to decay and meaninglessness.
+
+*return
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+*label history
+
+Deep History
+
+The world's history is marked by significant, almost mythical, epochs and conflicts.
+
+The most revered period is the Paragon Era, a time before the First Great War when the world's Seven Nations were unified. This unity was forged in the face of a cosmic threat: the Lord of Decay, Azgorthos – the "real deal." The war against Azgorthos is known as the 1st Great War. It was a cataclysmic conflict where Seven Paragons, powerful heroes each hailing from one of the unified nations, rose to stand against the Lord of Decay. They ultimately won, defeating Azgorthos, but at a heavy cost, with the Paragons either dying, sacrificing themselves, or disappearing. Though defeated, Azgorthos's influence lingered, leaving behind powerful artifacts and dangerous "offsprings," such as the dreaded Abyssal Maw, who famously fought against the Human Paragon, the "Paragon of Hope."
+
+Following this foundational conflict, thousands of years passed. The world advanced, societies rebuilt, and the memory of the Paragon Era and the 1st Great War became the stuff of legends and history.
+
+Then came the 2nd Great War, a more recent, devastating conflict that reshaped the current age, involving the assassination attempt on the King, the mother's sacrifice, the Cataclysm, and the initial actions of the nascent Obsidian Covenant.
+
+Decades later, after a long period of recovery and simmering tension, the MC finally awakens, setting the stage for the next chapter in this long and tumultuous history.
+
+*return
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+*label magic_system
+
+The Magic System
+
+Magic in this world is a diverse and complex force, rooted in both fundamental cosmic attunement and learned or inherited power.
+
+The most foundational form is Primal/Original Elemental Magic. For the vast majority of individuals, attunement allows them mastery over only one element. This attunement can be innate, tied to lineage, or perhaps influenced by one's place of birth or significant life events. These are the core elements that shape the physical world – fire, water, earth, air, etc. The MC's unique ability to potentially command all five elements (and more) is a direct defiance of this fundamental rule, tied to $!{pospronoun} mark and prophecy.
+
+Beyond this singular elemental attunement, individuals can learn and wield various Other Forms of Magic. These include:
+
+-Racial Magic: Certain races, like the Dragonborn, possess unique magical abilities inherent to their species, distinct from the primal elements. Similarly, other nations may have magical traditions or capabilities unique to their dominant inhabitants (except perhaps Aethelgard).
+
+-Inherited/Lineage Magic: Magical aptitude or specific abilities can be passed down through families (as seen with the Corona Ignis mark lineage).
+
+-Learned Magic: Arcane arts, spellcraft, enchanting, alchemy, or other magical disciplines that can be studied and mastered through training, regardless of one's elemental attunement (or lack thereof).
+
+-Spiritual Magic: Connection to nature spirits (in Silvania) or other spiritual forces can grant magical power.
+
+While individuals may be naturally potent (like the Elves' inherent magical strength), or have very weak or no elemental attunement at all, they can still often access these other forms of magic through study, heritage, or connection. The magic system is a layered one, where elemental mastery is distinct from, but can potentially combine with, racial gifts, learned skills, and spiritual connections.
+
+*return
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+*label fac_choice
+
+What Factions do you wanna know more about?
+
+*choice
+    # Obsidian Covenant
+        *gosub OC
+        *goto fac_choice
+
+    # Eclipse Vanguard
+        *gosub EV
+        *goto fac_choice
+
+    # Stellae Noctis
+        *gosub SN
+        *goto fac_choice
+
+    # Return to main menu
+        *goto main_menu
+
+*return
+
+*label EV
+The Eclipse Vanguard (EV)
+
+Inspired by the refined lethality of unseen protectors and the dedication of a true secret service, the Eclipse Vanguard functions as a highly sophisticated, independent intelligence organization operating from the shadows across the Seven Nations. Far more than a simple resistance group, they are a network of elite spies and scholars, bound by a shared purpose: to serve as the world's hidden defense against the insidious spread of the Obsidian Covenant's nihilistic decay and to guide the MC – the prophesied Sleepless One – towards embracing $!{pospronoun} true identity and destiny.
+
+Their approach is one of precision and strategic intervention, a stark contrast to the raw chaos of their enemy. Members, drawn from diverse backgrounds (elves, mages, warriors, and others) and representing high-ranking officers within the organization, are rigorously trained to operate with discretion and effectiveness. They command impressive resources, including extensive information networks, strategically located hidden bases (envisioned potentially in a snowy, secluded region for their main HQ), a range of powerful magical artifacts, and highly trained agents. Their influence, though covert, extends globally on a "small scale worldwide."
+
+The leadership structure of the EV is unique and deeply tied to the protagonist. Founded by the immensely powerful $!{grandparent}, whose capabilities and past are far more significant than they initially appear, $!{pronoun} remains the ultimate authority whose consultations and authorizations are absolute. However, after the Second Great War, $!{pronoun} stepped down from active, day-to-day command. Leadership now rests with a secretive "Shadow Cabinet," a council comprising thirteen or more heads. This cabinet likely includes representatives specializing in operations across the Seven Nations and other key strategic roles. They maintain extreme secrecy, even among themselves, meeting via holograms with redacted faces and voice changers around a hidden round table. This Shadow Cabinet is notably headed by a young woman the same age as the MC, who is also a potential Romance Option. Very wealthy and highly confidential, she embodies the active leadership and serves as the MC's primary, albeit mysterious, point of contact within the Vanguard's inner circle.
+
+Cohesion and loyalty within the EV are paramount. Recruitment outside the core leadership is based on close and worthy ties, with potential members undergoing rigorous background checks using clairvoyant magic to vet their loyalty and suitability for this hidden war. While the absolute top ranks of the Shadow Cabinet may rely on deep-seated, almost unbreakable family-only ranking and ties for their core command structure, other high-ranking officers and elite agents earn their positions through extraordinary merit, proven skill, and demonstrated loyalty, perhaps sponsored or vouched for by existing family members. This creates a dual hierarchy balancing unshakeable trust at the core with necessary talent and perspective from diverse backgrounds.
+
+$!{grandparent} is the custodian of a key artifact: the Chronos Amulet. Likely an ancient object of immense power, it is tied to the very fabric of time and causality, particularly in relation to the Chronos Ritual that summoned the MC and caused the cataclysm. The Amulet grants its wielder the ability to sense and understand temporal disturbances, perhaps view echoes of the past or potential futures, track individuals connected to significant time-bending events (like the Sleepless One), or even offer limited manipulation of temporal energies. It may have been passed down through $!{grandparent}'s significant family lineage or recovered from the epicenter of the cataclysm, a constant tool used by the EV to study the prophecy, prepare for the MC's arrival, and potentially counter the Obsidian Covenant's own manipulations of time or decay.
+
+Since the end of the war and the resulting Cataclysm, the Eclipse Vanguard has been relentlessly active. They've waged a continuous shadow war against the nascent Obsidian Covenant, dismantling their plots and gathering vital intelligence, all while simultaneously meticulously preparing for the Prophecy's fulfillment and the Sleepless One's awakening. They maintain a delicate, arms-length relationship with the human kingdom, acting as an unseen intelligence asset by providing crucial information indirectly, balancing their own goals with a need to maintain global stability against the Covenant's designs. Beyond their core conflict, they are aware of and interact with other significant hidden groups, including Stellae Noctis and the intriguing, seemingly neutral group known as The Veiled Hand ("deadly maids"), which might operate with a similar hidden-in-plain-sight methodology.
+
+In essence, the Eclipse Vanguard is the world's hidden secret service – a sophisticated and dedicated network operating in the shadows with style, precision, and ancient knowledge. Guided by their dark purpose, wielding potent resources like the Chronos Amulet, and ultimately commanded by the formidable $!{grandparent}, they are the unseen protectors working to prevent the return of ultimate decay and guide the prophesied Sleepless One to embrace $!{pospronoun} destiny before the shadows of the Obsidian Covenant consume everything. Their operations are deeply secretive; for instance, the young Shadow Cabinet leader might even meet the MC initially under a false identity, perhaps as a fake slave sold at an underground illegal auction, a perfect example of the lengths the Vanguard goes to operate unseen.
+
+*return
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+*label OC
+
+The Obsidian Covenant is not merely a political faction or a guild of dark mages; they are a pervasive, insidious philosophy given form. Operating from the deepest shadows across the Seven Nations, this clandestine collective is bound by a chilling belief system that fundamentally rejects the tenets upon which the world was seemingly built.
+
+At the core of the Covenant lies a profound and terrifying nihilism. They believe, with absolute conviction, that all existence, all struggle, all life, inevitably leads to nothingness. Meaning, purpose, truth, and intrinsic value are dismissed as comforting illusions humanity clings to, futilely delaying the inevitable return to entropy and void. From this bleak perspective, the very concepts revered by others – "the way, the truth, and the life" – are seen as the ultimate lies, false constructs imposed upon a reality whose true nature is decay and chaos.
+
+This nihilistic belief fuels their devotion to the entities they serve. Azgorthos, Ánax Phthorás, the dreaded Lord of Decay, is revered not just as a powerful being, but as the living embodiment of Decay itself – the fundamental force that strips away meaning and form, accelerating the universe's return to its base, meaningless state. Yet, Azgorthos is often seen as merely an agent of a higher power: The Opposer, the true lord of Chaos, the ultimate antithesis to any established order or divine principle, representing the primal void from which they believe everything came and to which everything will return.
+
+The roots of their philosophy trace back to ancient, hidden currents of thought that existed long before the modern age. However, the Second Great War and the resulting Cataclysm served as the crucible for their modern consolidation. Witnessing the collapse of kingdoms, the widespread despair, and the very tearing of the fabric of reality by the Chronos Ritual and its aftermath, the scattered adherents to this dark philosophy saw validation of their beliefs and an unprecedented opportunity. The world built on 'lies' was crumbling, and the wound left by the cataclysm was a potential pathway to accelerate the return of their dark lord.
+
+Forged in the ashes and disillusionment of the post-war era, the Obsidian Covenant united powerful individuals from every nation – scholars who found truth only in endings, nobles who saw the futility of their lineage, mages drawn to forbidden power, and pragmatists who sought to control the inevitable decline. Their overriding goal became the revival of Azgorthos, not just for conquest, but because $!{pospronoun} presence as the ultimate force of Decay is necessary to dismantle the current world order and align reality with The Opposer's true, chaotic nature.
+
+Their vision for the world under their "control" is not one of rebuilding or establishing a new enduring empire. It is a vision of managed collapse. They seek to strip away meaning, promote chaos, and accelerate decay, guiding existence towards its perceived inevitable end according to The Opposer's will. They operate in the shadows, pulling strings, orchestrating pivotal moments (like the king's assassination attempt that sparked the cataclysm) and hunting those who might uphold the 'false' principles of life, truth, and order – particularly individuals tied to prophecies that speak of breaking cycles or restoring balance, like the Sleepless One.
+
+The Obsidian Covenant is a chilling force driven by a deep-seated belief in ultimate meaninglessness, seeking to hasten the universe's return to nothingness under the banner of Decay and Chaos. They are the hidden current of entropy, patiently working to unravel the world from within.
+
+*return
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+*label SN
+
+Stellae Noctis (SN)
+
+Stellae Noctis are an ancient and exclusively female society of immensely powerful magic users, tracing their origins back to the distant Paragon Era, predating even the First Great War. Unlike organizations one is invited to join, membership in Stellae Noctis is earned through sheer power and transcendence. Its members are primarily mortal women who have "ascended" – breaking free from or rising above the "natural/primal barriers" potentially set upon mortals by the Celestials. This arduous process grants them a level of power and understanding that allows them to stand among the ranks of Stellae Noctis. They don't join; they become Stellae Noctis, individuals recognized for their cosmic-level power and unique roles within the universe's fabric.
+
+Inspired by concepts like the Hexenzirkel, Stellae Noctis are the world's foremost keepers, interpreters, recorders, and even shapers of prophecy and the fundamental "currents" that govern reality. Their purpose is to "overlook the steering wheel" of fate – not to seize control, but to deeply understand its flow, predict its paths, identify its potential deviations, and recognize its critical junctures across vast ages. Their gatherings are shrouded in secrecy, involving intricate discussions of cosmic causality or cryptic exchanges regarding the weave of destiny. Members are individuals with unique cosmic roles and specializations, representing mastery over fundamental concepts and forces, sometimes known by titles such as Goddess of Creation, Goddess of Prophecy, "A legend that never ends," "Guide who will never get lost" (Witch N), or "A flower that is not of this world."
+
+A prime example is Witch Ch (Cassandra), a key member whose backstory involves significant loss and a subsequent transformation through immense power, leading her to become a pillar of morality and good. Her journey solidified her dedication to protecting the balance or guiding destiny towards a benevolent outcome. Her titles, like "Chronicler of Currents" and "Whisper in the Grand Design," reflect her role in studying and subtly interacting with the flow of fate, while "Primordial Ember" hints at her immense power, perhaps forged in the fires of her past transformation. Her act of giving the MC the mark was a rare, crucial intervention stemming from her understanding of the prophecy and its unfolding.
+
+Stellae Noctis possessed foresight into the future, guiding their oversight of the "aethereal winds," but this vision stopped abruptly with the MC's awakening. $!{pospronoun} arrival introduced a fundamental uncertainty into the future's weave, signifying a major change in destiny's flow. Now, their role has shifted from foresight and recording to active guidance of the MC, believing $!{objpronoun} to be the key to navigating this unpredictable future and steering it towards an outcome that benefits all good forces.
+
+From their elevated perspective, Stellae Noctis view the struggles and objectives of other major factions – the Obsidian Covenant, the Eclipse Vanguard, and The Veiled Hand – as largely irrelevant to their ultimate level of power or cosmic concerns. They perceive these groups as entangled within the weave of destiny that Stellae Noctis oversees, and believe they could eliminate them with ease ("1 snap and they're gone"). However, they typically refrain from direct, overt intervention in these factions' conflicts unless their actions significantly impact the fundamental currents of destiny (such as the Covenant threatening to unravel reality or the EV guiding the prophesied Sleepless One).
+
+Given their non-physical nature and focus on subtlety, Stellae Noctis primarily intervene through visions (providing guidance, warnings, or glimpses of truth) and gifts (bestowing power, knowledge, artifacts, or insights like the MC's mark). They use all ways of communication – mental links, dreams, visions, perhaps even brief, non-physical manifestations – to interact with key individuals like the MC, $!{grandparent}, and other crucial players. They do not have physical bodies in the conventional sense.
+
+Stellae Noctis operates within a cosmic framework where certain rules and powers exist beyond even them. Their adherence to or limitations against the Celestials are unknown, highlighting the Celestials as an even higher, possibly untouchable, authority. Furthermore, their oversight and any attempt to alter or force change in destiny or interact with cosmic forces is met with inherent resistance from the universe itself. While scrying on Celestials or Stellae Noctis themselves yields "nothing" (they are too transcendent to be perceived), attempting to scry or manipulate sub-Celestial forces (like the power controlling a specific element) is met with a physical backlash, the manifestation of which relates directly to the force being intruded upon (e.g., powerful wind currents tearing clothes for scrying wind). This suggests their guidance must be subtle nudging, working with existing currents, rather than brute force manipulation, to avoid cosmic backlash.
+
+*return
+
+*comment ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

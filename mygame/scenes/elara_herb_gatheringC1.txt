@@ -1,0 +1,118 @@
+*label quests/elara_herb_gatheringC1
+
+The sun dappled through the leaves, painting the forest floor in shifting patterns of light and shadow. Elara, a woven basket hanging from her arm, gestured towards a patch of vibrant blue flowers. "These are dream blossoms," she explained, her voice soft. "They're used in calming teas. Careful though," she added with a playful smirk, "too many and you might start talking to squirrels."
+
+I chuckled, already feeling at ease in her company. Helping Elara gather herbs was a welcome change of pace from the intense magic training with Gramps. It was a chance to explore the forest in a different way, to learn its secrets at a slower, more gentle pace.
+
+"And what are those?" I asked, pointing to a cluster of crimson berries.
+
+"Those are fire berries," Elara replied. "They're incredibly spicy, but they're great for adding a kick to stews. Gramps uses them in his… 'special' chili. I suspect it's the secret ingredient to his fire-breathing abilities." She winked.
+
+We continued deeper into the woods, Elara pointing out various plants and explaining their uses. She had an encyclopedic knowledge of the forest, her words painting vivid pictures of their properties and the folklore surrounding them. It was clear she loved this place, her connection to it running deep.
+
+As we gathered herbs, our conversation drifted from plants to other things. She told me stories of the village, of the quirky inhabitants and their traditions. She spoke of her dreams of becoming a healer, of traveling to distant lands to learn more about the world's flora. There was a spark of passion in her eyes as she spoke, a quiet determination that I found… attractive. (Okay, maybe a little more than attractive. But she's just a friend. A really, really, *really* good friend.)
+
+"You know," Elara said, pausing and looking at me with a thoughtful expression, "you're different from the other kids in the village."
+
+"Different how?" I asked, curious.
+
+*fake_choice
+    #Tease her gently.
+        "Is it my dazzling charm?" I asked with a playful grin.
+        *set elara_affection +2
+        *goto elara_different
+    #Ask her sincerely.
+        "Really? How so?" I asked, genuinely interested.
+        *goto elara_different
+    #Make a self-deprecating joke.
+        "Probably because I'm so clumsy," I said, chuckling. "I'm surprised I haven't tripped over a root yet."
+        *set elara_affection +1
+        *goto elara_different
+
+*label elara_different
+
+She shrugged, a faint blush coloring her cheeks. "I don't know. You're… quieter, maybe. More observant. Like you're always thinking about something important."
+
+"I guess I am," I admitted. "There's a lot to think about."
+
+"Like what?" she pressed gently.
+
+*fake_choice
+    #Be mysterious.
+        "That's for me to know, and for you to find out," I said with a wink.
+        *set elara_affection +3
+        *goto elara_thoughts
+    #Be honest.
+        "Just… things," I mumbled. "The forest, the magic… my future."
+        *goto elara_thoughts
+    #Try to change the subject.
+        "Like how amazing this forest is," I said, gesturing around. "Have you ever noticed how the light filters through the leaves?"
+        *goto elara_thoughts
+
+*label elara_thoughts
+
+Elara nodded understandingly. "The future can be scary," she said. "But it can also be exciting. You have so much potential," she added, her gaze lingering on mine a little longer than necessary. (Okay, heart. Calm down. It's just a compliment.)
+
+We continued gathering herbs in comfortable silence for a while. The air was filled with the sweet scent of wildflowers and the gentle murmur of the wind through the trees. I found myself stealing glances at Elara, admiring her easy grace and the way the sunlight caught her hair, turning it into a halo of gold. She was beautiful, inside and out. (Okay, maybe I'm a little bit smitten. But who could blame me?)
+
+As the basket began to fill, Elara led me towards a small, hidden clearing. A waterfall cascaded down moss-covered rocks into a crystal-clear pool. "This is my favorite spot," she said, a smile gracing her lips. "It's so peaceful here."
+
+We sat by the pool, the sound of the waterfall a soothing melody. Elara began sorting the herbs, carefully separating them into different categories. I watched her, fascinated by her knowledge and skill.
+
+"You're really good at this," I commented.
+
+"Thanks," she replied, beaming. "I've been learning from my mother for years. She's the village healer, you know."
+
+"I know," I said. "She's amazing."
+
+"She is," Elara agreed. "I hope to be just like her someday."
+
+"I'm sure you will be," I said, my voice sincere. "You're already incredibly talented."
+
+Elara blushed again, looking away shyly. "You're very kind," she murmured.
+
+The silence stretched between us, comfortable yet charged with an unspoken energy. I wanted to say something, to tell her how I felt, but the words seemed to catch in my throat. (Smooth, me. Real smooth.)
+
+Suddenly, Elara gasped, pointing towards a patch of shimmering purple flowers growing near the waterfall. "Look!" she exclaimed. "Moonpetal blossoms! They only bloom at twilight. They're incredibly rare!"
+
+She rushed towards the flowers, her earlier shyness forgotten in her excitement. I followed her, my heart still pounding from our earlier conversation. (Okay, maybe I'm *really* smitten.)
+
+As Elara carefully gathered the moonpetal blossoms, I couldn't help but smile. She was so passionate, so dedicated to her craft. She was truly inspiring. And maybe, just maybe, she felt something for me too. (Okay, maybe I'm just delusional. But a guy can dream, right?)
+
+*page_break
+
+With the basket full and the sun beginning to dip below the horizon, we started to make our way back to the village. As we walked, Elara turned to me, a thoughtful expression on her face.
+
+"Thank you for helping me today," she said softly. "It was… nice spending time with you."
+
+"It was nice spending time with you too," I replied, my voice equally soft. (Nailed it. Totally suave.)
+
+We reached the edge of the forest, the lights of the village twinkling in the distance. Elara paused, looking at me one last time.
+
+"I should get back," she said. "My mother will be wondering where I am."
+
+"Okay," I said. "I'll see you later."
+
+*fake_choice
+    #Say goodbye normally.
+        "Yeah," she replied. "Later."
+        *goto elara_goodbye
+    #Tease her about the moonpetal blossoms.
+        "Don't stay up too late talking to the moonpetal blossoms," I teased.
+        *set elara_affection +2
+        *goto elara_goodbye
+    #Offer to walk her back to her house.
+        "Let me walk you back," I offered. "It's getting dark."
+        *set elara_affection +1
+        *goto elara_goodbye
+
+*label elara_goodbye
+
+She gave me a small, shy smile before turning and heading towards the village. I watched her go, my heart doing a little dance in my chest. (Okay, I'm officially head over heels. But don't tell anyone.)
+
+As I turned to head deeper into the woods (remember, Gramps's errand?), I couldn't help but grin. Today had been… wonderful. And maybe, just maybe, it was the start of something special. (Okay, I'm officially hopeless.)
+
+Now, time to focus on Gramps's task. He said something about a box near a hollow log…
+
+
+*return

@@ -1,0 +1,260 @@
+[b]Magic Affinity[/b]
+
+*line_break
+
+
+*if hydro_unlocked = true
+    *label water_check
+    *image hydrotitle.png left 
+    [${water}]
+    *if water = 0
+        *image hydromancy0.png 
+        *goto pyro_check
+    *elseif water = 10
+        *image hydromancy10.png 
+        *goto pyro_check
+    *elseif water = 20
+        *image hydromancy20.png
+        *goto pyro_check
+    *elseif water = 30
+        *image hydromancy30.png
+        *goto pyro_check
+    *elseif water = 40
+        *image hydromancy40.png
+        *goto pyro_check
+    *elseif water = 50
+        *image hydromancy50.png
+        *goto pyro_check
+    *elseif water = 60
+        *image hydromancy60.png
+        *goto pyro_check
+    *elseif water = 70
+        *image hydromancy70.png
+        *goto pyro_check
+    *elseif water = 80
+        *image hydromancy80.png
+        *goto pyro_check
+    *elseif water = 90
+        *image hydromancy90.png
+        *goto pyro_check
+    *elseif water = 100
+        *image hydromancy100.png
+        *goto pyro_check
+    *else
+        *image hydromancy1000.png
+        *goto pyro_check
+*else
+    *goto pyro_check
+
+*label pyro_check
+*if pyro_unlocked = true
+    *image pyrotitle.png left 
+    [${pyro}]
+    *if pyro = 0
+        *image pyromancy0.png
+        *goto aero_check
+    *elseif pyro = 10
+        *image pyromancy10.png
+        *goto aero_check
+    *elseif pyro = 20
+        *image pyromancy20.png
+        *goto aero_check
+    *elseif pyro = 30
+        *image pyromancy30.png
+        *goto aero_check
+    *elseif pyro = 40
+        *image pyromancy40.png
+        *goto aero_check
+    *elseif pyro = 50
+        *image pyromancy50.png
+        *goto aero_check
+    *elseif pyro = 60
+        *image pyromancy60.png
+        *goto aero_check
+    *elseif pyro = 70
+        *image pyromancy70.png
+        *goto aero_check
+    *elseif pyro = 80
+        *image pyromancy80.png
+        *goto aero_check
+    *elseif pyro = 90
+        *image pyromancy90.png
+        *goto aero_check
+    *elseif pyro = 100
+        *image pyromancy100.png
+        *goto aero_check
+    *else
+        *image pyromancy1000.png
+        *goto aero_check
+*else
+    *goto aero_check
+
+*label aero_check
+*if aero_unlocked = true
+    *image aerotitle.png left 
+    [${aero}]
+    *if aero = 0
+        *image aeromancy0.png
+        *goto geo_check
+    *elseif aero = 10
+        *image aeromancy10.png
+        *goto geo_check
+    *elseif aero = 20
+        *image aeromancy20.png
+        *goto geo_check
+    *elseif aero = 30
+        *image aeromancy30.png
+        *goto geo_check
+    *elseif aero = 40
+        *image aeromancy40.png
+        *goto geo_check
+    *elseif aero = 50
+        *image aeromancy50.png
+        *goto geo_check
+    *elseif aero = 60
+        *image aeromancy60.png
+        *goto geo_check
+    *elseif aero = 70
+        *image aeromancy70.png
+        *goto geo_check
+    *elseif aero = 80
+        *image aeromancy80.png
+        *goto geo_check
+    *elseif aero = 90
+        *image aeromancy90.png
+        *goto geo_check
+    *elseif aero = 100
+        *image aeromancy100.png
+        *goto geo_check
+    *else
+        *image aeromancy100.png
+        *goto geo_check
+*else
+    *goto geo_check
+
+*label geo_check
+*if geo_unlocked = true
+    *image geotitle.png left 
+    [${geo}]
+    *if geo = 0
+        *image geomancy0.png
+        *goto genesis_check
+    *elseif geo = 10
+        *image geomancy10.png
+        *goto genesis_check
+    *elseif geo = 20
+        *image geomancy20.png
+        *goto genesis_check
+    *elseif geo = 30
+        *image geomancy30.png
+        *goto genesis_check
+    *elseif geo = 40
+        *image geomancy40.png
+        *goto genesis_check
+    *elseif geo = 50
+        *image geomancy50.png
+        *goto genesis_check
+    *elseif geo = 60
+        *image geomancy60.png
+        *goto genesis_check
+    *elseif geo = 70
+        *image geomancy70.png
+        *goto genesis_check
+    *elseif geo = 80
+        *image geomancy80.png
+        *goto genesis_check
+    *elseif geo = 90
+        *image geomancy90.png
+        *goto genesis_check
+    *elseif geo = 100
+        *image geomancy100.png
+        *goto genesis_check
+    *else
+        *image geomancy100.png
+        *goto genesis_check
+*else
+    *goto genesis_check
+
+*label genesis_check
+*if (life_death = true)
+    *image genesistitle.png left 
+    [${genesis}]
+    *if genesis = 0
+        *image genesis0.png
+        *goto end_stats
+    *elseif genesis = 10
+        *image genesis10.png
+        *goto end_stats
+    *elseif genesis = 20
+        *image genesis20.png
+        *goto end_stats
+    *elseif genesis = 30
+        *image genesis30.png
+        *goto end_stats
+    *elseif genesis = 40
+        *image genesis40.png
+        *goto end_stats
+    *elseif genesis = 50
+        *image genesis50.png
+        *goto end_stats
+    *elseif genesis = 60
+        *image genesis60.png
+        *goto end_stats
+    *elseif genesis = 70
+        *image genesis70.png
+        *goto end_stats
+    *elseif genesis = 80
+        *image genesis80.png
+        *goto end_stats
+    *elseif genesis = 90
+        *image genesis90.png
+        *goto end_stats
+    *elseif genesis = 100
+        *image genesis100.png
+        *goto end_stats
+    *else
+        *image genesis100.png
+        *goto end_stats
+
+*goto end_stats
+
+*label end_stats
+
+
+
+
+
+
+
+
+
+
+
+
+*label modmenu
+[b]Mod Menu[/b]
+*choice 
+    *if (water <= 100)
+        # Add water 10%
+            *set water +10
+            *goto water_check
+    *if (pyro <= 100)
+        # Add pyro 10%
+            *set pyro +10
+            *goto water_check
+    *if (aero <= 100)       
+        # Add aero 10%
+            *set aero +10
+            *goto water_check
+    *if (geo <= 100)
+        # Add geo 10%
+            *set geo +10
+            *goto water_check
+    *if (genesis <= 100)
+        # Add genesis 10%
+            *set genesis +10
+            *goto water_check
+
+    # End
+        *finish
+
